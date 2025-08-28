@@ -63,7 +63,6 @@ internal class SuperHeroe
 			return "EMPATE";
 	}
 
-	// ToString corregido (nota: no veo propiedad Edad en tu clase)
 	public override string ToString(){
 		return string.IsNullOrEmpty(Nombre) ? "Empty" : $"Saludos!, Soy el SuperHeroe ¡{Nombre}! y tengo Fuerza: {Fuerza}, Resistencia: {Resistencia}, SuperPoderes: {SuperPoderes}";
 	}
