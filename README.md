@@ -6,9 +6,10 @@
 
 ### Índice de contenidos
 
-- [Prácticas formativas autogestionadas](./Prácticas%20formativas%20autogestionadas/)
-  - [A2](./Prácticas%20formativas%20autogestionadas/A2/)
-  - [A3](./Prácticas%20formativas%20autogestionadas/A3/)
+- [Semana 2](./Semana2/)
+  - [A2](./Semana2/A2/)
+- [Semana 3](./Semana3/)
+  - [A2](./Semana2/A2/)
 
 ---
 
