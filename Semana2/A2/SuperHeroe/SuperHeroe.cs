@@ -14,13 +14,13 @@
     public int Resistencia
     {
         get => _resistencia;
-        set => _resistencia = (value >= 0 && value <= 100) ? value : (value > 100) ? 100 : 0;
+        set => _resistencia = value;
     }
 
     public int SuperPoderes
     {
         get => _superPoderes;
-        set => _superPoderes = (value >= 0 && value <= 100) ? value : (value > 100) ? 100 : 0;
+        set => _superPoderes = value;
     }
 
     public string Nombre
