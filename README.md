@@ -20,7 +20,7 @@ Aquí encontrarás los trabajos prácticos (TPs) realizados por los integrantes 
 Cada rama corresponde al espacio personal de un integrante, donde se encuentran sus entregas y trabajos prácticos:
 
 - [`LEANDRO-MASELLI`](https://github.com/leoroan/ISFT29-DSOO-COMA-GRUPO2/tree/LEANDRO-MASELLI)
-- [`ESTEBAN-ACOSTA`](https://github.com/leoroan/ISFT29-DSOO-COMA-GRUPO2/tree/ESTEBAN-ACOSTA)
+- [`MATIAS-BETINOTTI`](https://github.com/leoroan/ISFT29-DSOO-COMA-GRUPO2/tree/MATIAS-BETINOTTI)
 - [`JAVIER-CANTEROS`](https://github.com/leoroan/ISFT29-DSOO-COMA-GRUPO2/tree/JAVIER-CANTEROS)
 - [`LUCIANO-SALERNO`](https://github.com/leoroan/ISFT29-DSOO-COMA-GRUPO2/tree/LUCIANO-SALERNO)
 - [`MELODY-ARCUSCHIN`](https://github.com/leoroan/ISFT29-DSOO-COMA-GRUPO2/tree/MELODY-ARCUSCHIN)
