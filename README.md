@@ -8,7 +8,7 @@ Aquí encontrarás los trabajos prácticos (TPs) realizados por los integrantes 
 ## 📚 Integrantes del Grupo
 
 - **Leandro Maselli**
-- **Esteban Acosta**
+- **Matias Betinotti**
 - **Javier Canteros**
 - **Luciano Salerno**
 - **Melody Arcuschin**
