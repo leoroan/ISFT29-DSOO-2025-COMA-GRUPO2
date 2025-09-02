@@ -7,9 +7,9 @@
 ### Índice de contenidos
 
 - [Practicas Formativas Autogestionadas](./Practicas%20Formativas%20Autogestionadas/)
-  - [Semana 2](./PracticasFormativasAutogestionadas/Semana2)
-  - [Semana 3](./PracticasFormativasAutogestionadas/Semana3)
-  - [Semana 4](./PracticasFormativasAutogestionadas/Semana4)
+  - [Semana 2](./Practicas%20Formativas%20Autogestionadas/Semana2)
+  - [Semana 3](./Practicas%20Formativas%20Autogestionadas/Semana3)
+  - [Semana 4](./Practicas%20Formativas%20Autogestionadas/Semana4)
 
 - [Practicas Formativas](./Práctiva%20Formativa/)
   - [Semana 3](./Práctiva%20Formativa/Semana3)
