@@ -1,0 +1,16 @@
+C:\Users\lmaselli\Documents\C#\repos\PrimerProyecto\bin\Debug\net8.0-windows\PrimerProyecto.exe
+C:\Users\lmaselli\Documents\C#\repos\PrimerProyecto\bin\Debug\net8.0-windows\PrimerProyecto.deps.json
+C:\Users\lmaselli\Documents\C#\repos\PrimerProyecto\bin\Debug\net8.0-windows\PrimerProyecto.runtimeconfig.json
+C:\Users\lmaselli\Documents\C#\repos\PrimerProyecto\bin\Debug\net8.0-windows\PrimerProyecto.dll
+C:\Users\lmaselli\Documents\C#\repos\PrimerProyecto\bin\Debug\net8.0-windows\PrimerProyecto.pdb
+C:\Users\lmaselli\Documents\C#\repos\PrimerProyecto\obj\Debug\net8.0-windows\PrimerProyecto.csproj.GenerateResource.cache
+C:\Users\lmaselli\Documents\C#\repos\PrimerProyecto\obj\Debug\net8.0-windows\PrimerProyecto.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lmaselli\Documents\C#\repos\PrimerProyecto\obj\Debug\net8.0-windows\PrimerProyecto.AssemblyInfoInputs.cache
+C:\Users\lmaselli\Documents\C#\repos\PrimerProyecto\obj\Debug\net8.0-windows\PrimerProyecto.AssemblyInfo.cs
+C:\Users\lmaselli\Documents\C#\repos\PrimerProyecto\obj\Debug\net8.0-windows\PrimerProyecto.csproj.CoreCompileInputs.cache
+C:\Users\lmaselli\Documents\C#\repos\PrimerProyecto\obj\Debug\net8.0-windows\PrimerProyecto.dll
+C:\Users\lmaselli\Documents\C#\repos\PrimerProyecto\obj\Debug\net8.0-windows\refint\PrimerProyecto.dll
+C:\Users\lmaselli\Documents\C#\repos\PrimerProyecto\obj\Debug\net8.0-windows\PrimerProyecto.pdb
+C:\Users\lmaselli\Documents\C#\repos\PrimerProyecto\obj\Debug\net8.0-windows\PrimerProyecto.genruntimeconfig.cache
+C:\Users\lmaselli\Documents\C#\repos\PrimerProyecto\obj\Debug\net8.0-windows\ref\PrimerProyecto.dll
+C:\Users\lmaselli\Documents\C#\repos\PrimerProyecto\obj\Debug\net8.0-windows\PrimerProyecto.Formulario1.resources

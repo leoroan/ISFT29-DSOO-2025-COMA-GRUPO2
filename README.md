@@ -6,11 +6,16 @@
 
 ### Índice de contenidos
 
-- [Semana 2](./Semana2/)
-  - [A2](./Semana2/A2/)
-- [Semana 3](./Semana3/)
-  - [A2](./Semana2/A2/)
+- [Practicas Formativas Autogestionadas](./PracticasFormativasAutogestionadas/)
+ - [Semana 2](./PracticasFormativasAutogestionadas/Semana2)
+ - [Semana 3](./PracticasFormativasAutogestionadas/Semana3)
+ - [Semana 4](./PracticasFormativasAutogestionadas/Semana4)
 
+- [Practicas Formativas](./PracticasFormativas/)
+  - [Semana 3](./PracticasFormativasAutogestionadas/Semana3)
+
+- [Proyecto Integrador](./ProyectoIntegrador/)
+  - [Presentacion y Fase1](./ProyectoIntegrador/PresentacionyFase1)
 ---
 
 > **Tip:** Haz clic en los enlaces para navegar directamente a cada carpeta y sus contenidos.
