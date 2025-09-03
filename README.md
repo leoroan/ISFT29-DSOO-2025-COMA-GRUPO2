@@ -23,7 +23,7 @@ Cada rama corresponde al espacio personal de un integrante, donde se encuentran 
 - [`MATIAS-BETINOTTI`](https://github.com/leoroan/ISFT29-DSOO-COMA-GRUPO2/tree/MATIAS-BETINOTTI)
 - [`JAVIER-CANTEROS`](https://github.com/leoroan/ISFT29-DSOO-COMA-GRUPO2/tree/JAVIER-CANTEROS)
 - [`LUCIANO-SALERNO`](https://github.com/leoroan/ISFT29-DSOO-COMA-GRUPO2/tree/LUCIANO-SALERNO)
-- [`MELODY-ARCUSCHIN`](https://github.com/leoroan/ISFT29-DSOO-COMA-GRUPO2/tree/JULIANA-NIEVA)
+- [`JULIANA-NIEVA`](https://github.com/leoroan/ISFT29-DSOO-COMA-GRUPO2/tree/JULIANA-NIEVA)
 
 ---
 
