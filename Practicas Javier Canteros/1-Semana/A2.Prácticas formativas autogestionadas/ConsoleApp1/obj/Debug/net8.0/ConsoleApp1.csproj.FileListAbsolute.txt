@@ -1,0 +1,15 @@
+T:\datos\Mis documentos\GitHub\ISFT29-DSOO-2025-COMA-GRUPO2\Practicas Javier Canteros\1-Semana\A2.Prácticas formativas autogestionadas\ConsoleApp1\bin\Debug\net8.0\ConsoleApp1.exe
+T:\datos\Mis documentos\GitHub\ISFT29-DSOO-2025-COMA-GRUPO2\Practicas Javier Canteros\1-Semana\A2.Prácticas formativas autogestionadas\ConsoleApp1\bin\Debug\net8.0\ConsoleApp1.deps.json
+T:\datos\Mis documentos\GitHub\ISFT29-DSOO-2025-COMA-GRUPO2\Practicas Javier Canteros\1-Semana\A2.Prácticas formativas autogestionadas\ConsoleApp1\bin\Debug\net8.0\ConsoleApp1.runtimeconfig.json
+T:\datos\Mis documentos\GitHub\ISFT29-DSOO-2025-COMA-GRUPO2\Practicas Javier Canteros\1-Semana\A2.Prácticas formativas autogestionadas\ConsoleApp1\bin\Debug\net8.0\ConsoleApp1.dll
+T:\datos\Mis documentos\GitHub\ISFT29-DSOO-2025-COMA-GRUPO2\Practicas Javier Canteros\1-Semana\A2.Prácticas formativas autogestionadas\ConsoleApp1\bin\Debug\net8.0\ConsoleApp1.pdb
+T:\datos\Mis documentos\GitHub\ISFT29-DSOO-2025-COMA-GRUPO2\Practicas Javier Canteros\1-Semana\A2.Prácticas formativas autogestionadas\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.GeneratedMSBuildEditorConfig.editorconfig
+T:\datos\Mis documentos\GitHub\ISFT29-DSOO-2025-COMA-GRUPO2\Practicas Javier Canteros\1-Semana\A2.Prácticas formativas autogestionadas\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.AssemblyInfoInputs.cache
+T:\datos\Mis documentos\GitHub\ISFT29-DSOO-2025-COMA-GRUPO2\Practicas Javier Canteros\1-Semana\A2.Prácticas formativas autogestionadas\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.AssemblyInfo.cs
+T:\datos\Mis documentos\GitHub\ISFT29-DSOO-2025-COMA-GRUPO2\Practicas Javier Canteros\1-Semana\A2.Prácticas formativas autogestionadas\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.csproj.CoreCompileInputs.cache
+T:\datos\Mis documentos\GitHub\ISFT29-DSOO-2025-COMA-GRUPO2\Practicas Javier Canteros\1-Semana\A2.Prácticas formativas autogestionadas\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.sourcelink.json
+T:\datos\Mis documentos\GitHub\ISFT29-DSOO-2025-COMA-GRUPO2\Practicas Javier Canteros\1-Semana\A2.Prácticas formativas autogestionadas\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.dll
+T:\datos\Mis documentos\GitHub\ISFT29-DSOO-2025-COMA-GRUPO2\Practicas Javier Canteros\1-Semana\A2.Prácticas formativas autogestionadas\ConsoleApp1\obj\Debug\net8.0\refint\ConsoleApp1.dll
+T:\datos\Mis documentos\GitHub\ISFT29-DSOO-2025-COMA-GRUPO2\Practicas Javier Canteros\1-Semana\A2.Prácticas formativas autogestionadas\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.pdb
+T:\datos\Mis documentos\GitHub\ISFT29-DSOO-2025-COMA-GRUPO2\Practicas Javier Canteros\1-Semana\A2.Prácticas formativas autogestionadas\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.genruntimeconfig.cache
+T:\datos\Mis documentos\GitHub\ISFT29-DSOO-2025-COMA-GRUPO2\Practicas Javier Canteros\1-Semana\A2.Prácticas formativas autogestionadas\ConsoleApp1\obj\Debug\net8.0\ref\ConsoleApp1.dll
