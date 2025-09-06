@@ -15,7 +15,7 @@
   - [Semana 3](./Práctiva%20Formativa/Semana3)
 
 - [Proyecto Integrador](./Proyecto%20Integrador/)
-  - [Presentacion y Fase1](./Proyecto%20Integrador/Presentacion%20y%20Fase1)
+  - [Fase1](./Proyecto%20Integrador/Fase1)
 ---
 
 > **Tip:** Haz clic en los enlaces para navegar directamente a cada carpeta y sus contenidos.
