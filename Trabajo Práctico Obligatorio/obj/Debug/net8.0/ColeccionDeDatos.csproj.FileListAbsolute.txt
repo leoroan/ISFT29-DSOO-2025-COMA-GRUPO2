@@ -1,0 +1,14 @@
+C:\Users\lmaselli\Documents\C#\repos\ColeccionDeDatos\bin\Debug\net8.0\ColeccionDeDatos.exe
+C:\Users\lmaselli\Documents\C#\repos\ColeccionDeDatos\bin\Debug\net8.0\ColeccionDeDatos.deps.json
+C:\Users\lmaselli\Documents\C#\repos\ColeccionDeDatos\bin\Debug\net8.0\ColeccionDeDatos.runtimeconfig.json
+C:\Users\lmaselli\Documents\C#\repos\ColeccionDeDatos\bin\Debug\net8.0\ColeccionDeDatos.dll
+C:\Users\lmaselli\Documents\C#\repos\ColeccionDeDatos\bin\Debug\net8.0\ColeccionDeDatos.pdb
+C:\Users\lmaselli\Documents\C#\repos\ColeccionDeDatos\obj\Debug\net8.0\ColeccionDeDatos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lmaselli\Documents\C#\repos\ColeccionDeDatos\obj\Debug\net8.0\ColeccionDeDatos.AssemblyInfoInputs.cache
+C:\Users\lmaselli\Documents\C#\repos\ColeccionDeDatos\obj\Debug\net8.0\ColeccionDeDatos.AssemblyInfo.cs
+C:\Users\lmaselli\Documents\C#\repos\ColeccionDeDatos\obj\Debug\net8.0\ColeccionDeDatos.csproj.CoreCompileInputs.cache
+C:\Users\lmaselli\Documents\C#\repos\ColeccionDeDatos\obj\Debug\net8.0\ColeccionDeDatos.dll
+C:\Users\lmaselli\Documents\C#\repos\ColeccionDeDatos\obj\Debug\net8.0\refint\ColeccionDeDatos.dll
+C:\Users\lmaselli\Documents\C#\repos\ColeccionDeDatos\obj\Debug\net8.0\ColeccionDeDatos.pdb
+C:\Users\lmaselli\Documents\C#\repos\ColeccionDeDatos\obj\Debug\net8.0\ColeccionDeDatos.genruntimeconfig.cache
+C:\Users\lmaselli\Documents\C#\repos\ColeccionDeDatos\obj\Debug\net8.0\ref\ColeccionDeDatos.dll
