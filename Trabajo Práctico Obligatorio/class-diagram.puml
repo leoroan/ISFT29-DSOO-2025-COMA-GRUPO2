@@ -1,0 +1,73 @@
+@startuml BibliotecaClassDiagram
+!theme plain
+title Diagrama de Clases - Sistema de Biblioteca
+
+class Biblioteca {
+    - libros : List<Libro>
+    - lectores : List<Lector>
+    - MAX_LIBROS_PRESTADOS : int = 3
+    + Biblioteca()
+    + Libros : List<Libro> {get, set}
+    + Lectores : List<Lector> {get, set}
+    + AgregarLibro(libro : Libro) : void
+    + AgregarLector(lector : Lector) : void
+    + RemoverLibro(libro : Libro) : void
+    + RemoverLector(lector : Lector) : void
+    + BuscarLibroPorTitulo(titulo : string) : Libro
+    + BuscarLectorPorNombre(nombre : string) : Lector
+    + PrestarLibro(lector : Lector, libro : Libro) : bool
+    + DevolverLibro(libro : Libro) : bool
+    - Prestar(lector : Lector, libro : Libro) : bool
+    - Devolver(lector : Lector, libro : Libro) : bool
+    + ToString() : string
+}
+
+class Libro {
+    - titulo : string
+    - autor : string
+    - prestado : bool
+    + Libro()
+    + Libro(titulo : string, autor : string)
+    + Titulo : string {get, set}
+    + Autor : string {get, set}
+    + Prestado : bool {get, set}
+    + ToString() : string
+}
+
+class Lector {
+    - nombre : string
+    - dni : int
+    - librosPrestados : List<Libro>
+    + Lector(nombre : string, dni : int)
+    + Nombre : string {get, set}
+    + Dni : int {get, set}
+    + LibrosPrestados : List<Libro> {get, set}
+    + PrestarLibro(libro : Libro) : void
+    + DevolverLibro(libro : Libro) : void
+    + ToString() : string
+}
+
+class Program {
+    + Main(args : string[]) : void {static}
+}
+
+' Relaciones
+Biblioteca "1" *-- "*" Libro : contiene
+Biblioteca "1" *-- "*" Lector : gestiona
+Lector "1" o-- "0..3" Libro : tiene prestados
+Program ..> Biblioteca : usa
+Program ..> Libro : crea
+Program ..> Lector : crea
+
+note right of Biblioteca::MAX_LIBROS_PRESTADOS
+  Constante que define el máximo
+  de libros que puede tener
+  prestados un lector
+end note
+
+note bottom of Lector
+  Un lector puede tener
+  máximo 3 libros prestados
+end note
+
+@enduml

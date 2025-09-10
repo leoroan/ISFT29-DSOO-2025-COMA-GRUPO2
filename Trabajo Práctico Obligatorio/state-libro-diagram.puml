@@ -1,0 +1,42 @@
+@startuml LibroStateDiagram
+!theme plain
+title Diagrama de Estados - Libro
+
+[*] --> Creado : new Libro()
+
+Creado --> Disponible : AgregarLibro()
+
+state Disponible {
+  state "En Biblioteca" as EnBiblioteca
+  [*] --> EnBiblioteca
+  EnBiblioteca : - prestado = false
+  EnBiblioteca : - en lista de libros de biblioteca
+}
+
+state Prestado {
+  state "Con Lector" as ConLector
+  [*] --> ConLector
+  ConLector : - prestado = true
+  ConLector : - en lista de libros prestados del lector
+  ConLector : - no está en biblioteca
+}
+
+Disponible --> Prestado : PrestarLibro()
+Prestado --> Disponible : DevolverLibro()
+
+Disponible --> [*] : RemoverLibro()
+Prestado --> [*] : RemoverLibro()\n(caso excepcional)
+
+note right of Prestado
+  Un libro prestado no puede
+  ser prestado nuevamente
+  hasta que sea devuelto
+end note
+
+note right of Disponible
+  Un libro disponible puede
+  ser prestado si el lector
+  no ha alcanzado el límite
+end note
+
+@enduml

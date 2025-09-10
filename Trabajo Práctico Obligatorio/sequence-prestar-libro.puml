@@ -1,0 +1,66 @@
+@startuml PrestarLibroSequence
+!theme plain
+title Diagrama de Secuencia - Préstamo de Libro
+
+actor Usuario
+participant Program
+participant Biblioteca
+participant Lector
+participant Libro
+
+Usuario -> Program : Solicita préstamo
+activate Program
+
+Program -> Biblioteca : BuscarLectorPorNombre(nombre)
+activate Biblioteca
+Biblioteca --> Program : lector encontrado
+deactivate Biblioteca
+
+Program -> Biblioteca : BuscarLibroPorTitulo(titulo)
+activate Biblioteca
+Biblioteca --> Program : libro encontrado
+deactivate Biblioteca
+
+Program -> Biblioteca : PrestarLibro(lector, libro)
+activate Biblioteca
+
+alt libro disponible y lector puede recibir préstamo
+    Biblioteca -> Libro : verificar !Prestado
+    activate Libro
+    Libro --> Biblioteca : true
+    deactivate Libro
+    
+    Biblioteca -> Lector : verificar LibrosPrestados.Count < 3
+    activate Lector
+    Lector --> Biblioteca : true
+    deactivate Lector
+    
+    Biblioteca -> Biblioteca : Prestar(lector, libro)
+    activate Biblioteca
+    
+    Biblioteca -> Lector : PrestarLibro(libro)
+    activate Lector
+    Lector -> Lector : librosPrestados.Add(libro)
+    deactivate Lector
+    
+    Biblioteca -> Libro : Prestado = true
+    activate Libro
+    deactivate Libro
+    
+    Biblioteca -> Biblioteca : RemoverLibro(libro)
+    
+    deactivate Biblioteca
+    
+    Biblioteca --> Program : true (préstamo exitoso)
+    
+else libro no disponible o lector alcanzó límite
+    Biblioteca --> Program : false (préstamo fallido)
+end
+
+deactivate Biblioteca
+
+Program --> Usuario : Resultado del préstamo
+
+deactivate Program
+
+@enduml

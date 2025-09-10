@@ -1,0 +1,52 @@
+@startuml BibliotecaUseCases
+!theme plain
+title Diagrama de Casos de Uso - Sistema de Biblioteca
+
+left to right direction
+
+actor "Bibliotecario" as bibliotecario
+actor "Lector" as lector
+
+package "Sistema de Biblioteca" {
+  usecase "Agregar Libro" as UC1
+  usecase "Agregar Lector" as UC2
+  usecase "Buscar Libro" as UC3
+  usecase "Buscar Lector" as UC4
+  usecase "Prestar Libro" as UC5
+  usecase "Devolver Libro" as UC6
+  usecase "Remover Libro" as UC7
+  usecase "Remover Lector" as UC8
+  usecase "Consultar Libros Prestados" as UC9
+  usecase "Listar Libros Disponibles" as UC10
+}
+
+' Relaciones
+bibliotecario --> UC1
+bibliotecario --> UC2
+bibliotecario --> UC3
+bibliotecario --> UC4
+bibliotecario --> UC5
+bibliotecario --> UC6
+bibliotecario --> UC7
+bibliotecario --> UC8
+bibliotecario --> UC10
+
+lector --> UC3
+lector --> UC9
+
+' Extensiones y inclusiones
+UC5 .> UC3 : <<include>>
+UC5 .> UC4 : <<include>>
+UC6 .> UC3 : <<include>>
+
+note right of UC5
+  Un lector puede tener
+  máximo 3 libros prestados
+end note
+
+note right of UC6
+  Solo se pueden devolver
+  libros que estén prestados
+end note
+
+@enduml

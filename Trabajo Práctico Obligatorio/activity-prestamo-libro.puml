@@ -1,0 +1,39 @@
+@startuml PrestamoLibroActivity
+!theme plain
+title Diagrama de Actividad - Proceso de Préstamo de Libro
+
+start
+
+:Usuario solicita préstamo de libro;
+
+:Buscar lector por nombre;
+
+if (¿Lector existe?) then (no)
+  :Mostrar "LECTOR INEXISTENTE";
+  stop
+else (sí)
+  :Buscar libro por título;
+  
+  if (¿Libro existe en biblioteca?) then (no)
+    :Mostrar "LIBRO INEXISTENTE";
+    stop
+  else (sí)
+    if (¿Libro ya está prestado?) then (sí)
+      :Mostrar "LIBRO NO DISPONIBLE";
+      stop
+    else (no)
+      if (¿Lector tiene 3 libros prestados?) then (sí)
+        :Mostrar "TOPE DE PRESTAMO ALCANZADO";
+        stop
+      else (no)
+        :Agregar libro a lista de prestados del lector;
+        :Marcar libro como prestado;
+        :Remover libro de biblioteca;
+        :Mostrar "PRESTAMO EXITOSO";
+        stop
+      endif
+    endif
+  endif
+endif
+
+@enduml

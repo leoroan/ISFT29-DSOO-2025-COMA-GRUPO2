@@ -1,0 +1,61 @@
+@startuml DevolverLibroSequence
+!theme plain
+title Diagrama de Secuencia - Devolución de Libro
+
+actor Usuario
+participant Program
+participant Biblioteca
+participant Lector
+participant Libro
+
+Usuario -> Program : Solicita devolución
+activate Program
+
+Program -> Biblioteca : BuscarLibroPorTitulo(titulo)
+activate Biblioteca
+Biblioteca --> Program : libro encontrado
+deactivate Biblioteca
+
+Program -> Biblioteca : DevolverLibro(libro)
+activate Biblioteca
+
+Biblioteca -> Biblioteca : Buscar lector que tiene el libro
+activate Biblioteca
+note right : lectores.FirstOrDefault(l => l.LibrosPrestados.Contains(libro))
+deactivate Biblioteca
+
+alt lector encontrado y libro está prestado
+    Biblioteca -> Libro : verificar Prestado
+    activate Libro
+    Libro --> Biblioteca : true
+    deactivate Libro
+    
+    Biblioteca -> Biblioteca : Devolver(lector, libro)
+    activate Biblioteca
+    
+    Biblioteca -> Lector : DevolverLibro(libro)
+    activate Lector
+    Lector -> Lector : librosPrestados.Remove(libro)
+    deactivate Lector
+    
+    Biblioteca -> Libro : Prestado = false
+    activate Libro
+    deactivate Libro
+    
+    Biblioteca -> Biblioteca : AgregarLibro(libro)
+    
+    deactivate Biblioteca
+    
+    Biblioteca --> Program : true (devolución exitosa)
+    
+else lector no encontrado o libro no prestado
+    Biblioteca --> Program : false (devolución fallida)
+end
+
+deactivate Biblioteca
+
+Program --> Usuario : Resultado de la devolución
+
+deactivate Program
+
+@enduml
