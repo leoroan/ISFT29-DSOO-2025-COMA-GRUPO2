@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lmaselli\\Documents\\C#\\repos\\ColeccionDeDatos\\ColeccionDeDatos.csproj": {}
+    "T:\\datos\\Mis documentos\\GitHub\\ISFT29-DSOO-2025-COMA-GRUPO2\\Trabajo Práctico Obligatorio\\ColeccionDeDatos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lmaselli\\Documents\\C#\\repos\\ColeccionDeDatos\\ColeccionDeDatos.csproj": {
+    "T:\\datos\\Mis documentos\\GitHub\\ISFT29-DSOO-2025-COMA-GRUPO2\\Trabajo Práctico Obligatorio\\ColeccionDeDatos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lmaselli\\Documents\\C#\\repos\\ColeccionDeDatos\\ColeccionDeDatos.csproj",
+        "projectUniqueName": "T:\\datos\\Mis documentos\\GitHub\\ISFT29-DSOO-2025-COMA-GRUPO2\\Trabajo Práctico Obligatorio\\ColeccionDeDatos.csproj",
         "projectName": "ColeccionDeDatos",
-        "projectPath": "C:\\Users\\lmaselli\\Documents\\C#\\repos\\ColeccionDeDatos\\ColeccionDeDatos.csproj",
-        "packagesPath": "C:\\Users\\lmaselli\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lmaselli\\Documents\\C#\\repos\\ColeccionDeDatos\\obj\\",
+        "projectPath": "T:\\datos\\Mis documentos\\GitHub\\ISFT29-DSOO-2025-COMA-GRUPO2\\Trabajo Práctico Obligatorio\\ColeccionDeDatos.csproj",
+        "packagesPath": "C:\\Users\\JAVI\\.nuget\\packages\\",
+        "outputPath": "T:\\datos\\Mis documentos\\GitHub\\ISFT29-DSOO-2025-COMA-GRUPO2\\Trabajo Práctico Obligatorio\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "F:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\lmaselli\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\JAVI\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

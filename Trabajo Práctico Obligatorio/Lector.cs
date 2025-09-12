@@ -12,6 +12,7 @@ namespace ColeccionDeDatos
         private int dni;
         private List<Libro> librosPrestados;
 
+        public Lector() { }
         public Lector(string nombre, int dni)
         {
             this.nombre = nombre;
@@ -28,10 +29,10 @@ namespace ColeccionDeDatos
             librosPrestados.Add(libro);
         }
 
-        public void DevolverLibro(Libro libro)
-        {
-            librosPrestados.Remove(libro);
-        }
+        //public void DevolverLibro(Libro libro)
+        //{
+        //    librosPrestados.Remove(libro);
+        //}
 
         public override string ToString()
         {
