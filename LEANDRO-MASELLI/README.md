@@ -15,7 +15,8 @@
   - [Semana 3](./PF/Semana3/)
 
 - [Proyecto Integrador](./Proyecto%20Integrador/)
-  - [Fase1](./Proyecto%20Integrador/Fase1)
+  - [Fase1](./Proyecto%20Integrador/Fase1/readme.md)
+  - [Fase1](./Proyecto%20Integrador/Fase2/fase2.md)
 ---
 
 > **Tip:** Haz clic en los enlaces para navegar directamente a cada carpeta y sus contenidos.
