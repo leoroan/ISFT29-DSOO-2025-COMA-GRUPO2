@@ -30,6 +30,8 @@
 - `fecha_vencimiento_cuota`: Fecha de vencimiento de la cuota  
 - `estado`: Estado (`activo`/`inactivo`)  
 - `carnet_numero`: Número de carné  
++ `pagar_cuota(): Pago`: Monto pagado por el mes  
+
 
 ### NoSocio
 - `carnet_temporal`: Número de carné temporal  
