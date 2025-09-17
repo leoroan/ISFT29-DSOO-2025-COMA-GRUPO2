@@ -35,3 +35,7 @@ Es decir, se debe retirar el libro de la lista de libros que posee la biblioteca
   - `"LECTOR INEXISTENTE"` (cuando el lector no se encuentra registrado dentro de la colección de lectores en la biblioteca).
 - Generar un **video grupal**, con cámaras activas, donde cada integrante explique parte del desarrollo y funcionamiento del proyecto. Por cuestiones de espacio en la plataforma, pueden enviar un link al video, como recomendación pueden subirlo a Youtube, sino puede ser un enlace a Drive, pero cerciórense de asignar el permiso de visualización correspondiente y no deben borrarlo hasta tener aprobada la materia.  
   **No dejen para entregar a último momento porque la plataforma puede fallar, se aconseja enviarlo un día antes como mínimo.**
+
+  ## UML Ampliado
+
+  ![Diagrama UML Biblioteca](poo_uml_biblioteca.png)
