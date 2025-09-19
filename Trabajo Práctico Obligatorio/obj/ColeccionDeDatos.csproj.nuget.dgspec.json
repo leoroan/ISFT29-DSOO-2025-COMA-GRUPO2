@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "T:\\datos\\Mis documentos\\GitHub\\ISFT29-DSOO-2025-COMA-GRUPO2\\Trabajo Práctico Obligatorio\\ColeccionDeDatos.csproj": {}
+    "C:\\Users\\lmaselli\\Documents\\C#\\ISFT29-DSOO-2025-COMA-GRUPO2\\Trabajo Práctico Obligatorio\\ColeccionDeDatos.csproj": {}
   },
   "projects": {
-    "T:\\datos\\Mis documentos\\GitHub\\ISFT29-DSOO-2025-COMA-GRUPO2\\Trabajo Práctico Obligatorio\\ColeccionDeDatos.csproj": {
+    "C:\\Users\\lmaselli\\Documents\\C#\\ISFT29-DSOO-2025-COMA-GRUPO2\\Trabajo Práctico Obligatorio\\ColeccionDeDatos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "T:\\datos\\Mis documentos\\GitHub\\ISFT29-DSOO-2025-COMA-GRUPO2\\Trabajo Práctico Obligatorio\\ColeccionDeDatos.csproj",
+        "projectUniqueName": "C:\\Users\\lmaselli\\Documents\\C#\\ISFT29-DSOO-2025-COMA-GRUPO2\\Trabajo Práctico Obligatorio\\ColeccionDeDatos.csproj",
         "projectName": "ColeccionDeDatos",
-        "projectPath": "T:\\datos\\Mis documentos\\GitHub\\ISFT29-DSOO-2025-COMA-GRUPO2\\Trabajo Práctico Obligatorio\\ColeccionDeDatos.csproj",
-        "packagesPath": "C:\\Users\\JAVI\\.nuget\\packages\\",
-        "outputPath": "T:\\datos\\Mis documentos\\GitHub\\ISFT29-DSOO-2025-COMA-GRUPO2\\Trabajo Práctico Obligatorio\\obj\\",
+        "projectPath": "C:\\Users\\lmaselli\\Documents\\C#\\ISFT29-DSOO-2025-COMA-GRUPO2\\Trabajo Práctico Obligatorio\\ColeccionDeDatos.csproj",
+        "packagesPath": "C:\\Users\\lmaselli\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lmaselli\\Documents\\C#\\ISFT29-DSOO-2025-COMA-GRUPO2\\Trabajo Práctico Obligatorio\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "F:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\JAVI\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lmaselli\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

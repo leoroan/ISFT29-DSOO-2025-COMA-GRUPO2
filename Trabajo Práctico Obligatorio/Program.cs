@@ -11,18 +11,18 @@ class Program
         //inicializamos la biblioteca con algunos libros
 
         List<Libro> libros = new List<Libro>
-        {
-            new() { Titulo = "Cien años de soledad", Autor = "Gabriel García Márquez" },
-            new() { Titulo = "Don Quijote de la Mancha", Autor = "Miguel de Cervantes" },
-            new() { Titulo = "La sombra del viento", Autor = "Carlos Ruiz Zafón" },
-            new() { Titulo = "Rayuela", Autor = "Julio Cortázar" },
-            new() { Titulo = "El amor en los tiempos del cólera", Autor = "Gabriel García Márquez" },
-            new() { Titulo = "Pedro Páramo", Autor = "Juan Rulfo" },
-            new() { Titulo = "Ficciones", Autor = "Jorge Luis Borges" },
-            new() { Titulo = "El túnel", Autor = "Ernesto Sabato" },
-            new() { Titulo = "La ciudad y los perros", Autor = "Mario Vargas Llosa" },
-            new() { Titulo = "Sobre héroes y tumbas", Autor = "Ernesto Sabato" }
-        };
+{
+    new() { Titulo = "A", Autor = "Autor A" },
+    new() { Titulo = "B", Autor = "Autor B" },
+    new() { Titulo = "C", Autor = "Autor C" },
+    new() { Titulo = "D", Autor = "Autor D" },
+    new() { Titulo = "E", Autor = "Autor E" },
+    new() { Titulo = "F", Autor = "Autor F" },
+    new() { Titulo = "G", Autor = "Autor G" },
+    new() { Titulo = "H", Autor = "Autor H" },
+    new() { Titulo = "I", Autor = "Autor I" },
+    new() { Titulo = "J", Autor = "Autor J" }
+};
         foreach (var libro in libros)
             biblioteca.AgregarLibro(libro);
         ////
@@ -42,10 +42,10 @@ class Program
             switch (opcion)
             {
                 case 1:
-                    biblioteca.altaLector();
+                    biblioteca.ProcesarAltaLector();
                     break;
                 case 2:
-                    Console.WriteLine(biblioteca.PrestarLibro());
+                    Console.WriteLine(biblioteca.ProcesarPrestarLibro());
                     break;
                 case 0:
                     Console.WriteLine("Saliendo...");
@@ -56,19 +56,6 @@ class Program
             }
 
         } while (opcion != 0);
-
-
-
-
-
-
-
-
-
-
-
-
-
         
         //foreach (var libro in libros)
         //    biblioteca.AgregarLibro(libro);

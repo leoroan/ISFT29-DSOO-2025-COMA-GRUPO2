@@ -28,12 +28,6 @@ namespace ColeccionDeDatos
         {
             librosPrestados.Add(libro);
         }
-
-        //public void DevolverLibro(Libro libro)
-        //{
-        //    librosPrestados.Remove(libro);
-        //}
-
         public override string ToString()
         {
             return $"Nombre: {nombre}, DNI: {dni}";

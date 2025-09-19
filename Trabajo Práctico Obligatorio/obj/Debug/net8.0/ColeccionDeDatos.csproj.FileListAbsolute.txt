@@ -27,3 +27,18 @@ T:\datos\Mis documentos\GitHub\ISFT29-DSOO-2025-COMA-GRUPO2\Trabajo Práctico Ob
 T:\datos\Mis documentos\GitHub\ISFT29-DSOO-2025-COMA-GRUPO2\Trabajo Práctico Obligatorio\obj\Debug\net8.0\ColeccionDeDatos.pdb
 T:\datos\Mis documentos\GitHub\ISFT29-DSOO-2025-COMA-GRUPO2\Trabajo Práctico Obligatorio\obj\Debug\net8.0\ColeccionDeDatos.genruntimeconfig.cache
 T:\datos\Mis documentos\GitHub\ISFT29-DSOO-2025-COMA-GRUPO2\Trabajo Práctico Obligatorio\obj\Debug\net8.0\ref\ColeccionDeDatos.dll
+C:\Users\lmaselli\Documents\C#\ISFT29-DSOO-2025-COMA-GRUPO2\Trabajo Práctico Obligatorio\bin\Debug\net8.0\ColeccionDeDatos.exe
+C:\Users\lmaselli\Documents\C#\ISFT29-DSOO-2025-COMA-GRUPO2\Trabajo Práctico Obligatorio\bin\Debug\net8.0\ColeccionDeDatos.deps.json
+C:\Users\lmaselli\Documents\C#\ISFT29-DSOO-2025-COMA-GRUPO2\Trabajo Práctico Obligatorio\bin\Debug\net8.0\ColeccionDeDatos.runtimeconfig.json
+C:\Users\lmaselli\Documents\C#\ISFT29-DSOO-2025-COMA-GRUPO2\Trabajo Práctico Obligatorio\bin\Debug\net8.0\ColeccionDeDatos.dll
+C:\Users\lmaselli\Documents\C#\ISFT29-DSOO-2025-COMA-GRUPO2\Trabajo Práctico Obligatorio\bin\Debug\net8.0\ColeccionDeDatos.pdb
+C:\Users\lmaselli\Documents\C#\ISFT29-DSOO-2025-COMA-GRUPO2\Trabajo Práctico Obligatorio\obj\Debug\net8.0\ColeccionDeDatos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lmaselli\Documents\C#\ISFT29-DSOO-2025-COMA-GRUPO2\Trabajo Práctico Obligatorio\obj\Debug\net8.0\ColeccionDeDatos.AssemblyInfoInputs.cache
+C:\Users\lmaselli\Documents\C#\ISFT29-DSOO-2025-COMA-GRUPO2\Trabajo Práctico Obligatorio\obj\Debug\net8.0\ColeccionDeDatos.AssemblyInfo.cs
+C:\Users\lmaselli\Documents\C#\ISFT29-DSOO-2025-COMA-GRUPO2\Trabajo Práctico Obligatorio\obj\Debug\net8.0\ColeccionDeDatos.csproj.CoreCompileInputs.cache
+C:\Users\lmaselli\Documents\C#\ISFT29-DSOO-2025-COMA-GRUPO2\Trabajo Práctico Obligatorio\obj\Debug\net8.0\ColeccionDeDatos.sourcelink.json
+C:\Users\lmaselli\Documents\C#\ISFT29-DSOO-2025-COMA-GRUPO2\Trabajo Práctico Obligatorio\obj\Debug\net8.0\ColeccionDeDatos.dll
+C:\Users\lmaselli\Documents\C#\ISFT29-DSOO-2025-COMA-GRUPO2\Trabajo Práctico Obligatorio\obj\Debug\net8.0\refint\ColeccionDeDatos.dll
+C:\Users\lmaselli\Documents\C#\ISFT29-DSOO-2025-COMA-GRUPO2\Trabajo Práctico Obligatorio\obj\Debug\net8.0\ColeccionDeDatos.pdb
+C:\Users\lmaselli\Documents\C#\ISFT29-DSOO-2025-COMA-GRUPO2\Trabajo Práctico Obligatorio\obj\Debug\net8.0\ColeccionDeDatos.genruntimeconfig.cache
+C:\Users\lmaselli\Documents\C#\ISFT29-DSOO-2025-COMA-GRUPO2\Trabajo Práctico Obligatorio\obj\Debug\net8.0\ref\ColeccionDeDatos.dll

@@ -29,29 +29,16 @@ namespace ColeccionDeDatos
             lectores.Add(lector);
         }
 
-        //public void RemoverLibro(Libro libro)
-        //{
-        //    libros.Remove(libro);
-        //}
-
-        //public void RemoverLector(Lector lector)
-        //{
-        //    lectores.Remove(lector);
-        //}
         public Libro BuscarLibroPorTitulo(string titulo)
         {
             return libros.FirstOrDefault(l => l.Titulo.Equals(titulo, StringComparison.OrdinalIgnoreCase));
         }
 
-        //public Lector BuscarLectorPorNombre(string nombre)
-        //{
-        //    return lectores.FirstOrDefault(l => l.Nombre == nombre);
-        //}
         public bool ExisteLectorPorDni(long Dni)
         {
             bool existe = false;
             Lector lector = lectores.FirstOrDefault(l => l.Dni == Dni);
-            if (lector!=null) existe = true;
+            if (lector != null) existe = true;
             return existe;
         }
         public bool ExisteLectorLibro(string titulo)
@@ -61,14 +48,7 @@ namespace ColeccionDeDatos
             if (libro != null) existe = true;
             return existe;
         }
-
-        //public bool PrestarLibro(Lector lector, Libro libro)
-        //{
-        //    return (!libro.Prestado && lector.LibrosPrestados.Count < MAX_LIBROS_PRESTADOS)
-        //        ? Prestar(lector, libro)
-        //        : false;
-        //}
-        public string PrestarLibro()
+        public string ProcesarPrestarLibro()
         {
             //pido lector y libro
             string TituloLibro = string.Empty;
@@ -97,7 +77,6 @@ namespace ColeccionDeDatos
                     continue; // vuelve al inicio del bucle
                 }
 
-                // Intentar convertir a número
                 if (!int.TryParse(entrada, out DNI))
                 {
                     Console.WriteLine("⚠️ Debe ingresar solo números válidos.\n");
@@ -106,7 +85,7 @@ namespace ColeccionDeDatos
 
             } while (string.IsNullOrWhiteSpace(entrada));
 
-            Lector lectorBusqueda = new Lector() {Dni = DNI };
+            Lector lectorBusqueda = new Lector() { Dni = DNI };
             Libro libroBusqueda = new Libro() { Titulo = TituloLibro };
 
             Lector lectorEncontrado = lectores.FirstOrDefault(l => l.Dni == lectorBusqueda.Dni);
@@ -119,10 +98,10 @@ namespace ColeccionDeDatos
                 {
                     if (!libroEncontrado.Prestado && lectorEncontrado.LibrosPrestados.Count < MAX_LIBROS_PRESTADOS)
                     {
-                        Prestar(lectorEncontrado, libroEncontrado);
+                        PrestarLibro(lectorEncontrado.Dni, libroEncontrado.Titulo);
                         return "PRESTAMO EXITOSO";
                     }
-                    else if (libroEncontrado.Prestado) 
+                    else if (libroEncontrado.Prestado)
                     {
                         return "LIBRO NO DISPONIBLE";
                     }
@@ -142,32 +121,32 @@ namespace ColeccionDeDatos
             }
         }
 
-        private bool Prestar(Lector lector, Libro libro)
+        private bool PrestarLibro(int dni, string titulo)
         {
-            lector.PrestarLibro(libro);
-            libro.Prestado = true;
-            //this.RemoverLibro(libro);
+            Lector lector = lectores.FirstOrDefault(l => l.Dni == dni);
+            Libro libro = libros.FirstOrDefault(l => l.Titulo.Equals(titulo, StringComparison.OrdinalIgnoreCase));
+
+            if (lector != null && libro != null)
+            {
+                lector.PrestarLibro(libro);
+                libro.Prestado = true;
+                return true;
+            }
+            return false;
+        }
+
+        public bool AltaLector(string nombre, int dni)
+        {
+            if (lectores.Any(l => l.Dni == dni))
+            {
+                return false;
+            }
+            lectores.Add(new Lector(nombre, dni));
             return true;
         }
 
-        //public bool DevolverLibro(Libro libro)
-        //{
-        //    var lector = lectores.FirstOrDefault(l => l.LibrosPrestados.Contains(libro));
-        //    if (lector != null && libro.Prestado)
-        //    {
-        //        return Devolver(lector, libro);
-        //    }
-        //    return false;
-        //}
 
-        //private bool Devolver(Lector lector, Libro libro)
-        //{
-        //    lector.DevolverLibro(libro);
-        //    libro.Prestado = false;
-        //    this.AgregarLibro(libro);
-        //    return true;
-        //}
-        public bool altaLector()
+        public bool ProcesarAltaLector()
         {
             string NombreLector = string.Empty;
             int DNI = 0;
@@ -210,10 +189,10 @@ namespace ColeccionDeDatos
                 Console.WriteLine("El lector ya existe en la base de datos.");
                 return false;
             }
-            else 
+            else
             {
                 Console.WriteLine("Lector dado de Alta.");
-                lectores.Add( new Lector(NombreLector,DNI));
+                AltaLector(NombreLector, DNI);
                 return true;
             }
         }
