@@ -10,7 +10,6 @@ Aquí encontrarás los trabajos prácticos (TPs) realizados por los integrantes 
 - **Leandro Maselli**
 - **Matias Betinotti**
 - **Javier Canteros**
-- **Luciano Salerno**
 - **Juliana Nieva**
 
 ---
@@ -22,9 +21,14 @@ Cada rama corresponde al espacio personal de un integrante, donde se encuentran 
 - [`LEANDRO-MASELLI`](https://github.com/leoroan/ISFT29-DSOO-COMA-GRUPO2/tree/main/LEANDRO-MASELLI)
 - [`MATIAS-BETINOTTI`](https://github.com/leoroan/ISFT29-DSOO-COMA-GRUPO2/tree/main/MATIAS-BETINOTTI)
 - [`JAVIER-CANTEROS`](https://github.com/leoroan/ISFT29-DSOO-COMA-GRUPO2/tree/main/JAVIER-CANTEROS)
-- [`LUCIANO-SALERNO`](https://github.com/leoroan/ISFT29-DSOO-COMA-GRUPO2/tree/main/LUCIANO-SALERNO)
 - [`JULIANA-NIEVA`](https://github.com/leoroan/ISFT29-DSOO-COMA-GRUPO2/tree/main/JULIANA-NIEVA)
 
 ---
 
 > _¡Explora las ramas para ver los aportes y documentos de cada integrante!_
+
+
+## 📄 Documento de Google del Grupo
+
+[Accede al documento colaborativo del grupo](https://docs.google.com/document/d/1ZnGVUTRVnBdTemNCy8GlPXTsq5Dwsniyfk5je8CUOo4/edit?usp=sharing)
+
