@@ -1,4 +1,5 @@
-# Sistema de Administración de Club Deportivo
+# Fase 2 : Análisis previo y funcional
+## Sistema de Administración de Club Deportivo
 
 ## Procesos del Sistema
 1. **Registro de Socios**  

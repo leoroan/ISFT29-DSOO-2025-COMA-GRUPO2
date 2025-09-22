@@ -1,4 +1,5 @@
-## Tarea 1: Analizar el funcionamiento del club deportivo
+# Fase 1 : Analizar
+## Analizar el funcionamiento del club deportivo
 
 **Tipo:** Práctica para el proyecto integrador.  
 **Formato:** Documento de texto propio del/la estudiante.  

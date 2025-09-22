@@ -18,10 +18,14 @@ Aquí encontrarás los trabajos prácticos (TPs) realizados por los integrantes 
 
 Cada rama corresponde al espacio personal de un integrante, donde se encuentran sus entregas y trabajos prácticos:
 
-- [`LEANDRO-MASELLI`](https://github.com/leoroan/ISFT29-DSOO-COMA-GRUPO2/tree/main/LEANDRO-MASELLI)
-- [`MATIAS-BETINOTTI`](https://github.com/leoroan/ISFT29-DSOO-COMA-GRUPO2/tree/main/MATIAS-BETINOTTI)
-- [`JAVIER-CANTEROS`](https://github.com/leoroan/ISFT29-DSOO-COMA-GRUPO2/tree/main/JAVIER-CANTEROS)
-- [`JULIANA-NIEVA`](https://github.com/leoroan/ISFT29-DSOO-COMA-GRUPO2/tree/main/JULIANA-NIEVA)
+- 👨‍💻 [`LEANDRO-MASELLI`](https://github.com/leoroan/ISFT29-DSOO-COMA-GRUPO2/tree/main/LEANDRO-MASELLI)
+- 👨‍💻 [`MATIAS-BETINOTTI`](https://github.com/leoroan/ISFT29-DSOO-COMA-GRUPO2/tree/main/MATIAS-BETINOTTI)
+- 👨‍💻 [`JAVIER-CANTEROS`](https://github.com/leoroan/ISFT29-DSOO-COMA-GRUPO2/tree/main/JAVIER-CANTEROS)
+- 👩‍💻 [`JULIANA-NIEVA`](https://github.com/leoroan/ISFT29-DSOO-COMA-GRUPO2/tree/main/JULIANA-NIEVA)
+
+- ✍️ [`PROYECTO-INTEGRADOR`](https://github.com/leoroan/ISFT29-DSOO-COMA-GRUPO2/tree/main/Proyecto%20Integrador)
+- 📓 [`PROYECTO-PRACTICO-OBLIGATORIO`](https://github.com/leoroan/ISFT29-DSOO-COMA-GRUPO2/tree/main/Trabajo%20Práctico%20Obligatorio)
+
 
 ---
 
