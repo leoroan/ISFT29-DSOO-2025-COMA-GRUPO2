@@ -8,4 +8,6 @@
 
 ## Plantillas de casos de uso :
 
-[DOCUMENTO](https://docs.google.com/document/d/1ZnGVUTRVnBdTemNCy8GlPXTsq5Dwsniyfk5je8CUOo4/edit?tab=t.i9ei95jhr9th)
+- [DOCUMENTO ON-LINE](https://docs.google.com/document/d/1ZnGVUTRVnBdTemNCy8GlPXTsq5Dwsniyfk5je8CUOo4/edit?tab=t.i9ei95jhr9th)
+
+- [Descargar Plantillas de Casos de Uso (PDF LOCAL)](./plantillas_cu.pdf)
