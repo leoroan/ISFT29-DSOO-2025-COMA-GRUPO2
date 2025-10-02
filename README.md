@@ -11,6 +11,7 @@ Aquí encontrarás los trabajos prácticos (TPs) realizados por los integrantes 
 - **Matias Betinotti**
 - **Javier Canteros**
 - **Juliana Nieva**
+- **Maximiliano Quinteros**
 
 ---
 
@@ -22,6 +23,7 @@ Cada rama corresponde al espacio personal de un integrante, donde se encuentran 
 - 👨‍💻 [`MATIAS-BETINOTTI`](https://github.com/leoroan/ISFT29-DSOO-COMA-GRUPO2/tree/main/MATIAS-BETINOTTI)
 - 👨‍💻 [`JAVIER-CANTEROS`](https://github.com/leoroan/ISFT29-DSOO-COMA-GRUPO2/tree/main/JAVIER-CANTEROS)
 - 👩‍💻 [`JULIANA-NIEVA`](https://github.com/leoroan/ISFT29-DSOO-COMA-GRUPO2/tree/main/JULIANA-NIEVA)
+- 👩‍💻 [`MAXIMILIANO-QUINTEROS`](https://github.com/leoroan/ISFT29-DSOO-COMA-GRUPO2/tree/main/MAXIMILIANO-QUINTEROS)
 
 - ✍️ [`PROYECTO-INTEGRADOR`](https://github.com/leoroan/ISFT29-DSOO-COMA-GRUPO2/tree/main/Proyecto%20Integrador)
 - 📓 [`PROYECTO-PRACTICO-OBLIGATORIO`](https://github.com/leoroan/ISFT29-DSOO-COMA-GRUPO2/tree/main/Trabajo%20Práctico%20Obligatorio)
