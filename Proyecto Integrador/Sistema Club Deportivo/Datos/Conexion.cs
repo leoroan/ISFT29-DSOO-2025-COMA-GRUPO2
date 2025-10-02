@@ -21,12 +21,14 @@ namespace ClubDeportivo.Datos
             this.baseDatos = "ClubDeportivo";
             this.servidor = "localhost";
             this.puerto = "3306";
-            this.usuario = "root";
+            //this.usuario = "root";
+            this.usuario = "admin";
             //this.clave = "";
-            this.clave = "Original2025";
+            //this.clave = "Original2025";
+            this.clave = "admin";
         }
         // proceso de interacción
-        public MySqlConnection CrearConcexion()
+        public MySqlConnection CrearConexion()
         {
             // instanciamos una conexion
             MySqlConnection? cadena = new MySqlConnection();
