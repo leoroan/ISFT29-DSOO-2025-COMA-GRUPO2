@@ -24,3 +24,18 @@ constraint fk_usuario foreign key(RolUsuario) references roles(RolUsuario)
 
 insert into usuario(CodUsuario,NombreUsuario,PassUsuario,RolUsuario) values
 (26,'Admin2025','123456',120);
+
+## fase 5
+create table socio(
+carnet_numero int,
+Nombre varchar(30),
+apellido varchar(40),
+fechaNacimiento date,
+direccion varchar(40),
+dni int,
+telefono varchar(20),
+aptoFisico boolean,
+fecha_inscripcion date,
+estadoMembresia boolean default true,
+constraint pk_socio primary key(carnet_numero)
+);

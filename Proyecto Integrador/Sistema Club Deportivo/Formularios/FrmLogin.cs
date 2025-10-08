@@ -1,3 +1,4 @@
+using ClubDeportivo.Formularios;
 using System.Data;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -18,6 +19,12 @@ namespace ClubDeportivo.formularios
             {
                 // quiere decir que el resultado tiene 1 fila por lo que el usuario EXISTE
                 MessageBox.Show("Ingreso exitoso","Ingreso Al Sistema",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                frmPrincipal Principal = new frmPrincipal();
+                Principal.rol = Convert.ToString(tablaLogin.Rows[0][0]);
+                Principal.usuario = Convert.ToString(txtUsuario.Text);
+                Principal.Show(); // se llama al formulario principal
+                this.Hide(); // se oculta el formulario del login
+
             }
             else
             {
