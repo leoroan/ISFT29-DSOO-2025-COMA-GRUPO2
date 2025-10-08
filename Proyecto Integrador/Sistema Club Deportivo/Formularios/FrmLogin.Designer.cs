@@ -69,10 +69,10 @@
             // 
             // BtnIngresar
             // 
-            BtnIngresar.Location = new Point(339, 222);
+            BtnIngresar.Location = new Point(321, 222);
             BtnIngresar.Name = "BtnIngresar";
             BtnIngresar.Size = new Size(166, 34);
-            BtnIngresar.TabIndex = 10;
+            BtnIngresar.TabIndex = 2;
             BtnIngresar.Text = "INGRESAR";
             BtnIngresar.UseVisualStyleBackColor = true;
             BtnIngresar.Click += BtnIngresar_Click;
@@ -82,7 +82,7 @@
             txtPass.Location = new Point(259, 179);
             txtPass.Name = "txtPass";
             txtPass.Size = new Size(317, 23);
-            txtPass.TabIndex = 9;
+            txtPass.TabIndex = 1;
             txtPass.UseSystemPasswordChar = true;
             // 
             // txtUsuario
@@ -90,7 +90,7 @@
             txtUsuario.Location = new Point(259, 130);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(317, 23);
-            txtUsuario.TabIndex = 8;
+            txtUsuario.TabIndex = 0;
             // 
             // pictureBox1
             // 

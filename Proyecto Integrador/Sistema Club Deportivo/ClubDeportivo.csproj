@@ -6,19 +6,15 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-    <ApplicationIcon>ico.ico</ApplicationIcon>
+    <ApplicationIcon>Recursos\ico.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="ico.ico" />
+    <Content Include="Recursos\ico.ico" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MySql.Data" Version="9.4.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Modelos\" />
   </ItemGroup>
 
   <ItemGroup>
