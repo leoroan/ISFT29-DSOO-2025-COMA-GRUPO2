@@ -17,34 +17,31 @@
 ## Clases y Atributos
 
 ### Persona
+- `dni`: numero de documento
+- `fecha_nacimiento`: Fecha de nacimiento  
 - `nombre`: Nombre del socio  
 - `apellido`: Apellido del socio  
-- `fecha_nacimiento`: Fecha de nacimiento  
-- `direccion`: Dirección  
 - `telefono`: Número de teléfono  
 - `AptoFisico` : boolean
 + `Registrar`() : Persona 
 
 ### Socio
-- `fecha_inscripcion`: Fecha de inscripción  
-- `fecha_vencimiento_cuota`: Fecha de vencimiento de la cuota  
+- `fecha_inscripcion`: Fecha de inscripción   
 - `estado`: Estado (`activo`/`inactivo`)  
 - `carnet_numero`: Número de carné  
-+ `pagar_cuota(): Pago`: Monto pagado por el mes  
-
++ `verificarEstado()` : Estado de la membresia en el club
++ `pagarCuota(Cuota)`: Monto pagado por el mes  
 
 ### NoSocio
-- `carnet_temporal`: Número de carné temporal  
-+ `pagar_actividad(): Pago`: Monto pagado por el día  
++ `pagarActividad(Actividad): PagoEventual`: Monto pagado por el día  
 
 ### Actividad
 - `nombre`: Nombre de la actividad  
 - `valor`: monto del valor de la actiidad  
 
 ### Cuota
+- `fechaVencimiento`: Fecha de vencimiento  
 - `monto`: Monto de la cuota  
-- `fecha_vencimiento`: Fecha de vencimiento  
-- `fecha_pago`: Fecha de pago  
 - `estado`: Estado (`pendiente`, `pagado`, `vencido`)  .
 
 ### PagoEventual
