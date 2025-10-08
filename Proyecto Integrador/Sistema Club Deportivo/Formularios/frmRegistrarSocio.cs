@@ -1,23 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-
+﻿
 namespace ClubDeportivo.Formularios
 {
+    /// <summary>
+    /// Formulario para el registro de nuevos socios en el club deportivo.
+    /// Permite ingresar y validar los datos personales de un nuevo socio.
+    /// </summary>
     public partial class frmRegistrarSocio : Form
     {
+        /// <summary>
+        /// Constructor del formulario de registro de socios.
+        /// Inicializa los componentes del formulario.
+        /// </summary>
         public frmRegistrarSocio()
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// Maneja el evento de click del botón Ingresar.
+        /// Valida los datos ingresados y registra un nuevo socio en la base de datos.
+        /// </summary>
+        /// <param name="sender">Objeto que desencadena el evento</param>
+        /// <param name="e">Argumentos del evento</param>
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             errorProvider1.Clear();
@@ -64,11 +67,18 @@ namespace ClubDeportivo.Formularios
                 }
             }
         }
-
+        /// <summary>
+        /// Maneja el evento de click del botón Volver.
+        /// Cierra el formulario actual.
+        /// </summary>
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        /// <summary>
+        /// Se ejecuta al cargar el formulario.
+        /// Inicializa la fecha de inscripción con la fecha actual y configura el combo box de apto físico.
+        /// </summary>
         private void frmRegistrarSocio_Load(object sender, EventArgs e)
         {
             dtpFechaInscripcion.Value = DateTime.Now;
@@ -81,6 +91,11 @@ namespace ClubDeportivo.Formularios
             cboAptoFisico.ValueMember = "Valor";
             cboAptoFisico.SelectedIndex = 0;
         }
+        /// <summary>
+        /// Valida que todos los campos requeridos estén completos.
+        /// Muestra mensajes de error para los campos incompletos.
+        /// </summary>
+        /// <returns>true si todos los campos son válidos, false en caso contrario</returns>
         public bool Validaciones()
         {
             bool ok = true;
@@ -116,11 +131,18 @@ namespace ClubDeportivo.Formularios
             }
             return ok;
         }
-
+        /// <summary>
+        /// Maneja el evento de click del botón Limpiar.
+        /// Limpia todos los campos del formulario.
+        /// </summary>
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
         }
+
+        /// <summary>
+        /// Limpia todos los campos del formulario y elimina los mensajes de error.
+        /// </summary>
         public void Limpiar()
         {
             txtNombre.Text = "";

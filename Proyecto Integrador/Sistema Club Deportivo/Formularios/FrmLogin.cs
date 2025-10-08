@@ -1,6 +1,5 @@
 using ClubDeportivo.Formularios;
 using System.Data;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ClubDeportivo.formularios
 {
@@ -18,7 +17,7 @@ namespace ClubDeportivo.formularios
             if (tablaLogin.Rows.Count > 0)
             {
                 // quiere decir que el resultado tiene 1 fila por lo que el usuario EXISTE
-                MessageBox.Show("Ingreso exitoso","Ingreso Al Sistema",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Ingreso exitoso","Ingreso al Sistema",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 frmPrincipal Principal = new frmPrincipal();
                 Principal.rol = Convert.ToString(tablaLogin.Rows[0][0]);
                 Principal.usuario = Convert.ToString(txtUsuario.Text);
@@ -28,7 +27,7 @@ namespace ClubDeportivo.formularios
             }
             else
             {
-                MessageBox.Show("Usuario y/o password incorrecto", "Ingreso Al Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Usuario y/o password incorrecto", "Ingreso al Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
