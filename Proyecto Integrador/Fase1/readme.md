@@ -42,4 +42,4 @@ Cada **profesor**, además de dictar su clase en los horarios asignados, control
 *Diagrama de clases propuesto FASE1*
 <br>
 
-![diagrama_club_deportivo](./diag_clases_club_v2.png)
+![diagrama_club_deportivo](./diagrama_de_clases_v12.jpeg)
