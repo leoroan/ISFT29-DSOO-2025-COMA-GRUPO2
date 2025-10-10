@@ -1,6 +1,6 @@
-drop database if exists ClubDeportivo;
-create database ClubDeportivo;
-use ClubDeportivo;
+drop database if exists comisionaequipo2;
+create database comisionaequipo2;
+use comisionaequipo2;
 
 create table roles(
 RolUsuario int,
@@ -26,16 +26,21 @@ insert into usuario(CodUsuario,NombreUsuario,PassUsuario,RolUsuario) values
 (26,'Admin2025','123456',120);
 
 ## fase 5
-create table socio(
-carnet_numero int,
-Nombre varchar(30),
+create table persona(
+idPersona int,
+nombre varchar(30),
 apellido varchar(40),
 fechaNacimiento date,
 direccion varchar(40),
 dni int,
 telefono varchar(20),
 aptoFisico boolean,
-fecha_inscripcion date,
+constraint pk_persona primary key(idPersona)
+);
+
+create table socio(
+carnetNumero int,
+fechaInscripcion date,
 estadoMembresia boolean default true,
-constraint pk_socio primary key(carnet_numero)
+constraint pk_socio primary key(carnetNumero)
 );

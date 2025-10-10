@@ -13,7 +13,7 @@ namespace ClubDeportivo.Datos
         private static Conexion? con = null;
         private Conexion() // asignamos valores a las variables de la conexion
         {
-            this.baseDatos = "ClubDeportivo";
+            this.baseDatos = "comisionaequipo2";
             this.servidor = "localhost";
             this.puerto = "3306";
             this.usuario = "root";

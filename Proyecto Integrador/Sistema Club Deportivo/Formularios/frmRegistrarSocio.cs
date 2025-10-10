@@ -1,4 +1,6 @@
 ﻿
+using ClubDeportivo.Datos;
+
 namespace ClubDeportivo.Formularios
 {
     /// <summary>
@@ -33,7 +35,7 @@ namespace ClubDeportivo.Formularios
             else
             {
                 string respuesta;
-                E_Socio socio = new E_Socio
+                E_Socio persona = new E_Socio
                     (
                         Convert.ToInt32(txtDni.Text),
                         dtpFechaNacimiento.Value,
@@ -46,8 +48,8 @@ namespace ClubDeportivo.Formularios
                      );
 
                 // instanciamos para usar el metodo dentro de Socio
-                Datos.Socio socioNuevo = new Datos.Socio();
-                respuesta = socioNuevo.Nuevo_Socio(socio);
+                Datos.Persona personaNueva = new Datos.Persona();
+                respuesta = personaNueva.Nuevo_persona(persona);
                 bool esnumero = int.TryParse(respuesta, out int codigo);
                 if (esnumero)
                 {
@@ -58,6 +60,9 @@ namespace ClubDeportivo.Formularios
                     }
                     else
                     {
+                        Socio socioNuevo = new Socio();
+                        respuesta = socioNuevo.Nuevo_Socio(persona);
+
                         MessageBox.Show("se almaceno con exito con el codigo Nro " + respuesta, "AVISO DEL SISTEMA",
                         MessageBoxButtons.OK, MessageBoxIcon.Question);
                         Limpiar();
