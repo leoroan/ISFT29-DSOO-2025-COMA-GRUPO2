@@ -53,5 +53,17 @@ namespace Proyecto.Formularios
             __________ */
             Application.Exit();
         }
+
+        private void btnAsignarCurso_Click(object sender, EventArgs e)
+        {
+            frmAsignar asignar = new frmAsignar();
+            asignar.ShowDialog();
+        }
+
+        private void btnPagarCurso_Click(object sender, EventArgs e)
+        {
+            frmPagar pagar = new frmPagar();
+            pagar.ShowDialog();
+        }
     }
 }

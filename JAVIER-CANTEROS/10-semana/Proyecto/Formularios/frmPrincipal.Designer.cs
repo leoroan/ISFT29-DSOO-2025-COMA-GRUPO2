@@ -30,8 +30,8 @@
         {
             lblIngreso = new Label();
             btnInscribir = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            btnAsignarCurso = new Button();
+            btnPagarCurso = new Button();
             button4 = new Button();
             btnSalir = new Button();
             SuspendLayout();
@@ -55,23 +55,25 @@
             btnInscribir.UseVisualStyleBackColor = true;
             btnInscribir.Click += btnInscribir_Click;
             // 
-            // button2
+            // btnAsignarCurso
             // 
-            button2.Location = new Point(368, 94);
-            button2.Name = "button2";
-            button2.Size = new Size(203, 69);
-            button2.TabIndex = 2;
-            button2.Text = "Asignar Curso";
-            button2.UseVisualStyleBackColor = true;
+            btnAsignarCurso.Location = new Point(368, 94);
+            btnAsignarCurso.Name = "btnAsignarCurso";
+            btnAsignarCurso.Size = new Size(203, 69);
+            btnAsignarCurso.TabIndex = 2;
+            btnAsignarCurso.Text = "Asignar Curso";
+            btnAsignarCurso.UseVisualStyleBackColor = true;
+            btnAsignarCurso.Click += btnAsignarCurso_Click;
             // 
-            // button3
+            // btnPagarCurso
             // 
-            button3.Location = new Point(106, 191);
-            button3.Name = "button3";
-            button3.Size = new Size(203, 69);
-            button3.TabIndex = 3;
-            button3.Text = "Pagar Curso";
-            button3.UseVisualStyleBackColor = true;
+            btnPagarCurso.Location = new Point(106, 191);
+            btnPagarCurso.Name = "btnPagarCurso";
+            btnPagarCurso.Size = new Size(203, 69);
+            btnPagarCurso.TabIndex = 3;
+            btnPagarCurso.Text = "Pagar Curso";
+            btnPagarCurso.UseVisualStyleBackColor = true;
+            btnPagarCurso.Click += btnPagarCurso_Click;
             // 
             // button4
             // 
@@ -96,14 +98,15 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(587, 300);
+            ClientSize = new Size(690, 300);
             Controls.Add(btnSalir);
             Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
+            Controls.Add(btnPagarCurso);
+            Controls.Add(btnAsignarCurso);
             Controls.Add(btnInscribir);
             Controls.Add(lblIngreso);
             Name = "frmPrincipal";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Ventana Principal";
             Load += frmPrincipal_Load;
             ResumeLayout(false);
@@ -114,8 +117,8 @@
 
         private Label lblIngreso;
         private Button btnInscribir;
-        private Button button2;
-        private Button button3;
+        private Button btnAsignarCurso;
+        private Button btnPagarCurso;
         private Button button4;
         private Button btnSalir;
     }

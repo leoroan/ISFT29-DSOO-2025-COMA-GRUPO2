@@ -9,21 +9,19 @@ using System.Threading.Tasks;
 
 namespace Proyecto.Datos
 {
-    internal class Postulantes
+    public class Pago
     {
-        public string Nuevo_Postu(E_Postulante postu)
+        public string NuevoPago(E_Pago pago)
         {
             string? salida;
             MySqlConnection sqlCon = new MySqlConnection();
             try
             {
                 sqlCon = Conexion.getInstancia().CrearConcexion();
-                MySqlCommand comando = new MySqlCommand("NuevoPos", sqlCon);
+                MySqlCommand comando = new MySqlCommand("NuevoPago", sqlCon);
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.Add("Nom", MySqlDbType.VarChar).Value = postu.Nombre;
-                comando.Parameters.Add("Ape", MySqlDbType.VarChar).Value = postu.Apellido;
-                comando.Parameters.Add("Tip", MySqlDbType.VarChar).Value = postu.TipoDoc;
-                comando.Parameters.Add("Doc", MySqlDbType.Int32).Value = postu.Documento;
+                comando.Parameters.Add("idInscri", MySqlDbType.Int64).Value = pago.IdInscripcion;
+                comando.Parameters.Add("monto", MySqlDbType.Float).Value = pago.Monto;
                 MySqlParameter ParCodigo = new MySqlParameter();
                 ParCodigo.ParameterName = "rta";
                 ParCodigo.MySqlDbType = MySqlDbType.Int32;
@@ -44,10 +42,8 @@ namespace Proyecto.Datos
                 { sqlCon.Close(); }
                 ;
             }
-
             return salida;
-
         }
     }
-
 }
+
