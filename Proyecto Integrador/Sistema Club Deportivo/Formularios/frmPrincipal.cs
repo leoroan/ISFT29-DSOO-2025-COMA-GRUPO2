@@ -25,5 +25,10 @@ namespace ClubDeportivo.Formularios
         {
             Application.Exit();
         }
+
+        private void btnPagarCuota_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

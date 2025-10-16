@@ -34,6 +34,7 @@
             tsbRol = new ToolStripStatusLabel();
             btnRegistrarSocio = new Button();
             btnSalir = new Button();
+            btnPagarCuota = new Button();
             staSistema.SuspendLayout();
             SuspendLayout();
             // 
@@ -42,7 +43,7 @@
             staSistema.Items.AddRange(new ToolStripItem[] { tsbUsuario, tsbRol });
             staSistema.Location = new Point(0, 173);
             staSistema.Name = "staSistema";
-            staSistema.Size = new Size(311, 22);
+            staSistema.Size = new Size(495, 22);
             staSistema.TabIndex = 0;
             staSistema.Text = "statusStrip1";
             // 
@@ -78,11 +79,22 @@
             btnSalir.UseVisualStyleBackColor = true;
             btnSalir.Click += btnSalir_Click;
             // 
+            // btnPagarCuota
+            // 
+            btnPagarCuota.Location = new Point(244, 65);
+            btnPagarCuota.Name = "btnPagarCuota";
+            btnPagarCuota.Size = new Size(153, 44);
+            btnPagarCuota.TabIndex = 3;
+            btnPagarCuota.Text = "Pagar Cuota";
+            btnPagarCuota.UseVisualStyleBackColor = true;
+            btnPagarCuota.Click += btnPagarCuota_Click;
+            // 
             // frmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(311, 195);
+            ClientSize = new Size(495, 195);
+            Controls.Add(btnPagarCuota);
             Controls.Add(btnSalir);
             Controls.Add(btnRegistrarSocio);
             Controls.Add(staSistema);
@@ -104,5 +116,6 @@
         private ToolStripStatusLabel tsbRol;
         private Button btnRegistrarSocio;
         private Button btnSalir;
+        private Button btnPagarCuota;
     }
 }
