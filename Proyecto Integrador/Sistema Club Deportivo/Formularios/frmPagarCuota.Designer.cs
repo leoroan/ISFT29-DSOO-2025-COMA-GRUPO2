@@ -1,6 +1,6 @@
-﻿namespace Proyecto.Formularios
+﻿namespace ClubDeportivo.Formularios
 {
-    partial class frmPagar
+    partial class frmPagarCuota
     {
         /// <summary>
         /// Required designer variable.
@@ -34,39 +34,41 @@
             optEfvo = new RadioButton();
             btnComprobante = new Button();
             btnPagar = new Button();
-            txtNro = new TextBox();
+            txtNroSocio = new TextBox();
             label1 = new Label();
+            btnBuscarSocio = new Button();
+            lblNombreSocio = new Label();
+            lblPrecioCuota = new Label();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // btnVolver
             // 
-            btnVolver.Location = new Point(363, 208);
+            btnVolver.Location = new Point(416, 274);
             btnVolver.Margin = new Padding(3, 4, 3, 4);
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new Size(86, 31);
-            btnVolver.TabIndex = 11;
+            btnVolver.TabIndex = 17;
             btnVolver.Text = "VOLVER";
             btnVolver.UseVisualStyleBackColor = true;
-            btnVolver.Click += btnVolver_Click;
             // 
             // groupBox1
             // 
             groupBox1.Controls.Add(optTarjeta);
             groupBox1.Controls.Add(optEfvo);
-            groupBox1.Location = new Point(388, 28);
+            groupBox1.Location = new Point(12, 133);
             groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(3, 4, 3, 4);
-            groupBox1.Size = new Size(229, 133);
-            groupBox1.TabIndex = 10;
+            groupBox1.Size = new Size(267, 133);
+            groupBox1.TabIndex = 16;
             groupBox1.TabStop = false;
             groupBox1.Text = "Forma de Pago";
             // 
             // optTarjeta
             // 
             optTarjeta.AutoSize = true;
-            optTarjeta.Location = new Point(37, 75);
+            optTarjeta.Location = new Point(37, 76);
             optTarjeta.Margin = new Padding(3, 4, 3, 4);
             optTarjeta.Name = "optTarjeta";
             optTarjeta.Size = new Size(74, 24);
@@ -78,7 +80,7 @@
             // 
             optEfvo.AutoSize = true;
             optEfvo.Checked = true;
-            optEfvo.Location = new Point(37, 41);
+            optEfvo.Location = new Point(37, 42);
             optEfvo.Margin = new Padding(3, 4, 3, 4);
             optEfvo.Name = "optEfvo";
             optEfvo.Size = new Size(83, 24);
@@ -90,62 +92,94 @@
             // btnComprobante
             // 
             btnComprobante.Enabled = false;
-            btnComprobante.Location = new Point(69, 229);
+            btnComprobante.Location = new Point(165, 274);
             btnComprobante.Margin = new Padding(3, 4, 3, 4);
             btnComprobante.Name = "btnComprobante";
             btnComprobante.Size = new Size(129, 31);
-            btnComprobante.TabIndex = 9;
+            btnComprobante.TabIndex = 15;
             btnComprobante.Text = "COMPROBANTE";
             btnComprobante.UseVisualStyleBackColor = true;
             btnComprobante.Click += btnComprobante_Click;
             // 
             // btnPagar
             // 
-            btnPagar.Location = new Point(69, 172);
+            btnPagar.Location = new Point(12, 274);
             btnPagar.Margin = new Padding(3, 4, 3, 4);
             btnPagar.Name = "btnPagar";
             btnPagar.Size = new Size(129, 31);
-            btnPagar.TabIndex = 8;
+            btnPagar.TabIndex = 14;
             btnPagar.Text = "PAGAR";
             btnPagar.UseVisualStyleBackColor = true;
             btnPagar.Click += btnPagar_Click;
             // 
-            // txtNro
+            // txtNroSocio
             // 
-            txtNro.Location = new Point(83, 87);
-            txtNro.Margin = new Padding(3, 4, 3, 4);
-            txtNro.Name = "txtNro";
-            txtNro.Size = new Size(114, 27);
-            txtNro.TabIndex = 7;
+            txtNroSocio.Location = new Point(165, 17);
+            txtNroSocio.Margin = new Padding(3, 4, 3, 4);
+            txtNroSocio.Name = "txtNroSocio";
+            txtNroSocio.Size = new Size(114, 27);
+            txtNroSocio.TabIndex = 13;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(14, 28);
+            label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(12, 18);
             label1.Name = "label1";
-            label1.Size = new Size(368, 32);
-            label1.TabIndex = 6;
-            label1.Text = "Ingrese Numero de inscripcion";
-            label1.Click += label1_Click;
+            label1.Size = new Size(147, 23);
+            label1.TabIndex = 12;
+            label1.Text = "Numero de Socio:";
             // 
-            // frmPagar
+            // btnBuscarSocio
+            // 
+            btnBuscarSocio.Location = new Point(295, 18);
+            btnBuscarSocio.Margin = new Padding(3, 4, 3, 4);
+            btnBuscarSocio.Name = "btnBuscarSocio";
+            btnBuscarSocio.Size = new Size(86, 31);
+            btnBuscarSocio.TabIndex = 18;
+            btnBuscarSocio.Text = "Buscar";
+            btnBuscarSocio.UseVisualStyleBackColor = true;
+            btnBuscarSocio.Click += btnBuscarSocio_Click;
+            // 
+            // lblNombreSocio
+            // 
+            lblNombreSocio.AutoSize = true;
+            lblNombreSocio.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblNombreSocio.Location = new Point(12, 57);
+            lblNombreSocio.Name = "lblNombreSocio";
+            lblNombreSocio.Size = new Size(147, 23);
+            lblNombreSocio.TabIndex = 19;
+            lblNombreSocio.Text = "Nombre de Socio:";
+            // 
+            // lblPrecioCuota
+            // 
+            lblPrecioCuota.AutoSize = true;
+            lblPrecioCuota.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPrecioCuota.Location = new Point(12, 91);
+            lblPrecioCuota.Name = "lblPrecioCuota";
+            lblPrecioCuota.Size = new Size(112, 23);
+            lblPrecioCuota.TabIndex = 20;
+            lblPrecioCuota.Text = "Precio Cuota:";
+            // 
+            // frmPagarCuota
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(634, 292);
+            ClientSize = new Size(514, 331);
+            Controls.Add(lblPrecioCuota);
+            Controls.Add(lblNombreSocio);
+            Controls.Add(btnBuscarSocio);
             Controls.Add(btnVolver);
             Controls.Add(groupBox1);
             Controls.Add(btnComprobante);
             Controls.Add(btnPagar);
-            Controls.Add(txtNro);
+            Controls.Add(txtNroSocio);
             Controls.Add(label1);
-            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "frmPagar";
+            Name = "frmPagarCuota";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "PAGAR EL CURSO";
+            Text = "Pagar Cuota";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
@@ -160,7 +194,10 @@
         private RadioButton optEfvo;
         private Button btnComprobante;
         private Button btnPagar;
-        private TextBox txtNro;
+        private TextBox txtNroSocio;
         private Label label1;
+        private Button btnBuscarSocio;
+        private Label lblNombreSocio;
+        private Label lblPrecioCuota;
     }
 }

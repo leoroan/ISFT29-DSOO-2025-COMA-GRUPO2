@@ -80,15 +80,15 @@ namespace Proyecto.Formularios
                     //guardar pago
                     Pago pago = new Pago();
                     string rta = pago.NuevoPago(new E_Pago
-                        {
-                            IdInscripcion = doc.numero_f,
-                            Monto = doc.monto_f,
-                            Fecha = DateTime.Now
-                        });
-
-                    if(rta != "1")
                     {
-                        MessageBox.Show("Pago registrado con exito bajo en numero: " +rta, "AVISO DEL SISTEMA",
+                        IdInscripcion = doc.numero_f,
+                        Monto = doc.monto_f,
+                        Fecha = DateTime.Now
+                    });
+
+                    if (rta != "1")
+                    {
+                        MessageBox.Show("Pago registrado con exito bajo en numero: " + rta, "AVISO DEL SISTEMA",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                         btnComprobante.Enabled = true;
                     }
@@ -97,7 +97,7 @@ namespace Proyecto.Formularios
                         MessageBox.Show("El pago ya existe", "AVISO DEL SISTEMA",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    
+
                 }
                 else
                 {
@@ -120,6 +120,11 @@ namespace Proyecto.Formularios
         private void btnComprobante_Click(object sender, EventArgs e)
         {
             doc.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

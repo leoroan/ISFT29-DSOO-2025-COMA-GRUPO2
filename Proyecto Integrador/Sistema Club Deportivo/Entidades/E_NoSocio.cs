@@ -23,10 +23,10 @@ public class E_NoSocio : E_Persona
     if (actividad == null)
       throw new ArgumentNullException(nameof(actividad));
 
-    var pago = new E_PagoEventual(DateTime.Now, actividad.Valor, MedioPago.Efectivo);
+    var pago = new E_PagoEventual(DateTime.Now, actividad.Precio, MedioPago.Efectivo);
     pagosEventuales.Add(pago);
 
-    Console.WriteLine($"Actividad '{actividad.Nombre}' pagada. Monto: ${actividad.Valor}");
+    Console.WriteLine($"Actividad '{actividad.Nombre}' pagada. Monto: ${actividad.Precio}");
     return pago;
   }
 

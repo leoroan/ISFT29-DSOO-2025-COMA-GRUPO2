@@ -1,30 +1,45 @@
 public class E_Cuota
 {
   // Campos privados
-  private DateTime fechaVencimiento;
-  private double monto;
-  private bool estado;
+    private DateTime fechaVencimiento;
+    private float precio;
+    private bool estado;
+    private int carnetNumero;
+    private int idCuota;
 
   // Constructor
-  public E_Cuota(DateTime fechaVencimiento, double monto)
+  public E_Cuota(int idCuota,int carnetNumero,DateTime fechaVencimiento, float precio, bool estado)
   {
     FechaVencimiento = fechaVencimiento;
-    Monto = monto;
+    Precio = precio;
     Estado = false;
+    CarnetNumero = carnetNumero;
+    IdCuota = idCuota;
+    Estado=estado;
   }
 
-  // Propiedades
-  public DateTime FechaVencimiento
-  {
-    get { return fechaVencimiento; }
-    set { fechaVencimiento = value; }
-  }
+    // Propiedades
+    public int IdCuota
+    {
+        get { return idCuota; }
+        set { idCuota = value; }
+    }
+    public int CarnetNumero
+    {
+        get { return carnetNumero; }
+        set { carnetNumero = value; }
+    }
+    public DateTime FechaVencimiento
+    {
+        get { return fechaVencimiento; }
+        set { fechaVencimiento = value; }
+    }
 
-  public double Monto
-  {
-    get { return monto; }
-    set { monto = value; }
-  }
+    public float Precio
+    {
+        get { return precio; }
+        set { precio = value; }
+    }
 
   public bool Estado
   {

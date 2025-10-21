@@ -1,27 +1,31 @@
 public class E_Actividad
 {
-  // Campos privados
-  private string nombre;
-  private double valor;
+    // Campos privados
+    private int idActividad;
+    private string nombre;
+    private float precio;
+
 
   // Constructor
-  public E_Actividad(string nombre, double valor)
+  public E_Actividad(int idActividad,string nombre, float precio)
   {
     Nombre = nombre;
-    Valor = valor;
+    Precio = precio;
+    IdActividad = idActividad;
   }
 
   // Propiedades
+  public int IdActividad { get; set; }
   public string Nombre
   {
     get { return nombre; }
     set { nombre = value; }
   }
 
-  public double Valor
+  public float Precio
   {
-    get { return valor; }
-    set { valor = value; }
+    get { return precio; }
+    set { precio = value; }
   }
 
 }

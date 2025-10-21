@@ -28,7 +28,8 @@ namespace ClubDeportivo.Formularios
 
         private void btnPagarCuota_Click(object sender, EventArgs e)
         {
-
+            frmPagarCuota frmPagarCuota = new frmPagarCuota();
+            frmPagarCuota.ShowDialog();
         }
     }
 }

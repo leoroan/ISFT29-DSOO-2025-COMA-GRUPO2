@@ -35,35 +35,39 @@
             btnRegistrarSocio = new Button();
             btnSalir = new Button();
             btnPagarCuota = new Button();
+            btnImprimirCarnet = new Button();
             staSistema.SuspendLayout();
             SuspendLayout();
             // 
             // staSistema
             // 
+            staSistema.ImageScalingSize = new Size(20, 20);
             staSistema.Items.AddRange(new ToolStripItem[] { tsbUsuario, tsbRol });
-            staSistema.Location = new Point(0, 173);
+            staSistema.Location = new Point(0, 293);
             staSistema.Name = "staSistema";
-            staSistema.Size = new Size(495, 22);
+            staSistema.Padding = new Padding(1, 0, 16, 0);
+            staSistema.Size = new Size(566, 26);
             staSistema.TabIndex = 0;
             staSistema.Text = "statusStrip1";
             // 
             // tsbUsuario
             // 
             tsbUsuario.Name = "tsbUsuario";
-            tsbUsuario.Size = new Size(50, 17);
+            tsbUsuario.Size = new Size(62, 20);
             tsbUsuario.Text = "Usuario:";
             // 
             // tsbRol
             // 
             tsbRol.Name = "tsbRol";
-            tsbRol.Size = new Size(27, 17);
+            tsbRol.Size = new Size(34, 20);
             tsbRol.Text = "Rol:";
             // 
             // btnRegistrarSocio
             // 
-            btnRegistrarSocio.Location = new Point(85, 65);
+            btnRegistrarSocio.Location = new Point(97, 87);
+            btnRegistrarSocio.Margin = new Padding(3, 4, 3, 4);
             btnRegistrarSocio.Name = "btnRegistrarSocio";
-            btnRegistrarSocio.Size = new Size(153, 44);
+            btnRegistrarSocio.Size = new Size(175, 59);
             btnRegistrarSocio.TabIndex = 1;
             btnRegistrarSocio.Text = "Registrar Socio";
             btnRegistrarSocio.UseVisualStyleBackColor = true;
@@ -71,9 +75,10 @@
             // 
             // btnSalir
             // 
-            btnSalir.Location = new Point(236, 147);
+            btnSalir.Location = new Point(470, 258);
+            btnSalir.Margin = new Padding(3, 4, 3, 4);
             btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(63, 23);
+            btnSalir.Size = new Size(72, 31);
             btnSalir.TabIndex = 2;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = true;
@@ -81,24 +86,37 @@
             // 
             // btnPagarCuota
             // 
-            btnPagarCuota.Location = new Point(244, 65);
+            btnPagarCuota.Location = new Point(279, 87);
+            btnPagarCuota.Margin = new Padding(3, 4, 3, 4);
             btnPagarCuota.Name = "btnPagarCuota";
-            btnPagarCuota.Size = new Size(153, 44);
+            btnPagarCuota.Size = new Size(175, 59);
             btnPagarCuota.TabIndex = 3;
             btnPagarCuota.Text = "Pagar Cuota";
             btnPagarCuota.UseVisualStyleBackColor = true;
             btnPagarCuota.Click += btnPagarCuota_Click;
             // 
+            // btnImprimirCarnet
+            // 
+            btnImprimirCarnet.Location = new Point(97, 154);
+            btnImprimirCarnet.Margin = new Padding(3, 4, 3, 4);
+            btnImprimirCarnet.Name = "btnImprimirCarnet";
+            btnImprimirCarnet.Size = new Size(175, 59);
+            btnImprimirCarnet.TabIndex = 4;
+            btnImprimirCarnet.Text = "Imprimir Carnet";
+            btnImprimirCarnet.UseVisualStyleBackColor = true;
+            // 
             // frmPrincipal
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(495, 195);
+            ClientSize = new Size(566, 319);
+            Controls.Add(btnImprimirCarnet);
             Controls.Add(btnPagarCuota);
             Controls.Add(btnSalir);
             Controls.Add(btnRegistrarSocio);
             Controls.Add(staSistema);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 4, 3, 4);
             Name = "frmPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sistema Club Deportivo";
@@ -117,5 +135,6 @@
         private Button btnRegistrarSocio;
         private Button btnSalir;
         private Button btnPagarCuota;
+        private Button btnImprimirCarnet;
     }
 }

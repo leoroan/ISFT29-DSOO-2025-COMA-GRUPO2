@@ -44,7 +44,9 @@ namespace ClubDeportivo.Formularios
                         txtTelefono.Text,
                         txtDomicilio.Text,
                         Convert.ToBoolean(cboAptoFisico.SelectedValue),
-                        dtpFechaInscripcion.Value
+                        dtpFechaInscripcion.Value,
+                        0,
+                        true
                      );
 
                 // instanciamos para usar el metodo dentro de Socio
@@ -65,6 +67,43 @@ namespace ClubDeportivo.Formularios
 
                         MessageBox.Show("se almaceno con exito con el codigo Nro " + respuesta, "AVISO DEL SISTEMA",
                         MessageBoxButtons.OK, MessageBoxIcon.Question);
+
+                        //obtengo precio de la membresia
+                        Actividad actividad = new Actividad();
+                        float precio = actividad.TraerPrecioMembresia();
+
+                        //registro cuota mensual
+                        Cuota cuota = new Cuota();
+                        cuota.NuevaCuota(new E_Cuota(0, int.Parse(respuesta), DateTime.Now, precio, false));
+
+                        //preguntar para imprimir carnet
+                        DialogResult resultado = MessageBox.Show(
+                                "¿Desea Imprimir el carnet?",  
+                                "Confirmación",               
+                                MessageBoxButtons.YesNo,      
+                                MessageBoxIcon.Question     
+);
+
+                        if (resultado == DialogResult.Yes)
+                        {
+                           frmCarnet frmCarnet = new frmCarnet();
+                           frmCarnet.socio = new E_Socio
+                               (
+                                    Convert.ToInt32(txtDni.Text),
+                                    dtpFechaNacimiento.Value,
+                                    txtNombre.Text,
+                                    txtApellido.Text,
+                                    txtTelefono.Text,
+                                    txtDomicilio.Text,
+                                    Convert.ToBoolean(cboAptoFisico.SelectedValue),
+                                    dtpFechaInscripcion.Value,
+                                    int.Parse(respuesta),
+                                    true
+
+                               );
+                            frmCarnet.ShowDialog();
+                        }
+
                         Limpiar();
                         dtpFechaInscripcion.Focus();
 
@@ -157,6 +196,11 @@ namespace ClubDeportivo.Formularios
             txtTelefono.Text = "";
             cboAptoFisico.Text = "";
             errorProvider1.Clear();
+        }
+
+        private void btnImprimirCarnet_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

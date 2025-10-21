@@ -46,5 +46,12 @@ namespace ClubDeportivo.Datos
             }
             return salida;
         }
+
+        public enum TipoPersona
+        {
+            Socio = 1,
+            NoSocio = 0,
+
+        }
     }
 }

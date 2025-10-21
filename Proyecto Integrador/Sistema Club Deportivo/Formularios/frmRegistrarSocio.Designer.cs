@@ -58,44 +58,45 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(402, 252);
+            label5.Location = new Point(459, 336);
             label5.Name = "label5";
-            label5.Size = new Size(28, 15);
+            label5.Size = new Size(35, 20);
             label5.TabIndex = 28;
             label5.Text = "Dni:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(402, 340);
+            label4.Location = new Point(459, 444);
             label4.Name = "label4";
-            label4.Size = new Size(69, 15);
+            label4.Size = new Size(86, 20);
             label4.TabIndex = 27;
             label4.Text = "Apto Fisico:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(402, 137);
+            label3.Location = new Point(459, 183);
             label3.Name = "label3";
-            label3.Size = new Size(54, 15);
+            label3.Size = new Size(69, 20);
             label3.TabIndex = 26;
             label3.Text = "Apellido:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(402, 100);
+            label2.Location = new Point(459, 133);
             label2.Name = "label2";
-            label2.Size = new Size(54, 15);
+            label2.Size = new Size(67, 20);
             label2.TabIndex = 25;
             label2.Text = "Nombre:";
             // 
             // btnVolver
             // 
-            btnVolver.Location = new Point(659, 381);
+            btnVolver.Location = new Point(763, 487);
+            btnVolver.Margin = new Padding(3, 4, 3, 4);
             btnVolver.Name = "btnVolver";
-            btnVolver.Size = new Size(75, 23);
+            btnVolver.Size = new Size(86, 31);
             btnVolver.TabIndex = 10;
             btnVolver.Text = "VOLVER";
             btnVolver.UseVisualStyleBackColor = true;
@@ -103,9 +104,10 @@
             // 
             // btnLimpiar
             // 
-            btnLimpiar.Location = new Point(530, 381);
+            btnLimpiar.Location = new Point(625, 487);
+            btnLimpiar.Margin = new Padding(3, 4, 3, 4);
             btnLimpiar.Name = "btnLimpiar";
-            btnLimpiar.Size = new Size(75, 23);
+            btnLimpiar.Size = new Size(86, 31);
             btnLimpiar.TabIndex = 9;
             btnLimpiar.Text = "LIMPIAR";
             btnLimpiar.UseVisualStyleBackColor = true;
@@ -113,9 +115,10 @@
             // 
             // btnIngresar
             // 
-            btnIngresar.Location = new Point(406, 381);
+            btnIngresar.Location = new Point(481, 487);
+            btnIngresar.Margin = new Padding(3, 4, 3, 4);
             btnIngresar.Name = "btnIngresar";
-            btnIngresar.Size = new Size(75, 23);
+            btnIngresar.Size = new Size(86, 31);
             btnIngresar.TabIndex = 8;
             btnIngresar.Text = "INGRESAR";
             btnIngresar.UseVisualStyleBackColor = true;
@@ -125,50 +128,55 @@
             // 
             cboAptoFisico.DropDownStyle = ComboBoxStyle.DropDownList;
             cboAptoFisico.FormattingEnabled = true;
-            cboAptoFisico.Location = new Point(497, 337);
+            cboAptoFisico.Location = new Point(568, 440);
+            cboAptoFisico.Margin = new Padding(3, 4, 3, 4);
             cboAptoFisico.Name = "cboAptoFisico";
-            cboAptoFisico.Size = new Size(104, 23);
+            cboAptoFisico.Size = new Size(118, 28);
             cboAptoFisico.TabIndex = 7;
             // 
             // txtDni
             // 
-            txtDni.Location = new Point(497, 249);
+            txtDni.Location = new Point(568, 332);
+            txtDni.Margin = new Padding(3, 4, 3, 4);
             txtDni.Name = "txtDni";
-            txtDni.Size = new Size(237, 23);
+            txtDni.Size = new Size(270, 27);
             txtDni.TabIndex = 5;
             // 
             // txtApellido
             // 
-            txtApellido.Location = new Point(497, 133);
+            txtApellido.Location = new Point(568, 177);
+            txtApellido.Margin = new Padding(3, 4, 3, 4);
             txtApellido.MaxLength = 40;
             txtApellido.Name = "txtApellido";
-            txtApellido.Size = new Size(237, 23);
+            txtApellido.Size = new Size(270, 27);
             txtApellido.TabIndex = 2;
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(497, 95);
+            txtNombre.Location = new Point(568, 127);
+            txtNombre.Margin = new Padding(3, 4, 3, 4);
             txtNombre.MaxLength = 30;
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(237, 23);
+            txtNombre.Size = new Size(270, 27);
             txtNombre.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(483, 9);
+            label1.Location = new Point(552, 12);
             label1.Name = "label1";
-            label1.Size = new Size(193, 25);
+            label1.Size = new Size(246, 32);
             label1.TabIndex = 17;
             label1.Text = "REGISTRO DE SOCIO";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Socio;
-            pictureBox1.Location = new Point(-1, 28);
+            pictureBox1.Location = new Point(-1, 37);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(384, 361);
+            pictureBox1.Size = new Size(454, 481);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 33;
             pictureBox1.TabStop = false;
@@ -176,69 +184,73 @@
             // dtpFechaNacimiento
             // 
             dtpFechaNacimiento.Format = DateTimePickerFormat.Short;
-            dtpFechaNacimiento.Location = new Point(497, 171);
+            dtpFechaNacimiento.Location = new Point(568, 228);
+            dtpFechaNacimiento.Margin = new Padding(3, 4, 3, 4);
             dtpFechaNacimiento.Name = "dtpFechaNacimiento";
-            dtpFechaNacimiento.Size = new Size(104, 23);
+            dtpFechaNacimiento.Size = new Size(118, 27);
             dtpFechaNacimiento.TabIndex = 3;
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(402, 175);
+            label10.Location = new Point(459, 233);
             label10.Name = "label10";
-            label10.Size = new Size(52, 15);
+            label10.Size = new Size(63, 20);
             label10.TabIndex = 35;
             label10.Text = "Fec.Nac:";
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(402, 215);
+            label11.Location = new Point(459, 287);
             label11.Name = "label11";
-            label11.Size = new Size(61, 15);
+            label11.Size = new Size(77, 20);
             label11.TabIndex = 37;
             label11.Text = "Domicilio:";
             // 
             // txtDomicilio
             // 
-            txtDomicilio.Location = new Point(497, 211);
+            txtDomicilio.Location = new Point(568, 281);
+            txtDomicilio.Margin = new Padding(3, 4, 3, 4);
             txtDomicilio.MaxLength = 40;
             txtDomicilio.Name = "txtDomicilio";
-            txtDomicilio.Size = new Size(237, 23);
+            txtDomicilio.Size = new Size(270, 27);
             txtDomicilio.TabIndex = 4;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(402, 294);
+            label6.Location = new Point(459, 392);
             label6.Name = "label6";
-            label6.Size = new Size(55, 15);
+            label6.Size = new Size(70, 20);
             label6.TabIndex = 39;
             label6.Text = "Telefono:";
             // 
             // txtTelefono
             // 
-            txtTelefono.Location = new Point(497, 291);
+            txtTelefono.Location = new Point(568, 388);
+            txtTelefono.Margin = new Padding(3, 4, 3, 4);
             txtTelefono.MaxLength = 20;
             txtTelefono.Name = "txtTelefono";
-            txtTelefono.Size = new Size(237, 23);
+            txtTelefono.Size = new Size(270, 27);
             txtTelefono.TabIndex = 6;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(402, 65);
+            label7.Location = new Point(459, 87);
             label7.Name = "label7";
-            label7.Size = new Size(89, 15);
+            label7.Size = new Size(108, 20);
             label7.TabIndex = 41;
             label7.Text = "Fec.Inscripcion:";
             // 
             // dtpFechaInscripcion
             // 
             dtpFechaInscripcion.Format = DateTimePickerFormat.Short;
-            dtpFechaInscripcion.Location = new Point(497, 61);
+            dtpFechaInscripcion.Location = new Point(568, 81);
+            dtpFechaInscripcion.Margin = new Padding(3, 4, 3, 4);
             dtpFechaInscripcion.Name = "dtpFechaInscripcion";
-            dtpFechaInscripcion.Size = new Size(104, 23);
+            dtpFechaInscripcion.Size = new Size(118, 27);
             dtpFechaInscripcion.TabIndex = 0;
             // 
             // errorProvider1
@@ -247,9 +259,9 @@
             // 
             // frmRegistrarSocio
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(749, 430);
+            ClientSize = new Size(856, 541);
             Controls.Add(label7);
             Controls.Add(dtpFechaInscripcion);
             Controls.Add(label6);
@@ -271,6 +283,7 @@
             Controls.Add(txtApellido);
             Controls.Add(txtNombre);
             Controls.Add(label1);
+            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "frmRegistrarSocio";

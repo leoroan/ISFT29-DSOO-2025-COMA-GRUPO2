@@ -28,12 +28,12 @@
 ### Socio
 - `fecha_inscripcion`: Fecha de inscripción   
 - `estado`: Booleano
-- `carnetNumero`: Número de carné  
+- `carnetNumero`: Número de carnet  
 + `verificarEstado()` : Estado de la membresia en el club
 + `pagarCuota(Cuota)`: Monto pagado por el mes  
 
 ### NoSocio
-- `carnetTemporal`: Número de carné 
+- `carnetTemporal`: Número de carnet 
 + `pagarActividad(Actividad): PagoEventual`: Monto pagado por el día  
 
 ### Actividad
@@ -41,11 +41,14 @@
 - `valor`: monto del valor de la actiidad  
 
 ### Cuota
+- `carnetNumero`: Número de carnet de socio 
 - `fechaVencimiento`: Fecha de vencimiento  
 - `monto`: Monto de la cuota  
 - `estado`: nombre del estado
 
-### PagoEventual
+### Pago
+- `carnetNumero`: Número de carnet de socio o no socio
+- `tipoPersona`: numero que indica si es socio o no
 - `fecha`: Fecha del pago eventual  
 - `monto`: Monto abonado  
 - `medio`: Medio de pago utilizado (efectivo, tarjeta, etc.)  
