@@ -1,5 +1,8 @@
-using ClubDeportivo.Formularios;
+﻿using ClubDeportivo.Formularios;
+using System;
 using System.Data;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace ClubDeportivo.formularios
 {
@@ -9,28 +12,47 @@ namespace ClubDeportivo.formularios
         {
             InitializeComponent();
         }
-        private void BtnIngresar_Click(object sender, EventArgs e)
-        {
-            DataTable tablaLogin = new DataTable(); // es la que recibe los datos desde el formulario
-            Datos.Usuarios dato = new Datos.Usuarios(); // variable que  contiene todas las caracteristicas de la clase
-            tablaLogin = dato.Log_Usu(txtUsuario.Text, txtPass.Text);
-            if (tablaLogin.Rows.Count > 0)
-            {
-                // quiere decir que el resultado tiene 1 fila por lo que el usuario EXISTE
-                MessageBox.Show("Ingreso exitoso","Ingreso al Sistema",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                frmPrincipal Principal = new frmPrincipal();
-                Principal.rol = Convert.ToString(tablaLogin.Rows[0][0]);
-                Principal.usuario = Convert.ToString(txtUsuario.Text);
-                Principal.Show(); // se llama al formulario principal
-                this.Hide(); // se oculta el formulario del login
 
-            }
-            else
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+            this.ActiveControl = txtUsuario;
+        }
+
+        private void FrmLogin_Paint(object sender, PaintEventArgs e)
+        {
+            using (var brush = new System.Drawing.Drawing2D.LinearGradientBrush(
+                this.ClientRectangle,
+                Color.FromArgb(0, 102, 204),
+                Color.White,
+                45F))
             {
-                MessageBox.Show("Usuario y/o password incorrecto", "Ingreso al Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Graphics.FillRectangle(brush, this.ClientRectangle);
             }
         }
 
+        private void BtnIngresar_Click(object sender, EventArgs e)
+        {
+            DataTable tablaLogin = new DataTable();
+            Datos.Usuarios dato = new Datos.Usuarios();
+            tablaLogin = dato.Log_Usu(txtUsuario.Text.Trim(), txtPass.Text.Trim());
 
+            if (tablaLogin.Rows.Count > 0)
+            {
+                MessageBox.Show("Ingreso exitoso ✅", "Ingreso al Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                frmPrincipal Principal = new frmPrincipal
+                {
+                    rol = Convert.ToString(tablaLogin.Rows[0][0]),
+                    usuario = txtUsuario.Text
+                };
+                Principal.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Usuario y/o contraseña incorrectos", "Error de acceso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtPass.Clear();
+                txtUsuario.Focus();
+            }
+        }
     }
 }
