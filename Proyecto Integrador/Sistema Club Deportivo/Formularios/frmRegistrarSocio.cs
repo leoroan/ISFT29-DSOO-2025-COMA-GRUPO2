@@ -1,130 +1,20 @@
-﻿
-using ClubDeportivo.Datos;
+﻿using ClubDeportivo.Datos;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace ClubDeportivo.Formularios
 {
-    /// <summary>
-    /// Formulario para el registro de nuevos socios en el club deportivo.
-    /// Permite ingresar y validar los datos personales de un nuevo socio.
-    /// </summary>
     public partial class frmRegistrarSocio : Form
     {
-        /// <summary>
-        /// Constructor del formulario de registro de socios.
-        /// Inicializa los componentes del formulario.
-        /// </summary>
         public frmRegistrarSocio()
         {
             InitializeComponent();
         }
-        /// <summary>
-        /// Maneja el evento de click del botón Ingresar.
-        /// Valida los datos ingresados y registra un nuevo socio en la base de datos.
-        /// </summary>
-        /// <param name="sender">Objeto que desencadena el evento</param>
-        /// <param name="e">Argumentos del evento</param>
-        private void btnIngresar_Click(object sender, EventArgs e)
-        {
-            errorProvider1.Clear();
-            if (!Validaciones())
-            {
-                MessageBox.Show("Debe completar datos requeridos",
-                "AVISO DEL SISTEMA", MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
-            }
-            else
-            {
-                string respuesta;
-                E_Socio persona = new E_Socio
-                    (
-                        Convert.ToInt32(txtDni.Text),
-                        dtpFechaNacimiento.Value,
-                        txtNombre.Text,
-                        txtApellido.Text,
-                        txtTelefono.Text,
-                        txtDomicilio.Text,
-                        Convert.ToBoolean(cboAptoFisico.SelectedValue),
-                        dtpFechaInscripcion.Value,
-                        0,
-                        true
-                     );
 
-                // instanciamos para usar el metodo dentro de Socio
-                Datos.Persona personaNueva = new Datos.Persona();
-                respuesta = personaNueva.Nuevo_persona(persona);
-                bool esnumero = int.TryParse(respuesta, out int codigo);
-                if (esnumero)
-                {
-                    if (codigo == 1)
-                    {
-                        MessageBox.Show("Socio YA EXISTE", "AVISO DEL SISTEMA",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else
-                    {
-                        Socio socioNuevo = new Socio();
-                        respuesta = socioNuevo.Nuevo_Socio(persona);
-
-                        MessageBox.Show("se almaceno con exito con el codigo Nro " + respuesta, "AVISO DEL SISTEMA",
-                        MessageBoxButtons.OK, MessageBoxIcon.Question);
-
-                        //obtengo precio de la membresia
-                        Actividad actividad = new Actividad();
-                        float precio = actividad.TraerPrecioMembresia();
-
-                        //registro cuota mensual
-                        Cuota cuota = new Cuota();
-                        cuota.NuevaCuota(new E_Cuota(0, int.Parse(respuesta), DateTime.Now, precio, false));
-
-                        //preguntar para imprimir carnet
-                        DialogResult resultado = MessageBox.Show(
-                                "¿Desea Imprimir el carnet?",  
-                                "Confirmación",               
-                                MessageBoxButtons.YesNo,      
-                                MessageBoxIcon.Question     
-);
-
-                        if (resultado == DialogResult.Yes)
-                        {
-                           frmCarnet frmCarnet = new frmCarnet();
-                           frmCarnet.socio = new E_Socio
-                               (
-                                    Convert.ToInt32(txtDni.Text),
-                                    dtpFechaNacimiento.Value,
-                                    txtNombre.Text,
-                                    txtApellido.Text,
-                                    txtTelefono.Text,
-                                    txtDomicilio.Text,
-                                    Convert.ToBoolean(cboAptoFisico.SelectedValue),
-                                    dtpFechaInscripcion.Value,
-                                    int.Parse(respuesta),
-                                    true
-
-                               );
-                            frmCarnet.ShowDialog();
-                        }
-
-                        Limpiar();
-                        dtpFechaInscripcion.Focus();
-
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// Maneja el evento de click del botón Volver.
-        /// Cierra el formulario actual.
-        /// </summary>
-        private void btnVolver_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-        /// <summary>
-        /// Se ejecuta al cargar el formulario.
-        /// Inicializa la fecha de inscripción con la fecha actual y configura el combo box de apto físico.
-        /// </summary>
         private void frmRegistrarSocio_Load(object sender, EventArgs e)
         {
+            // Configuración inicial
             dtpFechaInscripcion.Value = DateTime.Now;
             cboAptoFisico.DataSource = new[]
             {
@@ -135,72 +25,143 @@ namespace ClubDeportivo.Formularios
             cboAptoFisico.ValueMember = "Valor";
             cboAptoFisico.SelectedIndex = 0;
         }
-        /// <summary>
-        /// Valida que todos los campos requeridos estén completos.
-        /// Muestra mensajes de error para los campos incompletos.
-        /// </summary>
-        /// <returns>true si todos los campos son válidos, false en caso contrario</returns>
-        public bool Validaciones()
+
+        private void btnIngresar_Click(object sender, EventArgs e)
         {
-            bool ok = true;
-            if (txtNombre.Text == "")
+            errorProvider1.Clear();
+
+            if (!Validaciones())
             {
-                ok = false;
-                errorProvider1.SetError(txtNombre, "Debe ingresar un nombre");
+                MessageBox.Show("Debe completar los datos requeridos.",
+                    "AVISO DEL SISTEMA",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
             }
-            if (txtApellido.Text == "")
+
+            string respuesta;
+            E_Socio persona = new E_Socio(
+                Convert.ToInt32(txtDni.Text),
+                dtpFechaNacimiento.Value,
+                txtNombre.Text,
+                txtApellido.Text,
+                txtTelefono.Text,
+                txtDomicilio.Text,
+                Convert.ToBoolean(cboAptoFisico.SelectedValue),
+                dtpFechaInscripcion.Value,
+                0,
+                true
+            );
+
+            Datos.Persona personaNueva = new Datos.Persona();
+            respuesta = personaNueva.Nuevo_persona(persona);
+
+            bool esNumero = int.TryParse(respuesta, out int codigo);
+            if (esNumero)
             {
-                ok = false;
-                errorProvider1.SetError(txtApellido, "Debe ingresar un apellido");
+                if (codigo == 1)
+                {
+                    MessageBox.Show("El socio ya existe.", "AVISO DEL SISTEMA",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    Socio socioNuevo = new Socio();
+                    respuesta = socioNuevo.Nuevo_Socio(persona);
+
+                    MessageBox.Show($"¡Socio registrado con éxito!\nCódigo asignado: {respuesta}",
+                        "AVISO DEL SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Registrar cuota automáticamente
+                    Actividad actividad = new Actividad();
+                    float precio = actividad.TraerPrecioMembresia();
+                    Cuota cuota = new Cuota();
+                    cuota.NuevaCuota(new E_Cuota(0, int.Parse(respuesta), DateTime.Now, precio, false));
+
+                    DialogResult resultado = MessageBox.Show(
+                        "¿Desea imprimir el carnet ahora?",
+                        "Confirmación",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question
+                    );
+
+                    if (resultado == DialogResult.Yes)
+                    {
+                        frmCarnet carnetForm = new frmCarnet();
+                        carnetForm.socio = new E_Socio(
+                            Convert.ToInt32(txtDni.Text),
+                            dtpFechaNacimiento.Value,
+                            txtNombre.Text,
+                            txtApellido.Text,
+                            txtTelefono.Text,
+                            txtDomicilio.Text,
+                            Convert.ToBoolean(cboAptoFisico.SelectedValue),
+                            dtpFechaInscripcion.Value,
+                            int.Parse(respuesta),
+                            true
+                        );
+                        carnetForm.ShowDialog();
+                    }
+
+                    Limpiar();
+                    dtpFechaInscripcion.Focus();
+                }
             }
-            if (txtDni.Text == "")
-            {
-                ok = false;
-                errorProvider1.SetError(txtDni, "Debe ingresar un DNI");
-            }
-            if (txtDomicilio.Text == "")
-            {
-                ok = false;
-                errorProvider1.SetError(txtDomicilio, "Debe ingresar un Direccion");
-            }
-            if (txtTelefono.Text == "")
-            {
-                ok = false;
-                errorProvider1.SetError(txtTelefono, "Debe ingresar un Telefono");
-            }
-            if (cboAptoFisico.Text == "")
-            {
-                ok = false;
-                errorProvider1.SetError(cboAptoFisico, "Debe seleccionar una opcion");
-            }
-            return ok;
         }
-        /// <summary>
-        /// Maneja el evento de click del botón Limpiar.
-        /// Limpia todos los campos del formulario.
-        /// </summary>
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
         }
 
-        /// <summary>
-        /// Limpia todos los campos del formulario y elimina los mensajes de error.
-        /// </summary>
-        public void Limpiar()
+        public bool Validaciones()
         {
-            txtNombre.Text = "";
-            txtApellido.Text = "";
-            txtDomicilio.Text = "";
-            txtDni.Text = "";
-            txtTelefono.Text = "";
-            cboAptoFisico.Text = "";
+            bool ok = true;
             errorProvider1.Clear();
+
+            if (string.IsNullOrWhiteSpace(txtNombre.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtNombre, "Debe ingresar un nombre");
+            }
+            if (string.IsNullOrWhiteSpace(txtApellido.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtApellido, "Debe ingresar un apellido");
+            }
+            if (string.IsNullOrWhiteSpace(txtDni.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtDni, "Debe ingresar el DNI");
+            }
+            if (string.IsNullOrWhiteSpace(txtDomicilio.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtDomicilio, "Debe ingresar un domicilio");
+            }
+            if (string.IsNullOrWhiteSpace(txtTelefono.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtTelefono, "Debe ingresar un teléfono");
+            }
+
+            return ok;
         }
 
-        private void btnImprimirCarnet_Click(object sender, EventArgs e)
+        public void Limpiar()
         {
-
+            txtNombre.Clear();
+            txtApellido.Clear();
+            txtDni.Clear();
+            txtDomicilio.Clear();
+            txtTelefono.Clear();
+            cboAptoFisico.SelectedIndex = 0;
+            errorProvider1.Clear();
         }
     }
 }

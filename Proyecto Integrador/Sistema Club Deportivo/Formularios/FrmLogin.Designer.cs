@@ -2,137 +2,144 @@
 {
     partial class FrmLogin
     {
-        /// <summary>
-        ///  Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        ///  Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
-            {
                 components.Dispose();
-            }
             base.Dispose(disposing);
         }
 
         #region Windows Form Designer generated code
-
-        /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
-            label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
-            BtnIngresar = new Button();
-            txtPass = new TextBox();
-            txtUsuario = new TextBox();
-            pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            SuspendLayout();
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(243, 30);
-            label3.Name = "label3";
-            label3.Size = new Size(351, 45);
-            label3.TabIndex = 13;
-            label3.Text = "INGRESO AL SISTEMA";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(260, 161);
-            label2.Name = "label2";
-            label2.Size = new Size(70, 15);
-            label2.TabIndex = 12;
-            label2.Text = "Contraseña:";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(260, 110);
-            label1.Name = "label1";
-            label1.Size = new Size(50, 15);
-            label1.TabIndex = 11;
-            label1.Text = "Usuario:";
-            // 
-            // BtnIngresar
-            // 
-            BtnIngresar.Location = new Point(321, 222);
-            BtnIngresar.Name = "BtnIngresar";
-            BtnIngresar.Size = new Size(166, 34);
-            BtnIngresar.TabIndex = 2;
-            BtnIngresar.Text = "INGRESAR";
-            BtnIngresar.UseVisualStyleBackColor = true;
-            BtnIngresar.Click += BtnIngresar_Click;
-            // 
-            // txtPass
-            // 
-            txtPass.Location = new Point(259, 179);
-            txtPass.Name = "txtPass";
-            txtPass.Size = new Size(317, 23);
-            txtPass.TabIndex = 1;
-            txtPass.UseSystemPasswordChar = true;
-            // 
-            // txtUsuario
-            // 
-            txtUsuario.Location = new Point(259, 130);
-            txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(317, 23);
-            txtUsuario.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.Icono;
-            pictureBox1.Location = new Point(24, 80);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(180, 176);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 7;
-            pictureBox1.TabStop = false;
+            this.pnlMain = new Panel();
+            this.lblTitulo = new Label();
+            this.txtUsuario = new TextBox();
+            this.txtPass = new TextBox();
+            this.labelUsuario = new Label();
+            this.labelPassword = new Label();
+            this.BtnIngresar = new Button();
+            this.pictureBox1 = new PictureBox();
+            this.pnlMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)this.pictureBox1).BeginInit();
+            this.SuspendLayout();
             // 
             // FrmLogin
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(667, 286);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(BtnIngresar);
-            Controls.Add(txtPass);
-            Controls.Add(txtUsuario);
-            Controls.Add(pictureBox1);
-            Icon = (Icon)resources.GetObject("$this.Icon");
-            MaximizeBox = false;
-            MinimizeBox = false;
-            Name = "FrmLogin";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Club Deportivo";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleMode = AutoScaleMode.Font;
+            this.ClientSize = new Size(700, 380);
+            this.BackColor = Color.White;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Icon = (Icon)resources.GetObject("$this.Icon");
+            this.Text = "Inicio de Sesión - Club Deportivo";
+            this.Load += new System.EventHandler(this.FrmLogin_Load);
+            this.Paint += new PaintEventHandler(this.FrmLogin_Paint);
+
+            // 
+            // pnlMain
+            // 
+            this.pnlMain.Anchor = AnchorStyles.None;
+            this.pnlMain.BackColor = Color.White;
+            this.pnlMain.BorderStyle = BorderStyle.FixedSingle;
+            this.pnlMain.Location = new Point(160, 70);
+            this.pnlMain.Size = new Size(380, 250);
+            this.pnlMain.Controls.Add(this.lblTitulo);
+            this.pnlMain.Controls.Add(this.txtUsuario);
+            this.pnlMain.Controls.Add(this.txtPass);
+            this.pnlMain.Controls.Add(this.labelUsuario);
+            this.pnlMain.Controls.Add(this.labelPassword);
+            this.pnlMain.Controls.Add(this.BtnIngresar);
+
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.Text = "🏆 CLUB DEPORTIVO";
+            this.lblTitulo.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point);
+            this.lblTitulo.ForeColor = Color.FromArgb(0, 51, 102);
+            this.lblTitulo.AutoSize = false;
+            this.lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
+            this.lblTitulo.Dock = DockStyle.Top;
+            this.lblTitulo.Height = 60;
+
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            this.txtUsuario.Location = new Point(50, 100);
+            this.txtUsuario.Width = 280;
+            this.txtUsuario.PlaceholderText = "Ingrese su usuario";
+
+            // 
+            // txtPass
+            // 
+            this.txtPass.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            this.txtPass.Location = new Point(50, 150);
+            this.txtPass.Width = 280;
+            this.txtPass.UseSystemPasswordChar = true;
+            this.txtPass.PlaceholderText = "Ingrese su contraseña";
+
+            // 
+            // labelUsuario
+            // 
+            this.labelUsuario.Text = "Usuario:";
+            this.labelUsuario.AutoSize = true;
+            this.labelUsuario.Location = new Point(50, 80);
+            this.labelUsuario.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            this.labelUsuario.ForeColor = Color.FromArgb(50, 50, 50);
+
+            // 
+            // labelPassword
+            // 
+            this.labelPassword.Text = "Contraseña:";
+            this.labelPassword.AutoSize = true;
+            this.labelPassword.Location = new Point(50, 130);
+            this.labelPassword.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            this.labelPassword.ForeColor = Color.FromArgb(50, 50, 50);
+
+            // 
+            // BtnIngresar
+            // 
+            this.BtnIngresar.Text = "INGRESAR";
+            this.BtnIngresar.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            this.BtnIngresar.Size = new Size(280, 40);
+            this.BtnIngresar.Location = new Point(50, 200);
+            this.BtnIngresar.FlatStyle = FlatStyle.Flat;
+            this.BtnIngresar.FlatAppearance.BorderSize = 0;
+            this.BtnIngresar.BackColor = Color.FromArgb(0, 102, 204);
+            this.BtnIngresar.ForeColor = Color.White;
+            this.BtnIngresar.Cursor = Cursors.Hand;
+            this.BtnIngresar.Click += new System.EventHandler(this.BtnIngresar_Click);
+            this.BtnIngresar.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 80, 160);
+
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = Properties.Resources.Icono;
+            this.pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            this.pictureBox1.Location = new Point(30, 100);
+            this.pictureBox1.Size = new Size(120, 120);
+
+            // 
+            // FrmLogin (final)
+            // 
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pnlMain);
+            this.ResumeLayout(false);
         }
 
         #endregion
 
-        private Label label3;
-        private Label label2;
-        private Label label1;
-        private Button BtnIngresar;
-        private TextBox txtPass;
+        private Panel pnlMain;
+        private Label lblTitulo;
+        private Label labelUsuario;
+        private Label labelPassword;
         private TextBox txtUsuario;
+        private TextBox txtPass;
+        private Button BtnIngresar;
         private PictureBox pictureBox1;
     }
 }
