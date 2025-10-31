@@ -14,178 +14,233 @@
         #region Código de diseño
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources =
-                new System.ComponentModel.ComponentResourceManager(typeof(frmComprobante));
-
-            this.lblTitulo = new Label();
-            this.panelComprobante = new Panel();
-            this.lblDetalle = new Label();
-            this.lblSocio = new Label();
-            this.lblTipo = new Label();
-            this.lblFecha = new Label();
-            this.lblImporte = new Label();
-            this.lblMedio = new Label();
-            this.lblActividad = new Label();
-
-            this.pbLogo = new PictureBox();
-            this.pbQR = new PictureBox();
-
-            this.btnImprimir = new Button();
-            this.btnCerrar = new Button();
-
-            ((System.ComponentModel.ISupportInitialize)this.pbLogo).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)this.pbQR).BeginInit();
-            this.SuspendLayout();
-
+            lblTitulo = new Label();
+            panelComprobante = new Panel();
+            lblNombre = new Label();
+            pbLogo = new PictureBox();
+            lblDetalle = new Label();
+            lblNro = new Label();
+            lblTipo = new Label();
+            lblFecha = new Label();
+            lblPrecio = new Label();
+            lblFormaPago = new Label();
+            lblActividad = new Label();
+            pbQR = new PictureBox();
+            btnImprimir = new Button();
+            btnCerrar = new Button();
+            panelComprobante.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbLogo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbQR).BeginInit();
+            SuspendLayout();
             // 
             // lblTitulo
             // 
-            this.lblTitulo.Dock = DockStyle.Top;
-            this.lblTitulo.Text = "🧾 COMPROBANTE DE PAGO";
-            this.lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
-            this.lblTitulo.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold);
-            this.lblTitulo.BackColor = Color.FromArgb(0, 102, 204);
-            this.lblTitulo.ForeColor = Color.White;
-            this.lblTitulo.Height = 70;
-
+            lblTitulo.BackColor = Color.FromArgb(0, 102, 204);
+            lblTitulo.Dock = DockStyle.Top;
+            lblTitulo.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold);
+            lblTitulo.ForeColor = Color.White;
+            lblTitulo.Location = new Point(0, 0);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(630, 52);
+            lblTitulo.TabIndex = 0;
+            lblTitulo.Text = "\U0001f9fe COMPROBANTE DE PAGO";
+            lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panelComprobante
             // 
-            this.panelComprobante.BackColor = Color.White;
-            this.panelComprobante.BorderStyle = BorderStyle.FixedSingle;
-            this.panelComprobante.Location = new Point(50, 90);
-            this.panelComprobante.Size = new Size(620, 330);
-            this.panelComprobante.Padding = new Padding(20);
-
-            Font infoFont = new Font("Segoe UI", 11F, FontStyle.Regular);
-
+            panelComprobante.BackColor = Color.White;
+            panelComprobante.BorderStyle = BorderStyle.FixedSingle;
+            panelComprobante.Controls.Add(lblNombre);
+            panelComprobante.Controls.Add(pbLogo);
+            panelComprobante.Controls.Add(lblDetalle);
+            panelComprobante.Controls.Add(lblNro);
+            panelComprobante.Controls.Add(lblTipo);
+            panelComprobante.Controls.Add(lblFecha);
+            panelComprobante.Controls.Add(lblPrecio);
+            panelComprobante.Controls.Add(lblFormaPago);
+            panelComprobante.Controls.Add(lblActividad);
+            panelComprobante.Controls.Add(pbQR);
+            panelComprobante.Location = new Point(44, 68);
+            panelComprobante.Margin = new Padding(3, 2, 3, 2);
+            panelComprobante.Name = "panelComprobante";
+            panelComprobante.Padding = new Padding(18, 15, 18, 15);
+            panelComprobante.Size = new Size(543, 264);
+            panelComprobante.TabIndex = 1;
+            // 
+            // lblNombre
+            // 
+            lblNombre.AutoSize = true;
+            lblNombre.Font = new Font("Segoe UI", 11F);
+            lblNombre.Location = new Point(35, 136);
+            lblNombre.Name = "lblNombre";
+            lblNombre.Size = new Size(67, 20);
+            lblNombre.TabIndex = 9;
+            lblNombre.Text = "Nombre:";
             // 
             // pbLogo
             // 
-            this.pbLogo.Image = Properties.Resources.Icono; 
-            this.pbLogo.Location = new Point(25, 15);
-            this.pbLogo.Size = new Size(100, 80);
-            this.pbLogo.SizeMode = PictureBoxSizeMode.Zoom;
-
+            pbLogo.Image = Properties.Resources.Icono;
+            pbLogo.Location = new Point(22, 11);
+            pbLogo.Margin = new Padding(3, 2, 3, 2);
+            pbLogo.Name = "pbLogo";
+            pbLogo.Size = new Size(88, 60);
+            pbLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            pbLogo.TabIndex = 0;
+            pbLogo.TabStop = false;
             // 
             // lblDetalle
             // 
-            this.lblDetalle.Text = "Detalle del Pago";
-            this.lblDetalle.Font = new Font("Segoe UI Semibold", 13F, FontStyle.Bold);
-            this.lblDetalle.Location = new Point(140, 20);
-            this.lblDetalle.AutoSize = true;
-
+            lblDetalle.AutoSize = true;
+            lblDetalle.Font = new Font("Segoe UI Semibold", 13F, FontStyle.Bold);
+            lblDetalle.Location = new Point(122, 15);
+            lblDetalle.Name = "lblDetalle";
+            lblDetalle.Size = new Size(148, 25);
+            lblDetalle.TabIndex = 1;
+            lblDetalle.Text = "Detalle del Pago";
             // 
-            // Labels de datos
+            // lblNro
             // 
-            this.lblSocio.Text = "N° de Socio:";
-            this.lblSocio.Location = new Point(40, 120);
-            this.lblSocio.Font = infoFont;
-            this.lblSocio.AutoSize = true;
-
-            this.lblTipo.Text = "Tipo Persona:";
-            this.lblTipo.Location = new Point(40, 150);
-            this.lblTipo.Font = infoFont;
-            this.lblTipo.AutoSize = true;
-
-            this.lblFecha.Text = "Fecha:";
-            this.lblFecha.Location = new Point(40, 180);
-            this.lblFecha.Font = infoFont;
-            this.lblFecha.AutoSize = true;
-
-            this.lblImporte.Text = "Importe:";
-            this.lblImporte.Location = new Point(40, 210);
-            this.lblImporte.Font = infoFont;
-            this.lblImporte.AutoSize = true;
-
-            this.lblMedio.Text = "Medio de Pago:";
-            this.lblMedio.Location = new Point(40, 240);
-            this.lblMedio.Font = infoFont;
-            this.lblMedio.AutoSize = true;
-
-            this.lblActividad.Text = "Actividad:";
-            this.lblActividad.Location = new Point(40, 270);
-            this.lblActividad.Font = infoFont;
-            this.lblActividad.AutoSize = true;
-
+            lblNro.AutoSize = true;
+            lblNro.Font = new Font("Segoe UI", 11F);
+            lblNro.Location = new Point(35, 90);
+            lblNro.Name = "lblNro";
+            lblNro.Size = new Size(29, 20);
+            lblNro.TabIndex = 2;
+            lblNro.Text = "N°:";
+            // 
+            // lblTipo
+            // 
+            lblTipo.AutoSize = true;
+            lblTipo.Font = new Font("Segoe UI", 11F);
+            lblTipo.Location = new Point(35, 112);
+            lblTipo.Name = "lblTipo";
+            lblTipo.Size = new Size(97, 20);
+            lblTipo.TabIndex = 3;
+            lblTipo.Text = "Tipo Persona:";
+            // 
+            // lblFecha
+            // 
+            lblFecha.AutoSize = true;
+            lblFecha.Font = new Font("Segoe UI", 11F);
+            lblFecha.Location = new Point(35, 159);
+            lblFecha.Name = "lblFecha";
+            lblFecha.Size = new Size(50, 20);
+            lblFecha.TabIndex = 4;
+            lblFecha.Text = "Fecha:";
+            // 
+            // lblPrecio
+            // 
+            lblPrecio.AutoSize = true;
+            lblPrecio.Font = new Font("Segoe UI", 11F);
+            lblPrecio.Location = new Point(35, 182);
+            lblPrecio.Name = "lblPrecio";
+            lblPrecio.Size = new Size(53, 20);
+            lblPrecio.TabIndex = 5;
+            lblPrecio.Text = "Precio:";
+            // 
+            // lblFormaPago
+            // 
+            lblFormaPago.AutoSize = true;
+            lblFormaPago.Font = new Font("Segoe UI", 11F);
+            lblFormaPago.Location = new Point(35, 204);
+            lblFormaPago.Name = "lblFormaPago";
+            lblFormaPago.Size = new Size(113, 20);
+            lblFormaPago.TabIndex = 6;
+            lblFormaPago.Text = "Medio de Pago:";
+            // 
+            // lblActividad
+            // 
+            lblActividad.AutoSize = true;
+            lblActividad.Font = new Font("Segoe UI", 11F);
+            lblActividad.Location = new Point(35, 226);
+            lblActividad.Name = "lblActividad";
+            lblActividad.Size = new Size(75, 20);
+            lblActividad.TabIndex = 7;
+            lblActividad.Text = "Actividad:";
             // 
             // pbQR
             // 
-            this.pbQR.Location = new Point(480, 170);
-            this.pbQR.Size = new Size(100, 100);
-            this.pbQR.SizeMode = PictureBoxSizeMode.Zoom;
-            this.pbQR.BorderStyle = BorderStyle.FixedSingle;
-
+            pbQR.BorderStyle = BorderStyle.FixedSingle;
+            pbQR.Location = new Point(420, 128);
+            pbQR.Margin = new Padding(3, 2, 3, 2);
+            pbQR.Name = "pbQR";
+            pbQR.Size = new Size(88, 76);
+            pbQR.SizeMode = PictureBoxSizeMode.Zoom;
+            pbQR.TabIndex = 8;
+            pbQR.TabStop = false;
             // 
-            // Botones
+            // btnImprimir
             // 
-            this.btnImprimir.Text = "Imprimir";
-            this.btnImprimir.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
-            this.btnImprimir.BackColor = Color.FromArgb(0, 102, 204);
-            this.btnImprimir.ForeColor = Color.White;
-            this.btnImprimir.FlatStyle = FlatStyle.Flat;
-            this.btnImprimir.FlatAppearance.BorderSize = 0;
-            this.btnImprimir.Size = new Size(150, 40);
-            this.btnImprimir.Location = new Point(150, 440);
-            this.btnImprimir.Cursor = Cursors.Hand;
-            this.btnImprimir.Click += new EventHandler(this.btnImprimir_Click);
-
-            this.btnCerrar.Text = "Cerrar";
-            this.btnCerrar.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
-            this.btnCerrar.BackColor = Color.FromArgb(220, 20, 60);
-            this.btnCerrar.ForeColor = Color.White;
-            this.btnCerrar.FlatStyle = FlatStyle.Flat;
-            this.btnCerrar.FlatAppearance.BorderSize = 0;
-            this.btnCerrar.Size = new Size(150, 40);
-            this.btnCerrar.Location = new Point(350, 440);
-            this.btnCerrar.Cursor = Cursors.Hand;
-            this.btnCerrar.Click += new EventHandler(this.btnCerrar_Click);
-
-            // Añadir controles al panel
-            this.panelComprobante.Controls.Add(this.pbLogo);
-            this.panelComprobante.Controls.Add(this.lblDetalle);
-            this.panelComprobante.Controls.Add(this.lblSocio);
-            this.panelComprobante.Controls.Add(this.lblTipo);
-            this.panelComprobante.Controls.Add(this.lblFecha);
-            this.panelComprobante.Controls.Add(this.lblImporte);
-            this.panelComprobante.Controls.Add(this.lblMedio);
-            this.panelComprobante.Controls.Add(this.lblActividad);
-            this.panelComprobante.Controls.Add(this.pbQR);
-
-            // Form principal
-            this.AutoScaleDimensions = new SizeF(8F, 20F);
-            this.AutoScaleMode = AutoScaleMode.Font;
-            this.ClientSize = new Size(720, 520);
-            this.Controls.Add(this.lblTitulo);
-            this.Controls.Add(this.panelComprobante);
-            this.Controls.Add(this.btnImprimir);
-            this.Controls.Add(this.btnCerrar);
-            this.StartPosition = FormStartPosition.CenterScreen;
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
-            this.Icon = (Icon)resources.GetObject("$this.Icon");
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Text = "Comprobante de Pago";
-            this.Load += new EventHandler(this.frmComprobante_Load);
-
-            ((System.ComponentModel.ISupportInitialize)this.pbLogo).EndInit();
-            ((System.ComponentModel.ISupportInitialize)this.pbQR).EndInit();
-            this.ResumeLayout(false);
+            btnImprimir.BackColor = Color.FromArgb(0, 102, 204);
+            btnImprimir.Cursor = Cursors.Hand;
+            btnImprimir.FlatAppearance.BorderSize = 0;
+            btnImprimir.FlatStyle = FlatStyle.Flat;
+            btnImprimir.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            btnImprimir.ForeColor = Color.White;
+            btnImprimir.Location = new Point(132, 349);
+            btnImprimir.Margin = new Padding(3, 2, 3, 2);
+            btnImprimir.Name = "btnImprimir";
+            btnImprimir.Size = new Size(131, 30);
+            btnImprimir.TabIndex = 2;
+            btnImprimir.Text = "Imprimir";
+            btnImprimir.UseVisualStyleBackColor = false;
+            btnImprimir.Click += btnImprimir_Click;
+            // 
+            // btnCerrar
+            // 
+            btnCerrar.BackColor = Color.FromArgb(220, 20, 60);
+            btnCerrar.Cursor = Cursors.Hand;
+            btnCerrar.FlatAppearance.BorderSize = 0;
+            btnCerrar.FlatStyle = FlatStyle.Flat;
+            btnCerrar.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            btnCerrar.ForeColor = Color.White;
+            btnCerrar.Location = new Point(307, 349);
+            btnCerrar.Margin = new Padding(3, 2, 3, 2);
+            btnCerrar.Name = "btnCerrar";
+            btnCerrar.Size = new Size(131, 30);
+            btnCerrar.TabIndex = 3;
+            btnCerrar.Text = "Cerrar";
+            btnCerrar.UseVisualStyleBackColor = false;
+            btnCerrar.Click += btnCerrar_Click;
+            // 
+            // frmComprobante
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(630, 390);
+            Controls.Add(lblTitulo);
+            Controls.Add(panelComprobante);
+            Controls.Add(btnImprimir);
+            Controls.Add(btnCerrar);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(3, 2, 3, 2);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "frmComprobante";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Comprobante de Pago";
+            Load += frmComprobante_Load;
+            panelComprobante.ResumeLayout(false);
+            panelComprobante.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pbLogo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbQR).EndInit();
+            ResumeLayout(false);
         }
         #endregion
 
         private Label lblTitulo;
         private Panel panelComprobante;
         private Label lblDetalle;
-        private Label lblSocio;
+        private Label lblNro;
         private Label lblTipo;
         private Label lblFecha;
-        private Label lblImporte;
-        private Label lblMedio;
+        private Label lblPrecio;
+        private Label lblFormaPago;
         private Label lblActividad;
         private Button btnImprimir;
         private Button btnCerrar;
         private PictureBox pbLogo;
         private PictureBox pbQR;
+        private Label lblNombre;
     }
 }

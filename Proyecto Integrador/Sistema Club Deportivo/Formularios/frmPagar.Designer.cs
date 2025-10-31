@@ -1,6 +1,6 @@
 ﻿namespace ClubDeportivo.Formularios
 {
-    partial class frmPagarCuota
+    partial class frmPagar
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -16,11 +16,13 @@
         {
             lblTitulo = new Label();
             pnlPrincipal = new Panel();
-            labelNroSocio = new Label();
-            txtNroSocio = new TextBox();
-            btnBuscarSocio = new Button();
-            lblNombreSocio = new Label();
-            lblPrecioCuota = new Label();
+            label1 = new Label();
+            cboTipoRegistro = new ComboBox();
+            lblNumero = new Label();
+            txtNro = new TextBox();
+            btnBuscar = new Button();
+            lblNombre = new Label();
+            lblPrecio = new Label();
             grpFormaPago = new GroupBox();
             optEfvo = new RadioButton();
             optTarjeta = new RadioButton();
@@ -39,7 +41,7 @@
             lblTitulo.ForeColor = Color.White;
             lblTitulo.Location = new Point(0, 0);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(682, 60);
+            lblTitulo.Size = new Size(657, 60);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "💰 PAGO DE CUOTA";
             lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
@@ -49,83 +51,106 @@
             pnlPrincipal.Anchor = AnchorStyles.None;
             pnlPrincipal.BackColor = Color.FromArgb(235, 245, 255);
             pnlPrincipal.BorderStyle = BorderStyle.FixedSingle;
-            pnlPrincipal.Controls.Add(labelNroSocio);
-            pnlPrincipal.Controls.Add(txtNroSocio);
-            pnlPrincipal.Controls.Add(btnBuscarSocio);
-            pnlPrincipal.Controls.Add(lblNombreSocio);
-            pnlPrincipal.Controls.Add(lblPrecioCuota);
+            pnlPrincipal.Controls.Add(label1);
+            pnlPrincipal.Controls.Add(cboTipoRegistro);
+            pnlPrincipal.Controls.Add(lblNumero);
+            pnlPrincipal.Controls.Add(txtNro);
+            pnlPrincipal.Controls.Add(btnBuscar);
+            pnlPrincipal.Controls.Add(lblNombre);
+            pnlPrincipal.Controls.Add(lblPrecio);
             pnlPrincipal.Controls.Add(grpFormaPago);
             pnlPrincipal.Controls.Add(btnPagar);
             pnlPrincipal.Controls.Add(btnComprobante);
             pnlPrincipal.Controls.Add(btnVolver);
-            pnlPrincipal.Location = new Point(248, 196);
+            pnlPrincipal.Location = new Point(49, 116);
             pnlPrincipal.Margin = new Padding(3, 2, 3, 2);
             pnlPrincipal.Name = "pnlPrincipal";
-            pnlPrincipal.Size = new Size(525, 263);
+            pnlPrincipal.Size = new Size(540, 336);
             pnlPrincipal.TabIndex = 1;
             // 
-            // labelNroSocio
+            // label1
             // 
-            labelNroSocio.AutoSize = true;
-            labelNroSocio.Font = new Font("Segoe UI Semilight", 12F);
-            labelNroSocio.Location = new Point(44, 30);
-            labelNroSocio.Name = "labelNroSocio";
-            labelNroSocio.Size = new Size(132, 21);
-            labelNroSocio.TabIndex = 0;
-            labelNroSocio.Text = "Número de Socio:";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semilight", 12F);
+            label1.Location = new Point(48, 21);
+            label1.Name = "label1";
+            label1.Size = new Size(119, 21);
+            label1.TabIndex = 10;
+            label1.Text = "Tipo de Persona";
             // 
-            // txtNroSocio
+            // cboTipoRegistro
             // 
-            txtNroSocio.Font = new Font("Segoe UI", 11F);
-            txtNroSocio.Location = new Point(175, 28);
-            txtNroSocio.Margin = new Padding(3, 2, 3, 2);
-            txtNroSocio.Name = "txtNroSocio";
-            txtNroSocio.Size = new Size(132, 27);
-            txtNroSocio.TabIndex = 1;
+            cboTipoRegistro.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboTipoRegistro.Location = new Point(183, 21);
+            cboTipoRegistro.Name = "cboTipoRegistro";
+            cboTipoRegistro.Size = new Size(130, 23);
+            cboTipoRegistro.TabIndex = 9;
+            cboTipoRegistro.SelectedIndexChanged += cboTipoRegistro_SelectedIndexChanged;
             // 
-            // btnBuscarSocio
+            // lblNumero
             // 
-            btnBuscarSocio.BackColor = Color.FromArgb(0, 102, 204);
-            btnBuscarSocio.Cursor = Cursors.Hand;
-            btnBuscarSocio.FlatAppearance.BorderSize = 0;
-            btnBuscarSocio.FlatStyle = FlatStyle.Flat;
-            btnBuscarSocio.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            btnBuscarSocio.ForeColor = Color.White;
-            btnBuscarSocio.Location = new Point(324, 26);
-            btnBuscarSocio.Margin = new Padding(3, 2, 3, 2);
-            btnBuscarSocio.Name = "btnBuscarSocio";
-            btnBuscarSocio.Size = new Size(83, 24);
-            btnBuscarSocio.TabIndex = 2;
-            btnBuscarSocio.Text = "Buscar";
-            btnBuscarSocio.UseVisualStyleBackColor = false;
-            btnBuscarSocio.Click += btnBuscarSocio_Click;
+            lblNumero.AutoSize = true;
+            lblNumero.Font = new Font("Segoe UI Semilight", 12F);
+            lblNumero.Location = new Point(48, 68);
+            lblNumero.Name = "lblNumero";
+            lblNumero.Size = new Size(70, 21);
+            lblNumero.TabIndex = 0;
+            lblNumero.Text = "Número:";
             // 
-            // lblNombreSocio
+            // txtNro
             // 
-            lblNombreSocio.AutoSize = true;
-            lblNombreSocio.Font = new Font("Segoe UI Semilight", 12F);
-            lblNombreSocio.Location = new Point(44, 68);
-            lblNombreSocio.Name = "lblNombreSocio";
-            lblNombreSocio.Size = new Size(136, 21);
-            lblNombreSocio.TabIndex = 3;
-            lblNombreSocio.Text = "Nombre del Socio:";
+            txtNro.Font = new Font("Segoe UI", 11F);
+            txtNro.Location = new Point(183, 66);
+            txtNro.Margin = new Padding(3, 2, 3, 2);
+            txtNro.MaxLength = 6;
+            txtNro.Name = "txtNro";
+            txtNro.Size = new Size(132, 27);
+            txtNro.TabIndex = 1;
+            txtNro.KeyPress += txtNro_KeyPress;
             // 
-            // lblPrecioCuota
+            // btnBuscar
             // 
-            lblPrecioCuota.AutoSize = true;
-            lblPrecioCuota.Font = new Font("Segoe UI Semilight", 12F);
-            lblPrecioCuota.Location = new Point(44, 98);
-            lblPrecioCuota.Name = "lblPrecioCuota";
-            lblPrecioCuota.Size = new Size(101, 21);
-            lblPrecioCuota.TabIndex = 4;
-            lblPrecioCuota.Text = "Precio Cuota:";
+            btnBuscar.BackColor = Color.FromArgb(0, 102, 204);
+            btnBuscar.Cursor = Cursors.Hand;
+            btnBuscar.FlatAppearance.BorderSize = 0;
+            btnBuscar.FlatStyle = FlatStyle.Flat;
+            btnBuscar.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            btnBuscar.ForeColor = Color.White;
+            btnBuscar.Location = new Point(328, 67);
+            btnBuscar.Margin = new Padding(3, 2, 3, 2);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(83, 24);
+            btnBuscar.TabIndex = 2;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = false;
+            btnBuscar.Click += btnBuscar_Click;
+            // 
+            // lblNombre
+            // 
+            lblNombre.AutoSize = true;
+            lblNombre.Font = new Font("Segoe UI Semilight", 12F);
+            lblNombre.Location = new Point(48, 106);
+            lblNombre.Name = "lblNombre";
+            lblNombre.Size = new Size(70, 21);
+            lblNombre.TabIndex = 3;
+            lblNombre.Text = "Nombre:";
+            // 
+            // lblPrecio
+            // 
+            lblPrecio.AutoSize = true;
+            lblPrecio.Font = new Font("Segoe UI Semilight", 12F);
+            lblPrecio.Location = new Point(48, 136);
+            lblPrecio.Name = "lblPrecio";
+            lblPrecio.Size = new Size(56, 21);
+            lblPrecio.TabIndex = 4;
+            lblPrecio.Text = "Precio:";
             // 
             // grpFormaPago
             // 
             grpFormaPago.Controls.Add(optEfvo);
             grpFormaPago.Controls.Add(optTarjeta);
             grpFormaPago.Font = new Font("Segoe UI Semilight", 11F);
-            grpFormaPago.Location = new Point(44, 135);
+            grpFormaPago.Location = new Point(48, 173);
             grpFormaPago.Margin = new Padding(3, 2, 3, 2);
             grpFormaPago.Name = "grpFormaPago";
             grpFormaPago.Padding = new Padding(3, 2, 3, 2);
@@ -142,7 +167,7 @@
             optEfvo.Location = new Point(18, 26);
             optEfvo.Margin = new Padding(3, 2, 3, 2);
             optEfvo.Name = "optEfvo";
-            optEfvo.Size = new Size(91, 18);
+            optEfvo.Size = new Size(81, 25);
             optEfvo.TabIndex = 0;
             optEfvo.TabStop = true;
             optEfvo.Text = "Efectivo";
@@ -154,7 +179,7 @@
             optTarjeta.Location = new Point(18, 52);
             optTarjeta.Margin = new Padding(3, 2, 3, 2);
             optTarjeta.Name = "optTarjeta";
-            optTarjeta.Size = new Size(91, 18);
+            optTarjeta.Size = new Size(72, 25);
             optTarjeta.TabIndex = 1;
             optTarjeta.Text = "Tarjeta";
             // 
@@ -166,10 +191,10 @@
             btnPagar.FlatStyle = FlatStyle.Flat;
             btnPagar.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             btnPagar.ForeColor = Color.White;
-            btnPagar.Location = new Point(280, 142);
+            btnPagar.Location = new Point(25, 281);
             btnPagar.Margin = new Padding(3, 2, 3, 2);
             btnPagar.Name = "btnPagar";
-            btnPagar.Size = new Size(175, 34);
+            btnPagar.Size = new Size(144, 36);
             btnPagar.TabIndex = 6;
             btnPagar.Text = "Registrar Pago";
             btnPagar.UseVisualStyleBackColor = false;
@@ -184,10 +209,10 @@
             btnComprobante.FlatStyle = FlatStyle.Flat;
             btnComprobante.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             btnComprobante.ForeColor = Color.White;
-            btnComprobante.Location = new Point(280, 142);
+            btnComprobante.Location = new Point(200, 281);
             btnComprobante.Margin = new Padding(3, 2, 3, 2);
             btnComprobante.Name = "btnComprobante";
-            btnComprobante.Size = new Size(175, 34);
+            btnComprobante.Size = new Size(144, 36);
             btnComprobante.TabIndex = 7;
             btnComprobante.Text = "Ver Comprobante";
             btnComprobante.UseVisualStyleBackColor = false;
@@ -201,22 +226,22 @@
             btnVolver.FlatStyle = FlatStyle.Flat;
             btnVolver.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             btnVolver.ForeColor = Color.White;
-            btnVolver.Location = new Point(280, 142);
+            btnVolver.Location = new Point(376, 281);
             btnVolver.Margin = new Padding(3, 2, 3, 2);
             btnVolver.Name = "btnVolver";
-            btnVolver.Size = new Size(175, 34);
+            btnVolver.Size = new Size(144, 36);
             btnVolver.TabIndex = 8;
             btnVolver.Text = "Cerrar";
             btnVolver.UseVisualStyleBackColor = false;
             btnVolver.Click += btnVolver_Click;
             // 
-            // frmPagarCuota
+            // frmPagar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Fondo;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(682, 390);
+            ClientSize = new Size(657, 528);
             Controls.Add(lblTitulo);
             Controls.Add(pnlPrincipal);
             DoubleBuffered = true;
@@ -224,10 +249,10 @@
             Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "frmPagarCuota";
+            Name = "frmPagar";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Pagar Cuota";
-            Load += frmPagarCuota_Load_1;
+            Load += frmPagar_Load;
             pnlPrincipal.ResumeLayout(false);
             pnlPrincipal.PerformLayout();
             grpFormaPago.ResumeLayout(false);
@@ -238,16 +263,18 @@
 
         private Label lblTitulo;
         private Panel pnlPrincipal;
-        private Label labelNroSocio;
-        private TextBox txtNroSocio;
-        private Button btnBuscarSocio;
-        private Label lblNombreSocio;
-        private Label lblPrecioCuota;
+        private Label lblNumero;
+        private TextBox txtNro;
+        private Button btnBuscar;
+        private Label lblNombre;
+        private Label lblPrecio;
         private GroupBox grpFormaPago;
         private RadioButton optEfvo;
         private RadioButton optTarjeta;
         private Button btnPagar;
         private Button btnComprobante;
         private Button btnVolver;
+        private Label label1;
+        private ComboBox cboTipoRegistro;
     }
 }

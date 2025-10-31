@@ -1,22 +1,23 @@
-﻿using MySql.Data.MySqlClient;
+﻿using ClubDeportivo.Entidades;
+using MySql.Data.MySqlClient;
 using System.Data;
 
 namespace ClubDeportivo.Datos
 {
-    public class Cuota
+    public class PagoActividad
     {
-        public string NuevaCuota(E_Cuota cuota)
+        public string NuevaPagoActividad(E_PagoActividad pagoActividad)
         {
             string? salida;
             MySqlConnection sqlCon = new MySqlConnection();
             try
             {
                 sqlCon = Conexion.getInstancia().CrearConexion();
-                MySqlCommand comando = new MySqlCommand("NuevaCuota", sqlCon);
+                MySqlCommand comando = new MySqlCommand("NuevaPagoActividad", sqlCon);
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.Add("CarnetNumero", MySqlDbType.Int32).Value = cuota.CarnetNumero;
-                comando.Parameters.Add("fechaVencimiento", MySqlDbType.Date).Value = cuota.FechaVencimiento;
-                comando.Parameters.Add("precio", MySqlDbType.Float).Value = cuota.Precio;
+                comando.Parameters.Add("nroActividad", MySqlDbType.Int32).Value = pagoActividad.NroActividad;
+                comando.Parameters.Add("carnetTemporal", MySqlDbType.Int32).Value = pagoActividad.CarnetTemporal;
+                comando.Parameters.Add("precio", MySqlDbType.Float).Value = pagoActividad.Precio;
 
                 MySqlParameter ParCodigo = new MySqlParameter();
                 ParCodigo.ParameterName = "rta";
@@ -40,19 +41,18 @@ namespace ClubDeportivo.Datos
             }
             return salida;
         }
-        public E_Cuota TraerCuota(int carnetNumero)
+        public E_PagoActividad TraerPagoActividad(int carnetTemporal)
         {
-            E_Cuota cuota =null;
+            E_PagoActividad pagoActividad = null;
             MySqlConnection sqlCon = new MySqlConnection();
             try
             {
                 string query;
                 sqlCon = Conexion.getInstancia().CrearConexion();
                 query = (@"SELECT *
-                        FROM cuota
-                        WHERE carnetNumero = "+ carnetNumero +
-                        @" AND fechaVencimiento BETWEEN DATE_FORMAT(CURDATE(), '%Y-%m-01')
-                        AND LAST_DAY(CURDATE()) and estado=0;");
+                        FROM pagoactividad
+                        WHERE carnetTemporal = " + carnetTemporal +
+                        " and estado=0;");
                 MySqlCommand comando = new MySqlCommand(query, sqlCon);
                 // usamos la consulta y la conexion.-
                 comando.CommandType = CommandType.Text;
@@ -62,7 +62,14 @@ namespace ClubDeportivo.Datos
                 if (reader.HasRows)
                 {
                     reader.Read(); // En este caso sabemos que si tiene datos es UNA SOLA FILA
-                    cuota=new E_Cuota( reader.GetInt32(0), reader.GetInt32(1),reader.GetDateTime(2),reader.GetFloat(3),reader.GetBoolean(4));
+                    pagoActividad = new E_PagoActividad
+                        (
+                        reader.GetInt32(0), 
+                        reader.GetInt32(1), 
+                        reader.GetInt32(2), 
+                        reader.GetFloat(3), 
+                        reader.GetBoolean(4)
+                        );
                 }
             }
             catch (Exception ex)
@@ -74,7 +81,7 @@ namespace ClubDeportivo.Datos
                 if (sqlCon.State == ConnectionState.Open)
                     sqlCon.Close();
             }
-            return cuota;
+            return pagoActividad;
         }
     }
 }

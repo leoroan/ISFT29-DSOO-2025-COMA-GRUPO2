@@ -12,7 +12,6 @@ public class E_Cuota
   {
     FechaVencimiento = fechaVencimiento;
     Precio = precio;
-    Estado = false;
     CarnetNumero = carnetNumero;
     IdCuota = idCuota;
     Estado=estado;

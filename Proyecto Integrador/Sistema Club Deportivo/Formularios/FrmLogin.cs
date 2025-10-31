@@ -1,8 +1,5 @@
 ﻿using ClubDeportivo.Formularios;
-using System;
 using System.Data;
-using System.Drawing;
-using System.Windows.Forms;
 
 namespace ClubDeportivo.formularios
 {
@@ -44,8 +41,10 @@ namespace ClubDeportivo.formularios
                     rol = Convert.ToString(tablaLogin.Rows[0][0]),
                     usuario = txtUsuario.Text
                 };
-                Principal.Show();
                 this.Hide();
+                Principal.ShowDialog();
+                this.Close();
+
             }
             else
             {

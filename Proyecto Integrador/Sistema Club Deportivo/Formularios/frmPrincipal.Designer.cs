@@ -23,10 +23,11 @@
             pnlHeader = new Panel();
             lblTitulo = new Label();
             pnlBotones = new Panel();
-            btnRegistrarSocio = new Button();
-            btnPagarCuota = new Button();
+            btnImprimirListado = new Button();
             btnImprimirCarnet = new Button();
+            btnPagar = new Button();
             btnSalir = new Button();
+            btnRegistrar = new Button();
             staSistema.SuspendLayout();
             pnlHeader.SuspendLayout();
             pnlBotones.SuspendLayout();
@@ -49,7 +50,7 @@
             tsbUsuario.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             tsbUsuario.ForeColor = Color.White;
             tsbUsuario.Name = "tsbUsuario";
-            tsbUsuario.Size = new Size(23, 23);
+            tsbUsuario.Size = new Size(52, 17);
             tsbUsuario.Text = "Usuario:";
             // 
             // tsbRol
@@ -57,7 +58,7 @@
             tsbRol.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             tsbRol.ForeColor = Color.White;
             tsbRol.Name = "tsbRol";
-            tsbRol.Size = new Size(23, 23);
+            tsbRol.Size = new Size(28, 17);
             tsbRol.Text = "Rol:";
             // 
             // pnlHeader
@@ -77,7 +78,7 @@
             lblTitulo.ForeColor = Color.White;
             lblTitulo.Location = new Point(0, 0);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(100, 23);
+            lblTitulo.Size = new Size(720, 90);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "🏆 CLUB DEPORTIVO - PANEL PRINCIPAL";
             lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
@@ -85,49 +86,92 @@
             // pnlBotones
             // 
             pnlBotones.BackColor = Color.WhiteSmoke;
-            pnlBotones.Controls.Add(btnRegistrarSocio);
-            pnlBotones.Controls.Add(btnPagarCuota);
+            pnlBotones.Controls.Add(btnImprimirListado);
             pnlBotones.Controls.Add(btnImprimirCarnet);
+            pnlBotones.Controls.Add(btnPagar);
             pnlBotones.Controls.Add(btnSalir);
+            pnlBotones.Controls.Add(btnRegistrar);
             pnlBotones.Dock = DockStyle.Fill;
             pnlBotones.Location = new Point(0, 90);
             pnlBotones.Name = "pnlBotones";
             pnlBotones.Padding = new Padding(40);
             pnlBotones.Size = new Size(720, 308);
             pnlBotones.TabIndex = 0;
-            pnlBotones.Paint += pnlBotones_Paint;
             // 
-            // btnRegistrarSocio
+            // btnImprimirListado
             // 
-            btnRegistrarSocio.Location = new Point(0, 0);
-            btnRegistrarSocio.Name = "btnRegistrarSocio";
-            btnRegistrarSocio.Size = new Size(75, 23);
-            btnRegistrarSocio.TabIndex = 0;
-            btnRegistrarSocio.Click += btnRegistrarSocio_Click;
-            // 
-            // btnPagarCuota
-            // 
-            btnPagarCuota.Location = new Point(0, 0);
-            btnPagarCuota.Name = "btnPagarCuota";
-            btnPagarCuota.Size = new Size(75, 23);
-            btnPagarCuota.TabIndex = 1;
-            btnPagarCuota.Click += btnPagarCuota_Click;
+            btnImprimirListado.BackColor = SystemColors.HotTrack;
+            btnImprimirListado.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            btnImprimirListado.ForeColor = Color.White;
+            btnImprimirListado.Image = Properties.Resources.listado_48;
+            btnImprimirListado.ImageAlign = ContentAlignment.MiddleLeft;
+            btnImprimirListado.Location = new Point(357, 127);
+            btnImprimirListado.Name = "btnImprimirListado";
+            btnImprimirListado.Size = new Size(207, 65);
+            btnImprimirListado.TabIndex = 10;
+            btnImprimirListado.Text = "Listado Deudores";
+            btnImprimirListado.UseVisualStyleBackColor = false;
+            btnImprimirListado.Click += btnImprimirListado_Click;
             // 
             // btnImprimirCarnet
             // 
-            btnImprimirCarnet.Location = new Point(0, 0);
+            btnImprimirCarnet.BackColor = SystemColors.HotTrack;
+            btnImprimirCarnet.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            btnImprimirCarnet.ForeColor = Color.White;
+            btnImprimirCarnet.Image = Properties.Resources.imprimir_48;
+            btnImprimirCarnet.ImageAlign = ContentAlignment.MiddleLeft;
+            btnImprimirCarnet.Location = new Point(140, 127);
             btnImprimirCarnet.Name = "btnImprimirCarnet";
-            btnImprimirCarnet.Size = new Size(75, 23);
-            btnImprimirCarnet.TabIndex = 2;
+            btnImprimirCarnet.Size = new Size(207, 65);
+            btnImprimirCarnet.TabIndex = 9;
+            btnImprimirCarnet.Text = "Imprimir Carnet";
+            btnImprimirCarnet.UseVisualStyleBackColor = false;
             btnImprimirCarnet.Click += btnImprimirCarnet_Click;
+            // 
+            // btnPagar
+            // 
+            btnPagar.BackColor = SystemColors.HotTrack;
+            btnPagar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            btnPagar.ForeColor = Color.White;
+            btnPagar.Image = Properties.Resources.pagar_48;
+            btnPagar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnPagar.Location = new Point(356, 43);
+            btnPagar.Name = "btnPagar";
+            btnPagar.Size = new Size(208, 65);
+            btnPagar.TabIndex = 8;
+            btnPagar.Text = "Pagar";
+            btnPagar.UseVisualStyleBackColor = false;
+            btnPagar.Click += btnPagar_Click;
             // 
             // btnSalir
             // 
-            btnSalir.Location = new Point(0, 0);
+            btnSalir.BackColor = SystemColors.HotTrack;
+            btnSalir.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSalir.ForeColor = Color.White;
+            btnSalir.Image = Properties.Resources.salir_48;
+            btnSalir.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSalir.Location = new Point(254, 204);
             btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(75, 23);
-            btnSalir.TabIndex = 3;
+            btnSalir.Size = new Size(207, 65);
+            btnSalir.TabIndex = 7;
+            btnSalir.Text = "Salir";
+            btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
+            // 
+            // btnRegistrar
+            // 
+            btnRegistrar.BackColor = SystemColors.HotTrack;
+            btnRegistrar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRegistrar.ForeColor = Color.White;
+            btnRegistrar.Image = Properties.Resources.registrar_48;
+            btnRegistrar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnRegistrar.Location = new Point(140, 43);
+            btnRegistrar.Name = "btnRegistrar";
+            btnRegistrar.Size = new Size(207, 65);
+            btnRegistrar.TabIndex = 6;
+            btnRegistrar.Text = "Registrar";
+            btnRegistrar.UseVisualStyleBackColor = false;
+            btnRegistrar.Click += btnRegistrar_Click;
             // 
             // frmPrincipal
             // 
@@ -184,9 +228,10 @@
         private Panel pnlHeader;
         private Label lblTitulo;
         private Panel pnlBotones;
-        private Button btnRegistrarSocio;
-        private Button btnPagarCuota;
+        private Button btnImprimirListado;
         private Button btnImprimirCarnet;
+        private Button btnPagar;
         private Button btnSalir;
+        private Button btnRegistrar;
     }
 }

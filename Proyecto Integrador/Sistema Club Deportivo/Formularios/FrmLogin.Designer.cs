@@ -15,120 +15,135 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
-            this.pnlMain = new Panel();
-            this.lblTitulo = new Label();
-            this.txtUsuario = new TextBox();
-            this.txtPass = new TextBox();
-            this.labelUsuario = new Label();
-            this.labelPassword = new Label();
-            this.BtnIngresar = new Button();
-            this.pictureBox1 = new PictureBox();
-            this.pnlMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)this.pictureBox1).BeginInit();
-            this.SuspendLayout();
-            // 
-            // FrmLogin
-            // 
-            this.AutoScaleMode = AutoScaleMode.Font;
-            this.ClientSize = new Size(700, 380);
-            this.BackColor = Color.White;
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.StartPosition = FormStartPosition.CenterScreen;
-            this.Icon = (Icon)resources.GetObject("$this.Icon");
-            this.Text = "Inicio de Sesión - Club Deportivo";
-            this.Load += new System.EventHandler(this.FrmLogin_Load);
-            this.Paint += new PaintEventHandler(this.FrmLogin_Paint);
-
+            pnlMain = new Panel();
+            lblTitulo = new Label();
+            txtUsuario = new TextBox();
+            txtPass = new TextBox();
+            labelUsuario = new Label();
+            labelPassword = new Label();
+            BtnIngresar = new Button();
+            pictureBox1 = new PictureBox();
+            pnlMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
             // pnlMain
             // 
-            this.pnlMain.Anchor = AnchorStyles.None;
-            this.pnlMain.BackColor = Color.White;
-            this.pnlMain.BorderStyle = BorderStyle.FixedSingle;
-            this.pnlMain.Location = new Point(160, 70);
-            this.pnlMain.Size = new Size(380, 250);
-            this.pnlMain.Controls.Add(this.lblTitulo);
-            this.pnlMain.Controls.Add(this.txtUsuario);
-            this.pnlMain.Controls.Add(this.txtPass);
-            this.pnlMain.Controls.Add(this.labelUsuario);
-            this.pnlMain.Controls.Add(this.labelPassword);
-            this.pnlMain.Controls.Add(this.BtnIngresar);
-
+            pnlMain.Anchor = AnchorStyles.None;
+            pnlMain.BackColor = Color.White;
+            pnlMain.BorderStyle = BorderStyle.FixedSingle;
+            pnlMain.Controls.Add(lblTitulo);
+            pnlMain.Controls.Add(txtUsuario);
+            pnlMain.Controls.Add(txtPass);
+            pnlMain.Controls.Add(labelUsuario);
+            pnlMain.Controls.Add(labelPassword);
+            pnlMain.Controls.Add(BtnIngresar);
+            pnlMain.Location = new Point(160, 70);
+            pnlMain.Name = "pnlMain";
+            pnlMain.Size = new Size(380, 250);
+            pnlMain.TabIndex = 1;
             // 
             // lblTitulo
             // 
-            this.lblTitulo.Text = "🏆 CLUB DEPORTIVO";
-            this.lblTitulo.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            this.lblTitulo.ForeColor = Color.FromArgb(0, 51, 102);
-            this.lblTitulo.AutoSize = false;
-            this.lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
-            this.lblTitulo.Dock = DockStyle.Top;
-            this.lblTitulo.Height = 60;
-
+            lblTitulo.Dock = DockStyle.Top;
+            lblTitulo.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold);
+            lblTitulo.ForeColor = Color.FromArgb(0, 51, 102);
+            lblTitulo.Location = new Point(0, 0);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(100, 60);
+            lblTitulo.TabIndex = 0;
+            lblTitulo.Text = "🏆 CLUB DEPORTIVO";
+            lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            this.txtUsuario.Location = new Point(50, 100);
-            this.txtUsuario.Width = 280;
-            this.txtUsuario.PlaceholderText = "Ingrese su usuario";
-
+            txtUsuario.Font = new Font("Segoe UI", 11F);
+            txtUsuario.Location = new Point(50, 100);
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.PlaceholderText = "Ingrese su usuario";
+            txtUsuario.Size = new Size(280, 27);
+            txtUsuario.TabIndex = 1;
+            txtUsuario.Text = "Admin2025";
             // 
             // txtPass
             // 
-            this.txtPass.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            this.txtPass.Location = new Point(50, 150);
-            this.txtPass.Width = 280;
-            this.txtPass.UseSystemPasswordChar = true;
-            this.txtPass.PlaceholderText = "Ingrese su contraseña";
-
+            txtPass.Font = new Font("Segoe UI", 11F);
+            txtPass.Location = new Point(50, 150);
+            txtPass.Name = "txtPass";
+            txtPass.PlaceholderText = "Ingrese su contraseña";
+            txtPass.Size = new Size(280, 27);
+            txtPass.TabIndex = 2;
+            txtPass.Text = "123456";
+            txtPass.UseSystemPasswordChar = true;
             // 
             // labelUsuario
             // 
-            this.labelUsuario.Text = "Usuario:";
-            this.labelUsuario.AutoSize = true;
-            this.labelUsuario.Location = new Point(50, 80);
-            this.labelUsuario.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            this.labelUsuario.ForeColor = Color.FromArgb(50, 50, 50);
-
+            labelUsuario.AutoSize = true;
+            labelUsuario.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            labelUsuario.ForeColor = Color.FromArgb(50, 50, 50);
+            labelUsuario.Location = new Point(50, 80);
+            labelUsuario.Name = "labelUsuario";
+            labelUsuario.Size = new Size(60, 19);
+            labelUsuario.TabIndex = 3;
+            labelUsuario.Text = "Usuario:";
             // 
             // labelPassword
             // 
-            this.labelPassword.Text = "Contraseña:";
-            this.labelPassword.AutoSize = true;
-            this.labelPassword.Location = new Point(50, 130);
-            this.labelPassword.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            this.labelPassword.ForeColor = Color.FromArgb(50, 50, 50);
-
+            labelPassword.AutoSize = true;
+            labelPassword.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            labelPassword.ForeColor = Color.FromArgb(50, 50, 50);
+            labelPassword.Location = new Point(50, 130);
+            labelPassword.Name = "labelPassword";
+            labelPassword.Size = new Size(82, 19);
+            labelPassword.TabIndex = 4;
+            labelPassword.Text = "Contraseña:";
             // 
             // BtnIngresar
             // 
-            this.BtnIngresar.Text = "INGRESAR";
-            this.BtnIngresar.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
-            this.BtnIngresar.Size = new Size(280, 40);
-            this.BtnIngresar.Location = new Point(50, 200);
-            this.BtnIngresar.FlatStyle = FlatStyle.Flat;
-            this.BtnIngresar.FlatAppearance.BorderSize = 0;
-            this.BtnIngresar.BackColor = Color.FromArgb(0, 102, 204);
-            this.BtnIngresar.ForeColor = Color.White;
-            this.BtnIngresar.Cursor = Cursors.Hand;
-            this.BtnIngresar.Click += new System.EventHandler(this.BtnIngresar_Click);
-            this.BtnIngresar.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 80, 160);
-
+            BtnIngresar.BackColor = Color.FromArgb(0, 102, 204);
+            BtnIngresar.Cursor = Cursors.Hand;
+            BtnIngresar.FlatAppearance.BorderSize = 0;
+            BtnIngresar.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 80, 160);
+            BtnIngresar.FlatStyle = FlatStyle.Flat;
+            BtnIngresar.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            BtnIngresar.ForeColor = Color.White;
+            BtnIngresar.Location = new Point(50, 200);
+            BtnIngresar.Name = "BtnIngresar";
+            BtnIngresar.Size = new Size(280, 40);
+            BtnIngresar.TabIndex = 5;
+            BtnIngresar.Text = "INGRESAR";
+            BtnIngresar.UseVisualStyleBackColor = false;
+            BtnIngresar.Click += BtnIngresar_Click;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = Properties.Resources.Icono;
-            this.pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            this.pictureBox1.Location = new Point(30, 100);
-            this.pictureBox1.Size = new Size(120, 120);
-
+            pictureBox1.Image = Properties.Resources.Icono;
+            pictureBox1.Location = new Point(30, 100);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(120, 120);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
-            // FrmLogin (final)
+            // FrmLogin
             // 
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.pnlMain);
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(700, 380);
+            Controls.Add(pictureBox1);
+            Controls.Add(pnlMain);
+            FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "FrmLogin";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Inicio de Sesión - Club Deportivo";
+            Load += FrmLogin_Load;
+            Paint += FrmLogin_Paint;
+            pnlMain.ResumeLayout(false);
+            pnlMain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion

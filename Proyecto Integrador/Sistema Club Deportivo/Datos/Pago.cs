@@ -1,17 +1,11 @@
 ﻿using ClubDeportivo.Entidades;
 using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace ClubDeportivo.Datos
 {
     public class Pago
     {
-        public string NuevoPago(E_Pago pago,E_Cuota cuota)
+        public string NuevoPago(E_Pago pago,int idRegistroaPagar)
         {
             string? salida;
             MySqlConnection sqlCon = new MySqlConnection();
@@ -25,8 +19,8 @@ namespace ClubDeportivo.Datos
                 comando.Parameters.Add("Precio", MySqlDbType.Float).Value = pago.Precio;
                 comando.Parameters.Add("Fecha", MySqlDbType.Date).Value = pago.Fecha;
                 comando.Parameters.Add("MedioPago", MySqlDbType.Int32).Value = pago.MedioPago;
-                comando.Parameters.Add("tipoActividad", MySqlDbType.Int32).Value = pago.Actividad?.IdActividad;
-                comando.Parameters.Add("idcuotaPagada", MySqlDbType.Int32).Value = cuota.IdCuota;
+                comando.Parameters.Add("tipoActividad", MySqlDbType.Int32).Value = pago.Actividad?.NroActividad;
+                comando.Parameters.Add("idRegistroaPagar", MySqlDbType.Int32).Value = idRegistroaPagar;
 
                 MySqlParameter ParCodigo = new MySqlParameter();
                 ParCodigo.ParameterName = "rta";
@@ -49,6 +43,12 @@ namespace ClubDeportivo.Datos
                 ;
             }
             return salida;
+        }
+        public enum TipoPago
+        {
+            Efectivo = 1,
+            Tarjeta = 0,
+
         }
     }
 }

@@ -48,18 +48,4 @@ public int CarnetNumero
     return EstadoMembresia;
   }
 
-  public void PagarCuota(E_Cuota cuota)
-  {
-    if (cuota != null)
-    {
-      cuota.Estado = true;
-      Console.WriteLine($"Cuota pagada exitosamente. Monto: ${cuota.Precio}");
-    }
-  }
-
-  public override E_Persona Registrar()
-  {
-    Console.WriteLine($"Socio {Nombre} {Apellido} registrado exitosamente.");
-    return this;
-  }
 }

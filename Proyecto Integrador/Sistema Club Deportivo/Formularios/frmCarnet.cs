@@ -1,8 +1,8 @@
-﻿using System;
+﻿using ClubDeportivo.Datos; 
+using System;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.Windows.Forms;
-using ClubDeportivo.Datos; 
 
 namespace ClubDeportivo.Formularios
 {
@@ -11,65 +11,77 @@ namespace ClubDeportivo.Formularios
         private Bitmap carnetBitmap;
 
         // Propiedad pública para recibir el socio desde frmRegistrarSocio
-        public E_Socio socio { get; set; }
+        public E_Socio socio = null;
+        public E_NoSocio noSocio = null;
+        public int TipoPersona = 0; // 1 = socio, 2 = no socio
 
-        public frmCarnet()
+        public frmCarnet(int tipoPersona)
         {
             InitializeComponent();
+            TipoPersona = tipoPersona;
         }
 
         private void frmCarnet_Load(object sender, EventArgs e)
         {
-            // Si se envió un socio, mostrar sus datos reales
-            if (socio != null)
+            if (TipoPersona == 1)
             {
-                lblNumero.Text = $"Nro de Carnet: {socio.CarnetNumero}";
-                lblNombre.Text = $"Nombre: {socio.Nombre} {socio.Apellido}";
-                lblFecha.Text = $"Fecha de Inscripción: {socio.FechaInscripcion:dd/MM/yyyy}";
+                lblTipoCarnet.Text = "Carnet de Socio";
+                lblNumero.Text = "Nro de Carnet: " + socio.CarnetNumero;
+                lblNombre.Text = "Nombre de Socio: " + socio.Nombre + " " + socio.Apellido;
+                lblFecha.Text = "Fecha de Inscripcion: " + socio.FechaInscripcion;
+                lblDni.Text = "Dni: " + socio.DNI.ToString();
             }
             else
             {
-                // Modo demostración si no se carga un socio
-                lblNumero.Text = "Nro de Carnet: 00001";
-                lblNombre.Text = "Nombre: Ejemplo";
-                lblFecha.Text = "Fecha de Inscripción: 01/01/2025";
+                lblTipoCarnet.Text = "Carnet Temporal";
+                lblNumero.Text = "Nro de Carnet Temporal: " + noSocio.CarnetTemporal;
+                lblNombre.Text = "Nombre de No Socio: " + noSocio.Nombre + " " + noSocio.Apellido;
+                lblDni.Text = "Dni: " + noSocio.DNI.ToString();
+                lblFecha.Visible = false;
             }
         }
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            try
-            {
-                // Capturamos el panel del carnet
-                carnetBitmap = new Bitmap(panelContenido.Width, panelContenido.Height);
-                panelContenido.DrawToBitmap(carnetBitmap,
-                    new Rectangle(0, 0, carnetBitmap.Width, carnetBitmap.Height));
+            /* -----------------------------------------------------
+           * Ocultamos los botones que no pertenecen al diseño
+           * pero si para la funcionalidad
+           * Usamos la propiedad VISIBLE y los posibles
+           * valores son True o False
+           * ---------------------------------------------------- */
+            btnImprimir.Visible = false;
 
-                PrintDocument pd = new PrintDocument();
-                pd.PrintPage += pd_PrintPage;
-
-                PrintPreviewDialog preview = new PrintPreviewDialog
-                {
-                    Document = pd,
-                    WindowState = FormWindowState.Maximized
-                };
-                preview.ShowDialog();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al intentar imprimir el carnet:\n{ex.Message}",
-                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            /* ---------------------------------------
+            * creamos los objetos para la impresion
+            * ------------------------------------------ */
+            PrintDocument pd = new PrintDocument();
+            pd.PrintPage += new PrintPageEventHandler(ImprimirForm1);
+            pd.Print();
+            btnImprimir.Visible = true; // visualizamos nuevamente el objeto
+            /* _________________________________
+            * regreso al formulario principal
+            * después del dar aviso
+            * ---------------------------------- */
+            MessageBox.Show("Operaación existosa", "AVISO DEL SISTEMA",
+            MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
         }
 
-        private void pd_PrintPage(object sender, PrintPageEventArgs e)
+        private void ImprimirForm1(object o, PrintPageEventArgs e)
         {
-            if (carnetBitmap != null)
+            // Crear un bitmap del tamaño del formulario
+            Bitmap bmp = new Bitmap(this.Width, this.Height);
+            this.DrawToBitmap(bmp, new Rectangle(0, 0, this.Width, this.Height));
+
+            // Copiar desde la pantalla (por si DrawToBitmap no muestra todo)
+            using (Graphics g = Graphics.FromImage(bmp))
             {
-                int x = (e.PageBounds.Width - carnetBitmap.Width) / 2;
-                int y = (e.PageBounds.Height - carnetBitmap.Height) / 3;
-                e.Graphics.DrawImage(carnetBitmap, x, y);
+                Point formLocation = this.PointToScreen(Point.Empty);
+                g.CopyFromScreen(formLocation, Point.Empty, this.Size);
             }
+
+            // Dibujar el bitmap en el documento
+            e.Graphics.DrawImage(bmp, 0, 0);
         }
     }
 }

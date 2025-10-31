@@ -1,9 +1,7 @@
-﻿using System;
-using System.Drawing;
-using System.Drawing.Printing;
-using System.Windows.Forms;
-using ClubDeportivo.Entidades;
+﻿using ClubDeportivo.Entidades;
 using QRCoder; 
+using System.Drawing.Printing;
+using static ClubDeportivo.Datos.Pago;
 
 namespace ClubDeportivo.Formularios
 {
@@ -13,38 +11,61 @@ namespace ClubDeportivo.Formularios
 
         public E_Pago PagoRealizado { get; set; }
 
-        public frmComprobante()
+        public frmComprobante(int tipoPersona)
         {
             InitializeComponent();
+            tipoPersona = TipoPersona;
         }
-
+        public E_Socio socio = null;
+        public E_NoSocio noSocio = null;
+        public E_Pago E_Pago = null;
+        public int TipoPersona = 0; // 1 = socio, 2 = no socio
         private void frmComprobante_Load(object sender, EventArgs e)
         {
             this.BackColor = Color.FromArgb(240, 248, 255);
             lblTitulo.BackColor = Color.FromArgb(0, 102, 204);
             lblTitulo.ForeColor = Color.White;
 
-            if (PagoRealizado != null)
+            TipoPago tipo = (TipoPago)E_Pago.MedioPago;
+            if (TipoPersona == 1)
             {
-                lblSocio.Text = $"N° de Socio: {PagoRealizado.CarnetNumero}";
-                lblTipo.Text = $"Tipo Persona: {(PagoRealizado.TipoPersona == 1 ? "Socio" : "Otro")}";
-                lblFecha.Text = $"Fecha: {PagoRealizado.Fecha:dd/MM/yyyy HH:mm}";
-                lblImporte.Text = $"Importe: ${PagoRealizado.Precio:F2}";
-                lblMedio.Text = $"Medio de Pago: {(PagoRealizado.MedioPago == 1 ? "Efectivo" : "Tarjeta")}";
-                lblActividad.Text = $"Actividad: {(PagoRealizado.Actividad != null ? PagoRealizado.Actividad.Nombre : "-")}";
-
-                GenerarCodigoQR();
+                lblNro.Text = "Nro de Carnet: " + socio.CarnetNumero;
+                lblTipo.Text ="Tipo de Persona: Socio";
+                lblNombre.Text = "Nombre de Socio: " + socio.Nombre + " " + socio.Apellido;
             }
-        }
+            else
+            {
+                lblNro.Text = "Nro de Carnet Temporal: " + noSocio.CarnetTemporal;
+                lblTipo.Text = "Tipo de Persona: No Socio";
+                lblNombre.Text = "Nombre del No Socio: " + noSocio.Nombre + " " + noSocio.Apellido;
+            }
+            lblFecha.Text = "Fecha: " + DateTime.Now.ToShortDateString();
+            lblPrecio.Text = "Precio Pagado: $" + E_Pago.Precio;
+            lblFormaPago.Text = "Forma de Pago: " + tipo.ToString();
+            lblActividad.Text = "Actividad: " + (E_Pago.Actividad != null ? E_Pago.Actividad.Nombre : "N/A");
 
-        private void GenerarCodigoQR()
+            GenerarCodigoQR(TipoPersona);
+        }
+        private void GenerarCodigoQR(int TipoPersona)
         {
             try
             {
-                string datosQR = $"Socio: {PagoRealizado.CarnetNumero}\n" +
-                                 $"Fecha: {PagoRealizado.Fecha:dd/MM/yyyy}\n" +
-                                 $"Monto: ${PagoRealizado.Precio:F2}\n" +
-                                 $"Pago: {(PagoRealizado.MedioPago == 1 ? "Efectivo" : "Tarjeta")}";
+                string datosQR = string.Empty;
+                if (TipoPersona ==1)
+                {
+                    datosQR =   $"Socio: {socio.CarnetNumero}\n" +
+                                $"Fecha Inscripcion: {socio.FechaInscripcion:dd/MM/yyyy}\n" +
+                                $"Precio: ${E_Pago.Precio:F2}\n" +
+                                $"Pago: {(E_Pago.MedioPago == 1 ? "Efectivo" : "Tarjeta")}";
+                }
+                else
+                {
+                    datosQR =   $"No Socio: {noSocio.CarnetTemporal}\n" +
+                                $"Fecha: {DateTime.Now:dd/MM/yyyy}\n" +
+                                $"Precio: ${E_Pago.Precio:F2}\n" +
+                                $"Pago: {(E_Pago.MedioPago == 1 ? "Efectivo" : "Tarjeta")}";
+                }
+                
 
                 QRCodeGenerator qrGenerator = new QRCodeGenerator();
                 QRCodeData qrCodeData = qrGenerator.CreateQrCode(datosQR, QRCodeGenerator.ECCLevel.Q);
@@ -58,41 +79,47 @@ namespace ClubDeportivo.Formularios
                 pbQR.Image = null;
             }
         }
-
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            try
-            {
-                comprobanteBitmap = new Bitmap(panelComprobante.Width, panelComprobante.Height);
-                panelComprobante.DrawToBitmap(comprobanteBitmap, new Rectangle(0, 0, comprobanteBitmap.Width, comprobanteBitmap.Height));
+            /* -----------------------------------------------------
+          * Ocultamos los botones que no pertenecen al diseño
+          * pero si para la funcionalidad
+          * Usamos la propiedad VISIBLE y los posibles
+          * valores son True o False
+          * ---------------------------------------------------- */
+            btnImprimir.Visible = false;
 
-                PrintDocument pd = new PrintDocument();
-                pd.PrintPage += Pd_PrintPage;
-
-                PrintPreviewDialog preview = new PrintPreviewDialog
-                {
-                    Document = pd,
-                    WindowState = FormWindowState.Maximized
-                };
-                preview.ShowDialog();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al imprimir el comprobante:\n" + ex.Message,
-                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            /* ---------------------------------------
+            * creamos los objetos para la impresion
+            * ------------------------------------------ */
+            PrintDocument pd = new PrintDocument();
+            pd.PrintPage += new PrintPageEventHandler(ImprimirForm1);
+            pd.Print();
+            btnImprimir.Visible = true; // visualizamos nuevamente el objeto
+            /* _________________________________
+            * regreso al formulario principal
+            * después del dar aviso
+            * ---------------------------------- */
+            MessageBox.Show("Operaación existosa", "AVISO DEL SISTEMA",
+            MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
         }
-
-        private void Pd_PrintPage(object sender, PrintPageEventArgs e)
+        private void ImprimirForm1(object o, PrintPageEventArgs e)
         {
-            if (comprobanteBitmap != null)
-            {
-                int x = (e.PageBounds.Width - comprobanteBitmap.Width) / 2;
-                int y = (e.PageBounds.Height - comprobanteBitmap.Height) / 3;
-                e.Graphics.DrawImage(comprobanteBitmap, x, y);
-            }
-        }
+            // Crear un bitmap del tamaño del formulario
+            Bitmap bmp = new Bitmap(this.Width, this.Height);
+            this.DrawToBitmap(bmp, new Rectangle(0, 0, this.Width, this.Height));
 
+            // Copiar desde la pantalla (por si DrawToBitmap no muestra todo)
+            using (Graphics g = Graphics.FromImage(bmp))
+            {
+                Point formLocation = this.PointToScreen(Point.Empty);
+                g.CopyFromScreen(formLocation, Point.Empty, this.Size);
+            }
+
+            // Dibujar el bitmap en el documento
+            e.Graphics.DrawImage(bmp, 0, 0);
+        }
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();

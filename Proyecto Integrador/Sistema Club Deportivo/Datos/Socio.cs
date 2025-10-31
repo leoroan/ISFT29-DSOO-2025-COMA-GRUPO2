@@ -8,8 +8,8 @@ namespace ClubDeportivo.Datos;
 
 internal class Socio
 {
-    E_Socio socioencontrado = null;
-    public string Nuevo_Socio(E_Socio socio)
+   
+    public string Nuevo_Socio(E_Socio socio, int idPersona)
     {
         string? salida;
         MySqlConnection sqlCon = new MySqlConnection();
@@ -18,6 +18,7 @@ internal class Socio
             sqlCon = Conexion.getInstancia().CrearConexion();
             MySqlCommand comando = new MySqlCommand("NuevoSocio", sqlCon);
             comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Add("idPersona", MySqlDbType.Int32).Value = idPersona;
             comando.Parameters.Add("fechaInscripcion", MySqlDbType.Date).Value = socio.FechaInscripcion;
 
             MySqlParameter ParCodigo = new MySqlParameter();
@@ -44,14 +45,14 @@ internal class Socio
     }
     public E_Socio? BuscarSocio(E_Socio socio)
     {
-
+        E_Socio socioencontrado = null;
         MySqlConnection sqlCon = new MySqlConnection();
         try
         {
             string query;
             sqlCon = Conexion.getInstancia().CrearConexion();
             query = (@"SELECT dni, fechaNacimiento, nombre, apellido,telefono, direccion,  aptoFisico,  fechaInscripcion,  carnetNumero,  estadoMembresia FROM socio S 
-            inner join persona P on P.idPersona = S.carnetNumero
+            inner join persona P on P.idPersona = S.idPersona
             where carnetNumero =" + socio.CarnetNumero); // <<<------ usamos el dato ingresado                por el usuario
             MySqlCommand comando = new MySqlCommand(query, sqlCon);
             // usamos la consulta y la conexion.-
@@ -79,8 +80,6 @@ internal class Socio
             }
             else
             {
-                MessageBox.Show("Número de Socio inexistente", "AVISO DEL SISTEMA",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
                 socioencontrado = null;
             }
         }
