@@ -14,6 +14,7 @@
         #region Windows Form Designer generated code
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCarnet));
             panelTitulo = new Panel();
             lblTipoCarnet = new Label();
             panelContenido = new Panel();
@@ -23,9 +24,11 @@
             lblNombre = new Label();
             lblNumero = new Label();
             pbIcono = new PictureBox();
+            pbIcono2 = new PictureBox();
             panelTitulo.SuspendLayout();
             panelContenido.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbIcono).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbIcono2).BeginInit();
             SuspendLayout();
             // 
             // panelTitulo
@@ -34,9 +37,8 @@
             panelTitulo.Controls.Add(lblTipoCarnet);
             panelTitulo.Dock = DockStyle.Top;
             panelTitulo.Location = new Point(0, 0);
-            panelTitulo.Margin = new Padding(3, 2, 3, 2);
             panelTitulo.Name = "panelTitulo";
-            panelTitulo.Size = new Size(525, 52);
+            panelTitulo.Size = new Size(600, 69);
             panelTitulo.TabIndex = 1;
             // 
             // lblTipoCarnet
@@ -46,7 +48,7 @@
             lblTipoCarnet.ForeColor = Color.White;
             lblTipoCarnet.Location = new Point(0, 0);
             lblTipoCarnet.Name = "lblTipoCarnet";
-            lblTipoCarnet.Size = new Size(525, 52);
+            lblTipoCarnet.Size = new Size(600, 69);
             lblTipoCarnet.TabIndex = 0;
             lblTipoCarnet.Text = "🏅 CARNET";
             lblTipoCarnet.TextAlign = ContentAlignment.MiddleCenter;
@@ -54,6 +56,7 @@
             // panelContenido
             // 
             panelContenido.BackColor = Color.FromArgb(240, 248, 255);
+            panelContenido.Controls.Add(pbIcono2);
             panelContenido.Controls.Add(lblDni);
             panelContenido.Controls.Add(btnImprimir);
             panelContenido.Controls.Add(lblFecha);
@@ -61,11 +64,10 @@
             panelContenido.Controls.Add(lblNumero);
             panelContenido.Controls.Add(pbIcono);
             panelContenido.Dock = DockStyle.Fill;
-            panelContenido.Location = new Point(0, 52);
-            panelContenido.Margin = new Padding(3, 2, 3, 2);
+            panelContenido.Location = new Point(0, 69);
             panelContenido.Name = "panelContenido";
-            panelContenido.Padding = new Padding(18, 15, 18, 15);
-            panelContenido.Size = new Size(525, 268);
+            panelContenido.Padding = new Padding(21, 20, 21, 20);
+            panelContenido.Size = new Size(600, 358);
             panelContenido.TabIndex = 0;
             // 
             // lblDni
@@ -73,9 +75,9 @@
             lblDni.AutoSize = true;
             lblDni.Font = new Font("Segoe UI", 12F);
             lblDni.ForeColor = Color.Black;
-            lblDni.Location = new Point(201, 135);
+            lblDni.Location = new Point(230, 180);
             lblDni.Name = "lblDni";
-            lblDni.Size = new Size(32, 21);
+            lblDni.Size = new Size(40, 28);
             lblDni.TabIndex = 5;
             lblDni.Text = "dni";
             // 
@@ -87,10 +89,9 @@
             btnImprimir.FlatStyle = FlatStyle.Flat;
             btnImprimir.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             btnImprimir.ForeColor = Color.White;
-            btnImprimir.Location = new Point(201, 212);
-            btnImprimir.Margin = new Padding(3, 2, 3, 2);
+            btnImprimir.Location = new Point(230, 283);
             btnImprimir.Name = "btnImprimir";
-            btnImprimir.Size = new Size(175, 34);
+            btnImprimir.Size = new Size(200, 45);
             btnImprimir.TabIndex = 0;
             btnImprimir.Text = "🖨️ Imprimir Carnet";
             btnImprimir.UseVisualStyleBackColor = false;
@@ -101,9 +102,9 @@
             lblFecha.AutoSize = true;
             lblFecha.Font = new Font("Segoe UI", 12F);
             lblFecha.ForeColor = Color.Black;
-            lblFecha.Location = new Point(201, 166);
+            lblFecha.Location = new Point(230, 221);
             lblFecha.Name = "lblFecha";
-            lblFecha.Size = new Size(47, 21);
+            lblFecha.Size = new Size(58, 28);
             lblFecha.TabIndex = 1;
             lblFecha.Text = "fecha";
             // 
@@ -112,9 +113,9 @@
             lblNombre.AutoSize = true;
             lblNombre.Font = new Font("Segoe UI", 12F);
             lblNombre.ForeColor = Color.Black;
-            lblNombre.Location = new Point(201, 105);
+            lblNombre.Location = new Point(230, 140);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(65, 21);
+            lblNombre.Size = new Size(81, 28);
             lblNombre.TabIndex = 2;
             lblNombre.Text = "nombre";
             // 
@@ -123,32 +124,41 @@
             lblNumero.AutoSize = true;
             lblNumero.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             lblNumero.ForeColor = Color.FromArgb(30, 30, 30);
-            lblNumero.Location = new Point(201, 75);
+            lblNumero.Location = new Point(230, 100);
             lblNumero.Name = "lblNumero";
-            lblNumero.Size = new Size(122, 21);
+            lblNumero.Size = new Size(151, 28);
             lblNumero.TabIndex = 3;
             lblNumero.Text = "carnet numero";
             // 
             // pbIcono
             // 
-            pbIcono.Image = Properties.Resources.Socio;
-            pbIcono.Location = new Point(44, 75);
-            pbIcono.Margin = new Padding(3, 2, 3, 2);
+            pbIcono.Image = Properties.Resources.socio;
+            pbIcono.Location = new Point(50, 100);
             pbIcono.Name = "pbIcono";
-            pbIcono.Size = new Size(131, 112);
+            pbIcono.Size = new Size(150, 149);
             pbIcono.SizeMode = PictureBoxSizeMode.Zoom;
             pbIcono.TabIndex = 4;
             pbIcono.TabStop = false;
             // 
+            // pbIcono2
+            // 
+            pbIcono2.Image = (Image)resources.GetObject("pbIcono2.Image");
+            pbIcono2.Location = new Point(50, 100);
+            pbIcono2.Name = "pbIcono2";
+            pbIcono2.Size = new Size(150, 149);
+            pbIcono2.SizeMode = PictureBoxSizeMode.Zoom;
+            pbIcono2.TabIndex = 6;
+            pbIcono2.TabStop = false;
+            pbIcono2.Visible = false;
+            // 
             // frmCarnet
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(525, 320);
+            ClientSize = new Size(600, 427);
             Controls.Add(panelContenido);
             Controls.Add(panelTitulo);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "frmCarnet";
@@ -159,6 +169,7 @@
             panelContenido.ResumeLayout(false);
             panelContenido.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbIcono).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbIcono2).EndInit();
             ResumeLayout(false);
         }
         #endregion
@@ -172,5 +183,6 @@
         private Label lblNumero;
         private PictureBox pbIcono;
         private Label lblDni;
+        private PictureBox pbIcono2;
     }
 }

@@ -38,10 +38,10 @@
             staSistema.BackColor = Color.FromArgb(0, 51, 102);
             staSistema.ImageScalingSize = new Size(20, 20);
             staSistema.Items.AddRange(new ToolStripItem[] { tsbUsuario, tsbRol });
-            staSistema.Location = new Point(0, 398);
+            staSistema.Location = new Point(0, 394);
             staSistema.Name = "staSistema";
             staSistema.Padding = new Padding(1, 0, 16, 0);
-            staSistema.Size = new Size(720, 22);
+            staSistema.Size = new Size(720, 26);
             staSistema.SizingGrip = false;
             staSistema.TabIndex = 0;
             // 
@@ -50,7 +50,7 @@
             tsbUsuario.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             tsbUsuario.ForeColor = Color.White;
             tsbUsuario.Name = "tsbUsuario";
-            tsbUsuario.Size = new Size(52, 17);
+            tsbUsuario.Size = new Size(67, 20);
             tsbUsuario.Text = "Usuario:";
             // 
             // tsbRol
@@ -58,7 +58,7 @@
             tsbRol.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             tsbRol.ForeColor = Color.White;
             tsbRol.Name = "tsbRol";
-            tsbRol.Size = new Size(28, 17);
+            tsbRol.Size = new Size(36, 20);
             tsbRol.Text = "Rol:";
             // 
             // pnlHeader
@@ -95,7 +95,7 @@
             pnlBotones.Location = new Point(0, 90);
             pnlBotones.Name = "pnlBotones";
             pnlBotones.Padding = new Padding(40);
-            pnlBotones.Size = new Size(720, 308);
+            pnlBotones.Size = new Size(720, 304);
             pnlBotones.TabIndex = 0;
             // 
             // btnImprimirListado
@@ -107,7 +107,7 @@
             btnImprimirListado.ImageAlign = ContentAlignment.MiddleLeft;
             btnImprimirListado.Location = new Point(357, 127);
             btnImprimirListado.Name = "btnImprimirListado";
-            btnImprimirListado.Size = new Size(207, 65);
+            btnImprimirListado.Size = new Size(241, 65);
             btnImprimirListado.TabIndex = 10;
             btnImprimirListado.Text = "Listado Deudores";
             btnImprimirListado.UseVisualStyleBackColor = false;
@@ -120,9 +120,9 @@
             btnImprimirCarnet.ForeColor = Color.White;
             btnImprimirCarnet.Image = Properties.Resources.imprimir_48;
             btnImprimirCarnet.ImageAlign = ContentAlignment.MiddleLeft;
-            btnImprimirCarnet.Location = new Point(140, 127);
+            btnImprimirCarnet.Location = new Point(106, 127);
             btnImprimirCarnet.Name = "btnImprimirCarnet";
-            btnImprimirCarnet.Size = new Size(207, 65);
+            btnImprimirCarnet.Size = new Size(241, 65);
             btnImprimirCarnet.TabIndex = 9;
             btnImprimirCarnet.Text = "Imprimir Carnet";
             btnImprimirCarnet.UseVisualStyleBackColor = false;
@@ -137,7 +137,7 @@
             btnPagar.ImageAlign = ContentAlignment.MiddleLeft;
             btnPagar.Location = new Point(356, 43);
             btnPagar.Name = "btnPagar";
-            btnPagar.Size = new Size(208, 65);
+            btnPagar.Size = new Size(241, 65);
             btnPagar.TabIndex = 8;
             btnPagar.Text = "Pagar";
             btnPagar.UseVisualStyleBackColor = false;
@@ -150,9 +150,9 @@
             btnSalir.ForeColor = Color.White;
             btnSalir.Image = Properties.Resources.salir_48;
             btnSalir.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSalir.Location = new Point(254, 204);
+            btnSalir.Location = new Point(236, 198);
             btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(207, 65);
+            btnSalir.Size = new Size(241, 65);
             btnSalir.TabIndex = 7;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = false;
@@ -165,9 +165,9 @@
             btnRegistrar.ForeColor = Color.White;
             btnRegistrar.Image = Properties.Resources.registrar_48;
             btnRegistrar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnRegistrar.Location = new Point(140, 43);
+            btnRegistrar.Location = new Point(106, 43);
             btnRegistrar.Name = "btnRegistrar";
-            btnRegistrar.Size = new Size(207, 65);
+            btnRegistrar.Size = new Size(241, 65);
             btnRegistrar.TabIndex = 6;
             btnRegistrar.Text = "Registrar";
             btnRegistrar.UseVisualStyleBackColor = false;
@@ -175,7 +175,7 @@
             // 
             // frmPrincipal
             // 
-            AutoScaleDimensions = new SizeF(7F, 17F);
+            AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(240, 248, 255);
             ClientSize = new Size(720, 420);

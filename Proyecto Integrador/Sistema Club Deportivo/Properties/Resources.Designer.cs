@@ -73,26 +73,6 @@ namespace ClubDeportivo.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ChatGPT_Image_25_oct_2025__15_41_58 {
-            get {
-                object obj = ResourceManager.GetObject("ChatGPT Image 25 oct 2025, 15_41_58", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ChatGPT_Image_26_oct_2025__20_04_07 {
-            get {
-                object obj = ResourceManager.GetObject("ChatGPT Image 26 oct 2025, 20_04_07", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap ClubDeportivo {
             get {
                 object obj = ResourceManager.GetObject("ClubDeportivo", resourceCulture);
@@ -183,9 +163,9 @@ namespace ClubDeportivo.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Socio {
+        internal static System.Drawing.Bitmap socio {
             get {
-                object obj = ResourceManager.GetObject("Socio", resourceCulture);
+                object obj = ResourceManager.GetObject("socio", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

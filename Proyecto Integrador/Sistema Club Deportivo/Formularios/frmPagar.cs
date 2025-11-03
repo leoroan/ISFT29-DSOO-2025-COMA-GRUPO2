@@ -6,10 +6,7 @@ namespace ClubDeportivo.Formularios
 {
     public partial class frmPagar : Form
     {
-        public frmPagar()
-        {
-            InitializeComponent();
-        }
+        #region Variables y Contructor
         bool SocioEncontrado = false;
         bool NoSocioEncontrado = false;
         bool CuotaDisponible = false;
@@ -20,15 +17,12 @@ namespace ClubDeportivo.Formularios
         E_PagoActividad pagoactividad = null;
         E_Pago PagoRealizado = null;
         bool comboIniciado = false;
-        public void ResetControles()
+        public frmPagar()
         {
-            SocioEncontrado = false;
-            CuotaDisponible = false;
-            cuotasocio = null;
-            txtNro.Text = "";
-            lblNombre.Text = "Nombre:";
-            lblPrecio.Text = "Precio:";
+            InitializeComponent();
         }
+        #endregion
+        #region Eventos
         private void btnPagar_Click(object sender, EventArgs e)
         {
             //C004-Pagar -F.uso - 04:se registra el pago en el sistema
@@ -82,7 +76,6 @@ namespace ClubDeportivo.Formularios
                     //C004-Pago-F.alternativo -07:muestra un error y permite reintentar
                     MessageBox.Show("El Pago no se registro", "Pago", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
             }
             else
             {
@@ -226,5 +219,17 @@ namespace ClubDeportivo.Formularios
                 e.Handled = true; // Bloquea la tecla
             }
         }
+        #endregion
+        #region Métodos
+        public void ResetControles()
+        {
+            SocioEncontrado = false;
+            CuotaDisponible = false;
+            cuotasocio = null;
+            txtNro.Text = "";
+            lblNombre.Text = "Nombre:";
+            lblPrecio.Text = "Precio:";
+        }
+        #endregion
     }
 }

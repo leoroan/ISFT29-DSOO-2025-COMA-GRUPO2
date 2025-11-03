@@ -7,19 +7,19 @@ namespace ClubDeportivo.Formularios
 {
     public partial class frmComprobante : Form
     {
-        private Bitmap comprobanteBitmap;
-
+        #region Variables y Contructor
         public E_Pago PagoRealizado { get; set; }
-
+        public E_Socio socio = null;
+        public E_NoSocio noSocio = null;
+        public E_Pago E_Pago = null;
+        public int TipoPersona = 0; // 1 = socio, 2 = no socio
         public frmComprobante(int tipoPersona)
         {
             InitializeComponent();
             tipoPersona = TipoPersona;
         }
-        public E_Socio socio = null;
-        public E_NoSocio noSocio = null;
-        public E_Pago E_Pago = null;
-        public int TipoPersona = 0; // 1 = socio, 2 = no socio
+        #endregion
+        #region Eventos
         private void frmComprobante_Load(object sender, EventArgs e)
         {
             this.BackColor = Color.FromArgb(240, 248, 255);
@@ -46,6 +46,37 @@ namespace ClubDeportivo.Formularios
 
             GenerarCodigoQR(TipoPersona);
         }
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            /* -----------------------------------------------------
+          * Ocultamos los botones que no pertenecen al diseño
+          * pero si para la funcionalidad
+          * Usamos la propiedad VISIBLE y los posibles
+          * valores son True o False
+          * ---------------------------------------------------- */
+            btnImprimir.Visible = false;
+
+            /* ---------------------------------------
+            * creamos los objetos para la impresion
+            * ------------------------------------------ */
+            PrintDocument pd = new PrintDocument();
+            pd.PrintPage += new PrintPageEventHandler(ImprimirForm1);
+            pd.Print();
+            btnImprimir.Visible = true; // visualizamos nuevamente el objeto
+            /* _________________________________
+            * regreso al formulario principal
+            * después del dar aviso
+            * ---------------------------------- */
+            MessageBox.Show("Operaación existosa", "AVISO DEL SISTEMA",
+            MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
+        }
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        #endregion
+        #region Métodos
         private void GenerarCodigoQR(int TipoPersona)
         {
             try
@@ -79,31 +110,6 @@ namespace ClubDeportivo.Formularios
                 pbQR.Image = null;
             }
         }
-        private void btnImprimir_Click(object sender, EventArgs e)
-        {
-            /* -----------------------------------------------------
-          * Ocultamos los botones que no pertenecen al diseño
-          * pero si para la funcionalidad
-          * Usamos la propiedad VISIBLE y los posibles
-          * valores son True o False
-          * ---------------------------------------------------- */
-            btnImprimir.Visible = false;
-
-            /* ---------------------------------------
-            * creamos los objetos para la impresion
-            * ------------------------------------------ */
-            PrintDocument pd = new PrintDocument();
-            pd.PrintPage += new PrintPageEventHandler(ImprimirForm1);
-            pd.Print();
-            btnImprimir.Visible = true; // visualizamos nuevamente el objeto
-            /* _________________________________
-            * regreso al formulario principal
-            * después del dar aviso
-            * ---------------------------------- */
-            MessageBox.Show("Operaación existosa", "AVISO DEL SISTEMA",
-            MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
-        }
         private void ImprimirForm1(object o, PrintPageEventArgs e)
         {
             // Crear un bitmap del tamaño del formulario
@@ -120,9 +126,6 @@ namespace ClubDeportivo.Formularios
             // Dibujar el bitmap en el documento
             e.Graphics.DrawImage(bmp, 0, 0);
         }
-        private void btnCerrar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        #endregion
     }
 }

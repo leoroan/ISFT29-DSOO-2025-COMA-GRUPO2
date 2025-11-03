@@ -124,9 +124,6 @@
   <data name="carnet" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Recursos\carnet.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Socio" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ChatGPT Image 26 oct 2025, 20_04_07.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="listado_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\listado_48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -139,22 +136,19 @@
   <data name="Icono" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ClubDeportivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ChatGPT Image 26 oct 2025, 20_04_07" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ChatGPT Image 26 oct 2025, 20_04_07.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="pagar_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pagar_48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="registrar_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\registrar_48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ChatGPT Image 25 oct 2025, 15_41_58" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ChatGPT Image 25 oct 2025, 15_41_58.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Fondo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ChatGPT Image 25 oct 2025, 15_41_58.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="salir_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\salir_48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="socio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\socioactivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Fondo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

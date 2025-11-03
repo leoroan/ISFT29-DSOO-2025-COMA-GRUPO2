@@ -1,26 +1,22 @@
-﻿using ClubDeportivo.Datos; 
-using System;
-using System.Drawing;
+﻿
 using System.Drawing.Printing;
-using System.Windows.Forms;
 
 namespace ClubDeportivo.Formularios
 {
     public partial class frmCarnet : Form
     {
-        private Bitmap carnetBitmap;
-
+        #region Variables y Contructor
         // Propiedad pública para recibir el socio desde frmRegistrarSocio
         public E_Socio socio = null;
         public E_NoSocio noSocio = null;
         public int TipoPersona = 0; // 1 = socio, 2 = no socio
-
         public frmCarnet(int tipoPersona)
         {
             InitializeComponent();
             TipoPersona = tipoPersona;
         }
-
+        #endregion
+        #region Eventos
         private void frmCarnet_Load(object sender, EventArgs e)
         {
             if (TipoPersona == 1)
@@ -30,6 +26,8 @@ namespace ClubDeportivo.Formularios
                 lblNombre.Text = "Nombre de Socio: " + socio.Nombre + " " + socio.Apellido;
                 lblFecha.Text = "Fecha de Inscripcion: " + socio.FechaInscripcion;
                 lblDni.Text = "Dni: " + socio.DNI.ToString();
+                pbIcono.Visible = true;
+                pbIcono2.Visible = false;
             }
             else
             {
@@ -38,9 +36,10 @@ namespace ClubDeportivo.Formularios
                 lblNombre.Text = "Nombre de No Socio: " + noSocio.Nombre + " " + noSocio.Apellido;
                 lblDni.Text = "Dni: " + noSocio.DNI.ToString();
                 lblFecha.Visible = false;
+                pbIcono.Visible = false;
+                pbIcono2.Visible = true;
             }
         }
-
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             /* -----------------------------------------------------
@@ -62,11 +61,12 @@ namespace ClubDeportivo.Formularios
             * regreso al formulario principal
             * después del dar aviso
             * ---------------------------------- */
-            MessageBox.Show("Operaación existosa", "AVISO DEL SISTEMA",
+            MessageBox.Show("Operaación exitosa", "AVISO DEL SISTEMA",
             MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
-
+        #endregion
+        #region Metodos
         private void ImprimirForm1(object o, PrintPageEventArgs e)
         {
             // Crear un bitmap del tamaño del formulario
@@ -83,5 +83,6 @@ namespace ClubDeportivo.Formularios
             // Dibujar el bitmap en el documento
             e.Graphics.DrawImage(bmp, 0, 0);
         }
+        #endregion
     }
 }

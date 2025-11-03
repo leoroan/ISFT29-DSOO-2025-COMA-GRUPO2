@@ -97,7 +97,7 @@
             label2.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             label2.Location = new Point(30, 98);
             label2.Name = "label2";
-            label2.Size = new Size(132, 23);
+            label2.Size = new Size(152, 23);
             label2.TabIndex = 22;
             label2.Text = "Tipo de Actividad:";
             // 
@@ -106,7 +106,7 @@
             label1.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             label1.Location = new Point(30, 61);
             label1.Name = "label1";
-            label1.Size = new Size(132, 23);
+            label1.Size = new Size(152, 23);
             label1.TabIndex = 21;
             label1.Text = "Tipo de Persona:";
             // 
@@ -115,7 +115,7 @@
             cboActividad.DropDownStyle = ComboBoxStyle.DropDownList;
             cboActividad.Location = new Point(210, 98);
             cboActividad.Name = "cboActividad";
-            cboActividad.Size = new Size(130, 23);
+            cboActividad.Size = new Size(130, 28);
             cboActividad.TabIndex = 2;
             // 
             // cboTipoPersona
@@ -123,7 +123,7 @@
             cboTipoPersona.DropDownStyle = ComboBoxStyle.DropDownList;
             cboTipoPersona.Location = new Point(210, 60);
             cboTipoPersona.Name = "cboTipoPersona";
-            cboTipoPersona.Size = new Size(130, 23);
+            cboTipoPersona.Size = new Size(130, 28);
             cboTipoPersona.TabIndex = 1;
             cboTipoPersona.SelectedIndexChanged += cboTipoPersona_SelectedIndexChanged;
             // 
@@ -132,7 +132,7 @@
             labelFechaIns.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             labelFechaIns.Location = new Point(28, 22);
             labelFechaIns.Name = "labelFechaIns";
-            labelFechaIns.Size = new Size(154, 23);
+            labelFechaIns.Size = new Size(176, 23);
             labelFechaIns.TabIndex = 0;
             labelFechaIns.Text = "Fecha de inscripción:";
             // 
@@ -204,21 +204,21 @@
             dtpFechaInscripcion.Format = DateTimePickerFormat.Short;
             dtpFechaInscripcion.Location = new Point(210, 22);
             dtpFechaInscripcion.Name = "dtpFechaInscripcion";
-            dtpFechaInscripcion.Size = new Size(230, 23);
+            dtpFechaInscripcion.Size = new Size(230, 27);
             dtpFechaInscripcion.TabIndex = 0;
             // 
             // txtNombre
             // 
             txtNombre.Location = new Point(210, 136);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(230, 23);
+            txtNombre.Size = new Size(230, 27);
             txtNombre.TabIndex = 3;
             // 
             // txtApellido
             // 
             txtApellido.Location = new Point(210, 174);
             txtApellido.Name = "txtApellido";
-            txtApellido.Size = new Size(230, 23);
+            txtApellido.Size = new Size(230, 27);
             txtApellido.TabIndex = 4;
             // 
             // dtpFechaNacimiento
@@ -226,7 +226,7 @@
             dtpFechaNacimiento.Format = DateTimePickerFormat.Short;
             dtpFechaNacimiento.Location = new Point(210, 212);
             dtpFechaNacimiento.Name = "dtpFechaNacimiento";
-            dtpFechaNacimiento.Size = new Size(230, 23);
+            dtpFechaNacimiento.Size = new Size(230, 27);
             dtpFechaNacimiento.TabIndex = 5;
             dtpFechaNacimiento.ValueChanged += dtpFechaNacimiento_ValueChanged;
             // 
@@ -235,7 +235,7 @@
             txtDni.Location = new Point(210, 250);
             txtDni.MaxLength = 8;
             txtDni.Name = "txtDni";
-            txtDni.Size = new Size(230, 23);
+            txtDni.Size = new Size(230, 27);
             txtDni.TabIndex = 6;
             txtDni.KeyPress += txtDni_KeyPress;
             // 
@@ -243,7 +243,7 @@
             // 
             txtDomicilio.Location = new Point(210, 288);
             txtDomicilio.Name = "txtDomicilio";
-            txtDomicilio.Size = new Size(230, 23);
+            txtDomicilio.Size = new Size(230, 27);
             txtDomicilio.TabIndex = 7;
             // 
             // txtTelefono
@@ -251,7 +251,7 @@
             txtTelefono.Location = new Point(210, 326);
             txtTelefono.MaxLength = 10;
             txtTelefono.Name = "txtTelefono";
-            txtTelefono.Size = new Size(230, 23);
+            txtTelefono.Size = new Size(230, 27);
             txtTelefono.TabIndex = 8;
             txtTelefono.KeyPress += txtTelefono_KeyPress;
             // 
@@ -260,7 +260,7 @@
             cboAptoFisico.DropDownStyle = ComboBoxStyle.DropDownList;
             cboAptoFisico.Location = new Point(210, 364);
             cboAptoFisico.Name = "cboAptoFisico";
-            cboAptoFisico.Size = new Size(130, 23);
+            cboAptoFisico.Size = new Size(130, 28);
             cboAptoFisico.TabIndex = 9;
             // 
             // btnIngresar

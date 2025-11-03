@@ -5,13 +5,16 @@ namespace ClubDeportivo.Formularios
 {
     public partial class frmRegistrar : Form
     {
+        #region Variables y Contructor
+        bool comboIniciado = false;
+        Actividad actividad = new Actividad();
+        List<E_Actividad> actividades;
         public frmRegistrar()
         {
             InitializeComponent();
         }
-        bool comboIniciado = false;
-        Actividad actividad = new Actividad();
-        List<E_Actividad> actividades;
+        #endregion
+        #region Eventos
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             //C001-Registrar persona-F.uso - 02: El Administrador ingresa los datos
@@ -197,17 +200,95 @@ namespace ClubDeportivo.Formularios
 
             }
         }
-
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
         }
+        private void frmRegistrar_Load(object sender, EventArgs e)
+        {
+            dtpFechaInscripcion.Value = DateTime.Now;
+            //combo apto fisico
+            cboAptoFisico.DataSource = new[]
+            {
+                new { Texto = "Sí", Valor = true },
+                new { Texto = "No", Valor = false }
+            };
+            cboAptoFisico.DisplayMember = "Texto";
+            cboAptoFisico.ValueMember = "Valor";
+            cboAptoFisico.SelectedIndex = 0;
 
+            //como tipo de registro
+            cboTipoPersona.DataSource = new[]
+           {
+                new { Texto = "Socio", Valor = 1 },
+                new { Texto = "No Socio", Valor = 0 }
+            };
+            cboTipoPersona.DisplayMember = "Texto";
+            cboTipoPersona.ValueMember = "Valor";
+            cboTipoPersona.SelectedIndex = 0;
+
+            //cargo actividades
+
+            actividades = actividad.TraerActividades();
+            cboActividad.DataSource = actividades;
+            cboActividad.DisplayMember = "Nombre";
+            cboActividad.ValueMember = "NroActividad";
+            cboActividad.SelectedIndex = 0;
+            comboIniciado = true;
+        }
+        private void cboTipoPersona_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!comboIniciado) return;
+            if (cboTipoPersona.SelectedIndex == 0)//socio
+            {
+                cboActividad.DataSource = actividades;
+                cboActividad.SelectedIndex = 0;
+                cboActividad.Enabled = false;
+            }
+            else
+            {
+                var filtradas = actividades
+                .Where(a => a.Nombre != "Todas")
+                .ToList();
+
+                cboActividad.DataSource = filtradas;
+                cboActividad.Enabled = true;
+                cboActividad.SelectedIndex = 1;
+            }
+        }
+        private void dtpFechaNacimiento_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtpFechaNacimiento.Value > DateTime.Now)
+            {
+                MessageBox.Show("La fecha de nacimiento no puede ser mayor a la fecha actual.",
+                "AVISO DEL SISTEMA", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                dtpFechaNacimiento.Value = DateTime.Now;
+
+            }
+        }
+        private void txtDni_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite solo números y teclas de control (como borrar o retroceso)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Bloquea la tecla
+            }
+        }
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite solo números y teclas de control (como borrar o retroceso)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Bloquea la tecla
+            }
+        }
+        #endregion
+        #region Métodos
         public bool Validaciones()
         {
             bool ok = true;
@@ -241,7 +322,6 @@ namespace ClubDeportivo.Formularios
 
             return ok;
         }
-
         public void Limpiar()
         {
             txtNombre.Clear();
@@ -252,89 +332,6 @@ namespace ClubDeportivo.Formularios
             cboAptoFisico.SelectedIndex = 0;
             errorProvider1.Clear();
         }
-
-        private void frmRegistrar_Load(object sender, EventArgs e)
-        {
-            dtpFechaInscripcion.Value = DateTime.Now;
-            //combo apto fisico
-            cboAptoFisico.DataSource = new[]
-            {
-                new { Texto = "Sí", Valor = true },
-                new { Texto = "No", Valor = false }
-            };
-            cboAptoFisico.DisplayMember = "Texto";
-            cboAptoFisico.ValueMember = "Valor";
-            cboAptoFisico.SelectedIndex = 0;
-
-            //como tipo de registro
-            cboTipoPersona.DataSource = new[]
-           {
-                new { Texto = "Socio", Valor = 1 },
-                new { Texto = "No Socio", Valor = 0 }
-            };
-            cboTipoPersona.DisplayMember = "Texto";
-            cboTipoPersona.ValueMember = "Valor";
-            cboTipoPersona.SelectedIndex = 0;
-
-            //cargo actividades
-
-            actividades = actividad.TraerActividades();
-            cboActividad.DataSource = actividades;
-            cboActividad.DisplayMember = "Nombre";
-            cboActividad.ValueMember = "NroActividad";
-            cboActividad.SelectedIndex = 0;
-            comboIniciado = true;
-        }
-
-        private void cboTipoPersona_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (!comboIniciado) return;
-            if (cboTipoPersona.SelectedIndex == 0)//socio
-            {
-                cboActividad.DataSource = actividades;
-                cboActividad.SelectedIndex = 0;
-                cboActividad.Enabled = false;
-            }
-            else
-            {
-                var filtradas = actividades
-                .Where(a => a.Nombre != "Todas")
-                .ToList();
-
-                cboActividad.DataSource = filtradas;
-                cboActividad.Enabled = true;
-                cboActividad.SelectedIndex = 1;
-            }
-        }
-
-        private void dtpFechaNacimiento_ValueChanged(object sender, EventArgs e)
-        {
-            if (dtpFechaNacimiento.Value > DateTime.Now)
-            {
-                MessageBox.Show("La fecha de nacimiento no puede ser mayor a la fecha actual.",
-                "AVISO DEL SISTEMA", MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
-                dtpFechaNacimiento.Value = DateTime.Now;
-
-            }
-        }
-
-        private void txtDni_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Permite solo números y teclas de control (como borrar o retroceso)
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true; // Bloquea la tecla
-            }
-        }
-
-        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Permite solo números y teclas de control (como borrar o retroceso)
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true; // Bloquea la tecla
-            }
-        }
+        #endregion
     }
 }

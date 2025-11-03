@@ -5,16 +5,17 @@ namespace ClubDeportivo.formularios
 {
     public partial class FrmLogin : Form
     {
+        #region Variables y Contructor
         public FrmLogin()
         {
             InitializeComponent();
         }
-
+        #endregion
+        #region Eventos
         private void FrmLogin_Load(object sender, EventArgs e)
         {
             this.ActiveControl = txtUsuario;
         }
-
         private void FrmLogin_Paint(object sender, PaintEventArgs e)
         {
             using (var brush = new System.Drawing.Drawing2D.LinearGradientBrush(
@@ -26,7 +27,6 @@ namespace ClubDeportivo.formularios
                 e.Graphics.FillRectangle(brush, this.ClientRectangle);
             }
         }
-
         private void BtnIngresar_Click(object sender, EventArgs e)
         {
             DataTable tablaLogin = new DataTable();
@@ -53,5 +53,6 @@ namespace ClubDeportivo.formularios
                 txtUsuario.Focus();
             }
         }
+        #endregion
     }
 }
