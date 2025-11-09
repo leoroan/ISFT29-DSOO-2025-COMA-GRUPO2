@@ -41,6 +41,7 @@ namespace ClubDeportivo.Formularios
         }
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            SocioEncontrado = false;
             if (cboTipoRegistro.SelectedIndex == 0)//socio
             {
                 if (txtNro.Text.Trim() == "")
@@ -117,6 +118,7 @@ namespace ClubDeportivo.Formularios
         public void ResetControles()
         {
             SocioEncontrado = false;
+         
             txtNro.Text = "";
             lblNombre.Text = "Nombre:";
         }

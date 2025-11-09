@@ -43,7 +43,7 @@
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(657, 60);
             lblTitulo.TabIndex = 0;
-            lblTitulo.Text = "💰 PAGO DE CUOTA";
+            lblTitulo.Text = "💰 PAGO";
             lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pnlPrincipal

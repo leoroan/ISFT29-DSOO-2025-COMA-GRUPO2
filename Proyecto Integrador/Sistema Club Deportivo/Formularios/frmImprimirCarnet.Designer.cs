@@ -176,7 +176,7 @@
             MinimizeBox = false;
             Name = "frmImprimirCarnet";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Pagar Cuota";
+            Text = "Imprimir Carnet";
             Load += frmPagar_Load;
             pnlPrincipal.ResumeLayout(false);
             pnlPrincipal.PerformLayout();
