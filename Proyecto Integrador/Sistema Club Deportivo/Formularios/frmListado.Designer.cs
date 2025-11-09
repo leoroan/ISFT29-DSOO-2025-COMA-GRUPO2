@@ -90,6 +90,7 @@
             btnCerrar.TabIndex = 1;
             btnCerrar.Text = "Cerrar";
             btnCerrar.UseVisualStyleBackColor = false;
+            btnCerrar.Click += btnCerrar_Click;
             // 
             // btnExportar
             // 

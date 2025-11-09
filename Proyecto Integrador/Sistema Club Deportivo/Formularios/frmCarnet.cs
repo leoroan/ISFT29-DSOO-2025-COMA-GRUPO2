@@ -24,7 +24,7 @@ namespace ClubDeportivo.Formularios
                 lblTipoCarnet.Text = "Carnet de Socio";
                 lblNumero.Text = "Nro de Carnet: " + socio.CarnetNumero;
                 lblNombre.Text = "Nombre de Socio: " + socio.Nombre + " " + socio.Apellido;
-                lblFecha.Text = "Fecha de Inscripcion: " + socio.FechaInscripcion;
+                lblFecha.Text = "Fecha de Inscripcion: " + socio.FechaInscripcion.ToShortDateString();
                 lblDni.Text = "Dni: " + socio.DNI.ToString();
                 pbIcono.Visible = true;
                 pbIcono2.Visible = false;

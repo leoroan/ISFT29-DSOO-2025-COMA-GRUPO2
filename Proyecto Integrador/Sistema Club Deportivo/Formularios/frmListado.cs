@@ -1,5 +1,4 @@
 ﻿using ClubDeportivo.Datos;
-using System.IO; 
 
 namespace ClubDeportivo.Formularios
 {
@@ -18,11 +17,8 @@ namespace ClubDeportivo.Formularios
             lblTitulo.Text = "Listado de Socios deudores a la fecha " + DateTime.Now.ToShortDateString() + ":";
             Listado listado = new Listado();
             dtgListado.DataSource = listado.TraerDeudores();
-
-            
             btnExportar.Click += BtnExportar_Click;
         }
-
         private void BtnExportar_Click(object sender, EventArgs e)
         {
             if (dtgListado.Rows.Count == 0)
@@ -74,6 +70,11 @@ namespace ClubDeportivo.Formularios
                 }
             }
         }
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         #endregion
+
     }
 }

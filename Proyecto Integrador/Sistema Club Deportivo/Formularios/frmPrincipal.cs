@@ -23,8 +23,8 @@ namespace ClubDeportivo.Formularios
         }
         private void btnImprimirCarnet_Click(object sender, EventArgs e)
         {
-            //frmCarnet carnet = new frmCarnet();
-            //carnet.ShowDialog();
+            frmImprimirCarnet carnet = new frmImprimirCarnet();
+            carnet.ShowDialog();
         }
         private void btnSalir_Click(object sender, EventArgs e)
         {

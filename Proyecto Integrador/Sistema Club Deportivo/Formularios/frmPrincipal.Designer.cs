@@ -176,7 +176,6 @@
             // frmPrincipal
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
-            AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(240, 248, 255);
             ClientSize = new Size(720, 420);
             Controls.Add(pnlBotones);
