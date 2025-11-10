@@ -17,7 +17,17 @@ namespace ClubDeportivo.Formularios
             lblTitulo.Text = "Listado de Socios deudores a la fecha " + DateTime.Now.ToShortDateString() + ":";
             Listado listado = new Listado();
             dtgListado.DataSource = listado.TraerDeudores();
-            btnExportar.Click += BtnExportar_Click;
+            if (dtgListado.Rows.Count == 0)
+            {
+                MessageBox.Show("No existe registros de deudores a la fecha Actual", "Listado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnExportar.Enabled = false;
+            }
+            else 
+            {
+                btnExportar.Enabled = true;
+            }
+
+                btnExportar.Click += BtnExportar_Click;
         }
         private void BtnExportar_Click(object sender, EventArgs e)
         {
