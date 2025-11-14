@@ -81,7 +81,7 @@
             // cboTipoRegistro
             // 
             cboTipoRegistro.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboTipoRegistro.Location = new Point(183, 21);
+            cboTipoRegistro.Location = new Point(200, 21);
             cboTipoRegistro.Name = "cboTipoRegistro";
             cboTipoRegistro.Size = new Size(130, 23);
             cboTipoRegistro.TabIndex = 9;
@@ -100,7 +100,7 @@
             // txtNro
             // 
             txtNro.Font = new Font("Segoe UI", 11F);
-            txtNro.Location = new Point(183, 66);
+            txtNro.Location = new Point(200, 66);
             txtNro.Margin = new Padding(3, 2, 3, 2);
             txtNro.MaxLength = 6;
             txtNro.Name = "txtNro";
@@ -116,7 +116,7 @@
             btnBuscar.FlatStyle = FlatStyle.Flat;
             btnBuscar.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             btnBuscar.ForeColor = Color.White;
-            btnBuscar.Location = new Point(328, 67);
+            btnBuscar.Location = new Point(345, 67);
             btnBuscar.Margin = new Padding(3, 2, 3, 2);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(83, 24);

@@ -55,7 +55,7 @@
             lblHeader.Name = "lblHeader";
             lblHeader.Size = new Size(940, 70);
             lblHeader.TabIndex = 0;
-            lblHeader.Text = "🏆 REGISTRAR NUEVO SOCIO";
+            lblHeader.Text = "🏆 REGISTRAR";
             lblHeader.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pnlContenedor
@@ -325,7 +325,7 @@
             MinimizeBox = false;
             Name = "frmRegistrar";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Registro de Socios";
+            Text = "Registro";
             Load += frmRegistrar_Load;
             pnlContenedor.ResumeLayout(false);
             pnlContenedor.PerformLayout();

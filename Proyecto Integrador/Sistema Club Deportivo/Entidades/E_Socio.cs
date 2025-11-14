@@ -6,8 +6,6 @@ public class E_Socio : E_Persona
   private DateTime fechaInscripcion;
   private bool estadoMembresia;
   private int carnetNumero;
-  private List<E_Cuota> cuotas;
-
   // Constructor
   public E_Socio(int dni, DateTime fechaNacimiento, string nombre, string apellido,
               string telefono,string domicilio, bool aptoFisico, DateTime fechaInscripcion, int carnetNumero, bool estadoMembresia)
@@ -15,7 +13,6 @@ public class E_Socio : E_Persona
   {
     FechaInscripcion = fechaInscripcion;
     EstadoMembresia = estadoMembresia;
-    cuotas = new List<E_Cuota>();
     CarnetNumero = carnetNumero;
   }
 
@@ -36,11 +33,6 @@ public int CarnetNumero
     get { return carnetNumero; }
     set { carnetNumero = value; }
 }
-
-    public List<E_Cuota> Cuotas
-  {
-    get { return cuotas; }
-  }
 
   // Métodos
   public bool VerificarEstado()

@@ -160,7 +160,7 @@ CREATE TABLE `cuota` (
   `precio` float DEFAULT NULL,
   `Estado` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`idCuota`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 DROP TABLE IF EXISTS nosocio;
 CREATE TABLE `nosocio` (
@@ -188,7 +188,7 @@ CREATE TABLE `pagoactividad` (
   `precio` float DEFAULT NULL,
   `estado` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`idPagoActividad`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 DROP TABLE IF EXISTS persona;
 CREATE TABLE `persona` (
@@ -225,7 +225,6 @@ CREATE TABLE `socio` (
   PRIMARY KEY (`carnetNumero`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-
 DROP TABLE IF EXISTS usuario;
 CREATE TABLE `usuario` (
   `CodUsuario` int NOT NULL AUTO_INCREMENT,
@@ -242,3 +241,4 @@ LOCK TABLES usuario WRITE;
 INSERT INTO usuario VALUES
  (26,'Admin2025','123456',120,1);
 UNLOCK TABLES;
+
